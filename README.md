@@ -1,3 +1,0 @@
-# ialzouby.github.io
-
-test
