@@ -189,12 +189,21 @@ h3{
 
 .linkedin-post {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 100vh; /* Set the height to make it fill the entire viewport */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative; /* Add this */
+    z-index: 1; /* Add this to bring the LinkedIn post above other content */
 }
 
+/* Add a CSS class for your header and footer, e.g., .site-header and .site-footer */
+.site-header {
+    z-index: 2; /* Ensure the header is above the LinkedIn post */
+}
 
+.site-footer {
+    z-index: 2; /* Ensure the footer is above the LinkedIn post */
+}
 
   
   
