@@ -1,14 +1,9 @@
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" >
     <title>FPV Hobby</title>
 
 
@@ -62,6 +57,66 @@
       text-align: center;
       padding: 10px;
   }
+/* Style for all navigation links (buttons) */
+nav a {
+    display: inline-block;
+    padding: 5px 15px;
+    margin: 5px 10px;
+    text-decoration: none;
+    background-color: #088cd8;
+    color: #fff;
+    border-radius: 25px; /* Add round cutout */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add shadow */
+    margin-right: 10px; /* Add right margin */
+    margin-left: 10px; /* Add left margin */
+    transition: background-color 0.3s;
+}
+
+/* Change color of navigation links on hover */
+nav a:hover {
+    background-color: #0077c0; /* Change color on hover */
+}
+
+/* Style for the dropdown content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Style for the dropdown links inside the dropdown content */
+.dropdown-content a {
+    padding: 10px 15px; /* Adjust padding for dropdown links */
+    text-decoration: none;
+    display: block;
+    color: #333;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown content when hovering over the dropdown */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Style for the Stuff and Midterm tabs to match the format */
+.dropdown-content a.stuff,
+.dropdown-content a.midterm {
+    padding: 12px 16px;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
 
 </style>
 
@@ -72,46 +127,81 @@
 </head>
 <body>
     <header>
-        <h1>Issam's Hobby || FPV</h1>
+        <h1> Issam Alzouby || ITIS 3135</h1>
         <nav>
-            <a href="#home">Home</a> ||
-            <a href="#what">What is FPV?</a> ||
-            <a href="#how">Instructions</a> ||
-            <a href="#see">Images</a>
+            <a href="#home">Home</a>
+            ||
+            <a href="#what">What is FPV?</a>
+            ||
+            <a href="#how">Instructions</a>
+           
+           
+            ||
+            <a href="#see">Images </a>
+            
         </nav>
     </header>
 
     <main>
-        <!-- Replace the content below with your FPV-related content -->
         <section id="home">
-            <h2>How to Hike</h2>
-        <p>Hiking is not just about putting one foot in front of the other. Learn the essential skills and tips to make your hikes safe and enjoyable:</p>
+            <h2>Welcome to the FPV Adventure</h2>
+            <p>First-Person View (FPV) drone flying is a thrilling experience that puts you in the pilot's seat. Strap on your goggles, grab your remote, and get ready for an exhilarating journey through the skies.</p>
     
-        <h3>Basic Gear</h3>
-        <p>Discover the essential hiking gear, including comfortable footwear, suitable clothing, and necessary accessories.</p>
+            <h3>Choosing the Right Gear</h3>
+            <p>Invest in high-quality FPV equipment:</p>
+            <ul>
+                <li><strong>FPV Drone:</strong> Select a drone with GPS, a stable frame, and a good camera.</li>
+                <li><strong>FPV Goggles:</strong> Get comfortable goggles for immersive flying.</li>
+                <li><strong>Remote Controller:</strong> Choose a reliable controller with precise controls.</li>
+            </ul>
     
-        <h3>Navigation</h3>
-        <p>Learn how to read trail maps and use compasses or GPS devices for navigation. Understanding your route is key to a successful hike.</p>
+            <h3>Making Drones Waterproof</h3>
+            <p>Don't let a little rain stop you. Apply conformal coating to waterproof your drone's electronics. Conformal paste forms a protective barrier, keeping your drone safe from moisture.</p>
     
-        <h3>Safety Tips</h3>
-        <p>Stay safe on the trails by following safety guidelines, knowing first aid basics, and preparing for unexpected situations.</p>
+            <h3>AI-Generated Images</h3>
+            <p>Enhance your FPV footage with AI-generated images:</p>
+            <ol>
+                <li>Use AI to edit and enhance your photos and videos.</li>
+                <li>Create stunning aerial panoramas with automated stitching.</li>
+                <li>Apply filters and effects to achieve professional-looking results.</li>
+            </ol>
     
-            <!-- Add FPV-related content here -->
+            <!-- Add more FPV-related content here -->
         </section>
 
         <section id="what">
             <h2>What is FPV?</h2>
-            <!-- Add FPV-related content here -->
+            <p>FPV, or First-Person View, is a unique way to experience drone flying. When you put on FPV goggles, you see exactly what your drone sees. It's like having wings and exploring the world from the sky.</p>
+    
+            <!-- Add more FPV-related content here -->
         </section>
 
         <section id="how">
             <h2>Instructions</h2>
-            <!-- Add FPV-related content here -->
+            <p>Ready to take flight? Follow these steps to get started with FPV:</p>
+            <ol>
+                <li><strong>Choose a Safe Location:</strong> Find an open area away from obstacles.</li>
+                <li><strong>Pre-flight Check:</strong> Inspect your drone and gear for any issues.</li>
+                <li><strong>Calibrate:</strong> Calibrate your drone's compass and GPS.</li>
+                <li><strong>Strap In:</strong> Put on your FPV goggles and secure your remote.</li>
+                <li><strong>Take Off:</strong> Lift off and explore the skies!</li>
+            </ol>
+    
+            <!-- Add more FPV-related content here -->
         </section>
 
         <section id="see">
             <h2>Images</h2>
-            <!-- Add FPV-related content here -->
+            <p>Experience the beauty of FPV through stunning images captured by enthusiasts:</p>
+    
+            <div class="image-gallery">
+                <img src="images/fpv1.jpg" alt="FPV Image 1">
+                <img src="images/fpv2.jpg" alt="FPV Image 2">
+                <img src="images/fpv3.jpg" alt="FPV Image 3">
+                <img src="images/fpv4.jpg" alt="FPV Image 4">
+            </div>
+    
+            <!-- Add more FPV-related content here -->
         </section>
     </main>
 
@@ -141,6 +231,7 @@
            
     </footer>
 
-    <script src="scripts/page.js"></script>
+    <script src="../scripts/page.js"></script>
+
 </body>
 </html>
