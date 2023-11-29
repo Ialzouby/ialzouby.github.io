@@ -187,26 +187,18 @@ h3{
         font-size: 16px;
 }
 
-.containerrr {
-    /* Add styles for your container here */
-    position: relative;
-    width: 100%;
-    max-width: 1200px; /* Adjust the maximum width as needed */
-    margin: 0 auto; /* Horizontally center the container */
+.main-container {
+    position: relative; /* Set the position to relative */
+    padding-top: 20px; /* Adjust the top padding to your preference */
+    padding-bottom: 20px; /* Adjust the bottom padding to your preference */
 }
 
+/* Styles for the LinkedIn post within the main container */
 .linkedin-post {
-    /* Styles for the LinkedIn post */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    position: relative; /* Change to relative */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 0; /* Adjust the top position to position the LinkedIn post vertically */
+    left: 0; /* Adjust the left position to position the LinkedIn post horizontally */
 }
-
 
   
   
