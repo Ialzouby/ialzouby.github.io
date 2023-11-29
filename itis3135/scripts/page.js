@@ -44,3 +44,20 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+document.addEventListener('DOMContentLoaded', function () {
+    const footerLinks = document.querySelectorAll('footer nav a');
+  
+    footerLinks.forEach(function (link) {
+        link.addEventListener('click', function (event) {
+            // Prevent the default link behavior
+            event.preventDefault();
+
+            // Get the href attribute of the clicked link
+            const targetUrl = link.getAttribute('href');
+
+            // Navigate to the target URL
+            window.location.href = targetUrl;
+        });
+    });
+});
+
