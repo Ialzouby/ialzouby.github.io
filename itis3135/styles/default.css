@@ -191,10 +191,9 @@ h3{
     display: flex;
     flex-direction: column; /* Stack elements vertically */
     align-items: center; /* Center content horizontally */
-    justify-content: space-between; /* Space evenly between header and footer */
+    /* Space evenly between header and footer */
     min-height: calc(100vh - 30px); /* Calculate minimum height to fill viewport */
-    padding-top: 20px;
-    padding-bottom: 20px;
+    
 }
 
   
