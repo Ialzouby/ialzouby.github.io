@@ -187,25 +187,14 @@ h3{
         font-size: 16px;
 }
 
-/* ... Previous CSS styles ... */
-
 .main-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stack elements vertically */
     align-items: center; /* Center content horizontally */
-    justify-content: space-between;
-    min-height: 100vh; /* Fill viewport height */
+    justify-content: space-between; /* Space evenly between header and footer */
+    min-height: calc(100vh - 30px); /* Calculate minimum height to fill viewport */
     padding-top: 20px;
     padding-bottom: 20px;
-    position: relative; /* Relative positioning for containing absolute elements */
-}
-
-/* Styles for the LinkedIn post within the main container */
-.linkedin-post {
-    position: absolute;
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Center precisely */
 }
 
   
