@@ -10,8 +10,8 @@ header, footer {
     color: #fff;
     padding: 12px;
     text-align: center;
-    border-radius: 10px; /* Add rounded edges */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a shadow */
+    border-radius: 10px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
 header a, footer a {
@@ -62,18 +62,18 @@ figcaption {
     height: 50vh;
     overflow: hidden;
     display: flex;
-    justify-content: center; /* Center horizontally */
+    justify-content: center; 
     align-items: center;
   }
   
   .slider-container {
     width: 100%;
-    height: 100%; /* Allow the height to adjust based on content */
+    height: 100%; 
     overflow: hidden;
     display: flex;
-    flex-direction: column; /* Stack the children vertically */
-    justify-content: center; /* Center horizontally within .slider-container */
-    align-items: center; /* Center vertically within .slider-container */
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
     margin-bottom: 28px; 
 }
   
@@ -93,16 +93,16 @@ figcaption {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    font-size: 18px; /* Set a fixed font size */
+    font-size: 18px; 
     border-radius: 10px;
     margin-right: 18px;
     transition: opacity 0.5s, transform 0.5s;
     cursor: pointer;
     padding: 10px;
-    overflow: hidden; /* Hide overflowing content */
+    overflow: hidden; 
 }
   
-  /* Hover effect - reduce opacity and scale up on hover */
+  
   .slider-block:hover {
     opacity: 0.8;
     transform: scale(1.05);
@@ -145,13 +145,13 @@ figcaption {
   }
   
   .post-image img {
-   max-width: 100%; /* Limit the image width to its container's width */
-    max-height: 100%; /* Limit the image height to its container's height */
-    width: auto; /* Allow the image to adjust its width */
+   max-width: 100%; 
+    max-height: 100%; 
+    width: auto; 
     height: auto;  
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    border-bottom-left-radius: 10px; /* Round off the bottom left corner for the image container */
+    border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px; 
    
   
@@ -161,26 +161,29 @@ figcaption {
   
   .post-text {
     text-align: center;
-    margin: 0; /* Reset margin for text */
-    max-height: 50%; /* Limit the maximum height for the text container */
-    overflow: hidden; /* Hide overflowing content */
+    margin: 0; 
+    max-height: 50%; 
+    overflow: hidden; 
 }
 
 .post-text h3 {
-    margin: 5px 0; /* Reduce margin around the post title */
+    margin: 5px 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-weight: bold;
+   
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 10px;
 }
+h3{
+    font-weight: bold;
+}
 
 .post-text p {
-    white-space: normal; /* Allow text to wrap to the next line */
-        text-overflow: clip; /* Allow text to display fully */
-        max-height: 70%; /* Adjust the maximum height as needed */
+    white-space: normal;
+        text-overflow: clip;
+        max-height: 70%; 
         font-size: 16px;
 }
 
