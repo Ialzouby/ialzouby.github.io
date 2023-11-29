@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="styles/default.css">
+    <style>
+        /* Reset default styles */
+       
+
+        /* Center the main content container vertically and horizontally */
+        .main-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 30vh;
+            background-color: #f0f0f0; /* Set a background color for the page */
+        }
+
+        /* Style for the cylinder button */
+        .cylinder-button {
+            display: inline-block;
+            padding: 20px 40px;
+            background-color: #a6dcef; /* Baby blue color */
+            color: #fff; /* Text color */
+            border: none;
+            border-radius: 50px; /* Gives it a rounded appearance */
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Add shadows */
+            transition: transform 0.2s ease-in-out;
+            margin: 10px; /* Add some margin between buttons */
+        }
+
+        .cylinder-button:hover {
+            transform: translateY(-5px); 
+        }
+
+       
+        .button-container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div data-include="components/header.html"></div>
+        <script src="scripts/HTMLInclude.min.js"></script>
+    </header>
+
+    <main class="main-container"> 
+        <div class="button-container">
+            <a href="https://ai4health-production.up.railway.app/" class="cylinder-button" target="_blank">Ai4Health</a>
+            <a href="https://www.haircolorxpertsalon.com/" class="cylinder-button" target="_blank">HairColorXperts</a>
+            <a href="https://sonicsounds.up.railway.app/" class="cylinder-button" target="_blank">NASA</a>
+
+        </div> 
+    </main>
+
+    <footer>
+        <div data-include="components/footer.html"></div>
+        <script src="scripts/HTMLInclude.min.js"></script>
+    </footer>
+</body>
+</html>
