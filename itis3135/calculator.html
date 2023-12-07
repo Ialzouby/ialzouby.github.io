@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+      body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header, footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+#calculator {
+    background-color: #ffffff;
+    width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+#display {
+    background-color: #ecf0f1;
+    padding: 15px;
+    margin-bottom: 10px;
+    text-align: right;
+    font-size: 1.5em;
+    border-radius: 5px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.btn {
+    width: 68px;
+    height: 68px;
+    line-height: 68px;
+    margin: 5px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 34px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    color: #7f8c8d;
+    background-color: #ecf0f1;
+}
+
+.btn:hover {
+    background-color: #bdc3c7;
+    transform: scale(1.05);
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+#clear {
+    background-color: #e74c3c;
+    color: white;
+}
+
+#equals {
+    background-color: #2ecc71;
+    color: white;
+}
+
+
+    </style>    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/default.css">
+    <title>Simple Calculator</title>
+</head>
+<body>
+    <header>
+        <div data-include="components/header.html"></div>
+        <h1>My Simple Calculator</h1>
+    </header>
+
+    <main>
+        <div id="calculator">
+            <div id="display">0</div>
+            <button class="btn" id="clear">C</button>            <button class="btn" id="one">1</button>
+            <button class="btn" id="two">2</button>
+            <button class="btn" id="three">3</button>            <button class="btn" id="four">4</button>
+            <button class="btn" id="five">5</button>            <button class="btn" id="six">6</button>
+            <button class="btn" id="seven">7</button>            <button class="btn" id="eight">8</button>
+            <button class="btn" id="nine">9</button>            <button class="btn" id="zero">0</button>
+            <button class="btn" id="divide">/</button>
+            <button class="btn" id="multiply">*</button>
+   
+            <button class="btn" id="subtract">-</button>
+
+
+            <button class="btn" id="add">+</button>
+
+            <button class="btn" id="equals">=</button>
+        </div>
+    </main>
+    <script src="scripts/calculator.js"></script>
+    <footer>
+        <p>Simple Calculator - Built for Learning</p>
+        <div data-include="components/footer.html"></div>
+        <script src="scripts/HTMLInclude.min.js"></script>
+    </footer>
+</body>
+</html>

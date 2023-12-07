@@ -262,3 +262,14 @@ h3{
 
   
 
+@media (min-width: 768px) {
+    .feature-three__list li+li {
+      margin-left: 50px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .feature-three__list li+li {
+      margin-left: 70px;
+    }
+  }

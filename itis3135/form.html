@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+       
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: grid;
+    grid-gap: 15px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="text"], input[type="tel"], input[type="email"], select {
+    font-size: 1em;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    margin-right: 10px;
+}
+
+.checkbox-group, .radio-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button[type="reset"] {
+    background-color: #6c757d;
+    margin-right: 10px;
+}
+
+button:hover[type="reset"] {
+    background-color: #5a6268;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    form {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issam Alzouby || ITIS 3135 Introduction</title>
+    <link rel="stylesheet" href="styles/default.css">
+</head>
+<body>
+    <div data-include="components/header.html"></div>
+    <script src="scripts/HTMLInclude.min.js"></script>
+   
+    <main> 
+        <h2>Contact Us</h2>
+        <form action="#">
+            <!-- Name -->
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your name">
+    
+            <!-- Phone Number -->
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+    
+            <!-- Email Address -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email">
+    
+            <!-- Checkboxes -->
+            <label>Services Interested In:</label>
+            <div>
+                <input type="checkbox" id="service1" name="service" value="repair">
+                <label for="service1">Repair</label>
+            </div>
+            <div>
+                <input type="checkbox" id="service2" name="service" value="maintenance">
+                <label for="service2">Sales</label>
+            </div>
+    
+            <!-- Radio Buttons -->
+            <label>Contact Preference:</label>
+            <div>
+                <input type="radio" id="contact_email" name="contact_pref" value="email">
+                <label for="contact_email">Email</label>
+            </div>
+            <div>
+                <input type="radio" id="contact_phone" name="contact_pref" value="phone">
+                <label for="contact_phone">Phone</label>
+            </div>
+    
+            <!-- Select Box -->
+            <label for="time_preference">Best Time to Contact:</label>
+            <select id="time_preference" name="time_preference">
+                <option value="morning">Morning</option>
+                <option value="afternoon">Afternoon</option>
+                <option value="evening">Evening</option>
+            </select>
+    
+            <!-- Buttons -->
+            <button type="reset">Reset</button>
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+    <footer>
+    <div data-include="components/footer.html"></div>
+    <script src="scripts/HTMLInclude.min.js"></script>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+ body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* changed to column */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+header, footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+#calculator {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+#display {
+    background-color: #ecf0f1;
+    padding: 15px;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    border-radius: 5px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+
+.btn {
+    width: 68px;
+    height: 68px;
+    margin: 5px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 34px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    color: #34495e;
+    background-color: #ecf0f1;
+}
+
+.btn:hover {
+    background-color: #bdc3c7;
+    transform: scale(1.05);
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.operator {
+    color: #d35400;
+}
+
+#clear {
+    background-color: #e74c3c;
+    color: white;
+}
+
+#equals {
+    background-color: #2ecc71;
+    color: white;
+}
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/default.css">
+    <div data-include="components/header.html"></div>
+    <title>Simple Calculator</title>
+</head>
+<body>
+    <header>
+        <h1>Simple Calculator</h1>
+    </header>
+
+    <main>
+        <div id="calculator">
+            <div id="display">0</div>
+            <!-- Numeric Buttons -->
+            <button class="btn" id="button1" value="1">1</button>
+            <button class="btn" id="button2" value="2">2</button>
+            <button class="btn" id="button3" value="3">3</button>
+            <button class="btn" id="button4" value="4">4</button>
+            <button class="btn" id="button5" value="5">5</button>
+            <button class="btn" id="button6" value="6">6</button>
+            <button class="btn" id="button7" value="7">7</button>
+            <button class="btn" id="button8" value="8">8</button>
+            <button class="btn" id="button9" value="9">9</button>
+            <button class="btn" id="button0" value="0">0</button>
+            
+            <!-- Operation Buttons -->
+            <button class="btn operator" id="add" value="+">+</button>
+            <button class="btn operator" id="subtract" value="-">-</button>
+            <button class="btn operator" id="multiply" value="*">*</button>
+            <button class="btn operator" id="divide" value="/">/</button>
+            
+            <!-- Calculate and Clear -->
+            <button class="btn" id="equals">=</button>
+            <button class="btn" id="clear">C</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>Calculator - Built for Learning</p>
+    </footer>
+    <div data-include="components/footer.html"></div>
+    <script src="scripts/calculator_try.js"></script>
+    <script src="scripts/HTMLInclude.min.js"></script>
+</body>
+</html>
+

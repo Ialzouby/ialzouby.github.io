@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #13b9e2;
+    color: white;
+    padding: 10px;
+}
+
+td {
+    padding: 8px;
+    text-align: left;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+footer {
+    background-color: #333333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    margin-top: 30px;
+}
+
+footer nav a {
+    color: #ddd;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/default.css">
+    <title>Tables</title>
+</head>
+<body>
+    <div>
+        <script src="scripts/HTMLInclude.min.js"></script>
+        <div data-include="components/header.html"></div>
+   </div>
+
+
+    <main>
+        <h2>Tables</h2>
+        <h3>Employee Data in Simple Table</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Year of Service</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ahmad Al-Khalil</td>
+                    <td>ahmad.k@company.com</td>
+                    <td>7</td>
+                </tr>
+                <tr>
+                    <td>Layla Al-Farsi</td>
+                    <td>layla.f@company.com</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>Fadi Nasri</td>
+                    <td>fadi.n@company.com</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>Sara Al-Amin</td>
+                    <td>sara.a@company.com</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>Khalid Al-Hakim</td>
+                    <td>khalid.h@company.com</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>Yasmin Al-Ghazali</td>
+                    <td>yasmin.g@company.com</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>Amir Saqqaf</td>
+                    <td>amir.s@company.com</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td>Rania Al-Masri</td>
+                    <td>rania.m@company.com</td>
+                    <td>2</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Employee Data in Detailed Table</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Year of Service</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Team Lead</td>
+                    <td>Ahmad Al-Khalil</td>
+                    <td>ahmad.k@company.com</td>
+                    <td>7</td>
+                    <td>$85,000</td>
+                </tr>
+                <tr>
+                    <td>Developer</td>
+                    <td>Layla Al-Farsi</td>
+                    <td>layla.f@company.com</td>
+                    <td>5</td>
+                    <td>$70,000</td>
+                </tr>
+                <tr>
+                    <td>Analyst</td>
+                    <td>Fadi Nasri</td>
+                    <td>fadi.n@company.com</td>
+                    <td>8</td>
+                    <td>$90,000</td>
+                </tr>
+                <tr>
+                    <td>Manager</td>
+                    <td>Sara Al-Amin</td>
+                    <td>sara.a@company.com</td>
+                    <td>6</td>
+                    <td>$95,000</td>
+                </tr>
+                <tr>
+                    <td>Consultant</td>
+                    <td>Khalid Al-Hakim</td>
+                    <td>khalid.h@company.com</td>
+                    <td>4</td>
+                    <td>$65,000</td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="text-align: right;">Total Salary Budget:</td>
+                    <td>$650,000</td>
+
+
+            </tr></tbody></table>
+                </main>
+                    
+                <div>  <div data-include="components/footer.html"></div>
+    </div>     
+        </body> 
+   
+                <script src="scripts/HTMLInclude.min.js"></script>
+
+                </html>
