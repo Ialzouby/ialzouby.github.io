@@ -1,121 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <title>My First Web Page</title>
     <style>
-      
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-header, footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1em 0;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-main {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-
-.overlined-text {
-    text-decoration: overline;
-    text-decoration-color: #13b9e2;
-}
-
-a {
-    color: #007bff; 
-    text-decoration: none; 
-}
-
-a:hover {
-    color: #0056b3; 
-}
-
-
-section {
-    margin-bottom: 20px;
-}
-
-section h3 a {
-    color: inherit; 
-}
-
-
-ul {
-    list-style-type: none; 
-    padding-left: 0; 
-}
-
-ul li {
-    margin-bottom: 10px;
-}
-
-    </style>    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/default.css">
-    <style>
-        .overlined-text {
-            text-decoration: overline;
+        body {
+            background-color: #f0e68c; 
+            font-family: 'Times New Roman', serif;
+        }
+        h1 {
+            background-color: #ff6347; 
+            color: #00ff00; 
+            text-align: right;
+            margin: 5px;
+            padding: 5px;
+            border: 3px dashed blue;
+        }
+        p {
+            color: #0000ff; 
+            font-size: 18px;
+            margin-left: 50px;
+            border: 2px solid red;
+            padding: 10px;
+        }
+        .content {
+            margin-left: 100px;
+            background-color: #add8e6; 
+            padding: 20px;
+            border: 5px solid #ff4500;
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+        }
+        li {
+            color: #8a2be2; 
+            margin-bottom: 10px;
+        }
+        .footer {
+            background-color: #778899; 
+            color: white;
+            text-align: left;
+            padding: 10px;
+            margin-top: 30px;
         }
     </style>
-    <title>Website Evaluations</title>
 </head>
+<header>
+<div data-include="components/header.html"></div>
+</header>
 <body>
-    <header>
-    </header>
-
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="website_evaluations.html">Website Evaluations</a>
-    </nav>
-
-    <main>
-        <h2 class="overlined-text">Website Evaluations</h2>
-
-        <section>
-            <h3 class="overlined-text"><a href="URL_of_the_good_website">Good Website</a></h3>
-            <p>Description of the good website.</p>
-            <ul>
-                <li><strong>Contrast:</strong> Ice cream bananananna</li>
-                <li><strong>Repetition:</strong> not that much.</li>
-                <li><strong>Alignment:</strong> in line.</li>
-                <li><strong>Proximity:</strong> IDK.</li>
-            </ul>
-        </section>
-
-        <section>
-            <h3 class="overlined-text"><a href="URL_of_the_bad_website">Bad Website</a></h3>
-            <p>Description of the bad website.</p>
-            <ul>
-                <li><strong>Contrast:</strong> Ugfly.</li>
-                <li><strong>Repetition:</strong> Same everywhere.</li>
-                <li><strong>Alignment:</strong> LOL.</li>
-                <li><strong>Proximity:</strong> NONE.</li>
-            </ul>
-        </section>
-    </main>
-
+    <h1>My Very First Web Page!</h1>
+    <div class="content">
+        <p>Welcome to my page! I'm learning to make websites. 😃</p>
+        <ul>
+            <li>My first list item</li>
+            <li>Look, I can make lists!</li>
+            <li>Isn't this cool?</li>
+        </ul>
+    </div>
+    <div class="footer">
+        <p>This is a footer. It's at the bottom!</p>
+    </div>
     <footer>
-      
+        <div data-include="components/footer.html"></div>
     </footer>
 
+    <script src="survey.js"></script>
+    <script src="scripts/HTMLInclude.min.js"></script> 
 </body>
 </html>

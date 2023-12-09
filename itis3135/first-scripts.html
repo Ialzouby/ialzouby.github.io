@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Page Title</title>
+    <link rel="stylesheet" href="styles/default.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header, footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        h3 {
+            color: #666;
+            margin-top: 20px;
+        }
+
+        /* Form Styles */
+        label {
+            display: block;
+            margin-top: 20px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box; /* Ensures padding doesn't affect overall width */
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            display: block;
+            background-color: #333;
+            color: white;
+            padding: 10px 15px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            main {
+                padding: 10px;
+            }
+
+            header, footer {
+                padding: 0.5rem 0;
+            }
+        }
+
+    </style>
+    <script src="scripts/defaultscripts.js" defer></script>
+</head>
+
+<body>
+<header>
+    <div data-include="components/header.html"></div>
+</header>
+<main>
+    <h2>First Scripts</h2>
+    <h3 id="dateTime"></h3>
+    <label for="name">What is your name?</label>
+    <input type="text" id="name">
+    <label for="feeling">How are you feeling?</label>
+    <input type="text" id="feeling">
+    <button onclick="nameFeeling()">Submit</button>
+    <div id="nameFeelingResult"></div>
+
+    <!-- Input field for favorite number -->
+    <label for="number">Give me your favorite number (0-10)</label>
+    <input type="number" id="numberInput" min="0" max="10">
+    <button id="button2" onclick="favNumber()">Submit</button>
+    <div id="favNumberResult"></div>
+
+    <!-- Input field for the insult generator -->
+    <label for="insultInput">Enter an insult keyword:</label>
+    <input type="text" id="insultInput">
+    <button onclick="randInsult()">Generate Insult</button>
+    <div id="randInsultResult"></div>
+
+    <!-- Input field for the random fact generator -->
+    <label for="factInput">Enter a fact keyword:</label>
+    <input type="text" id="factInput">
+    <button onclick="randFact()">Generate Fact</button>
+    <div id="randFactResult"></div>
+</main>
+<footer>
+    <footer>
+        <div data-include="components/footer.html"></div>
+    </footer>
+    <script src="scripts/HTMLInclude.min.js"></script>
+</footer>
+</body>
+</html>

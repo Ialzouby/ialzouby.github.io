@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BYO Intro</title>
+    <link rel="stylesheet" href="styles/default.css">
+    <style>
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+
+
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Form Fields Styling */
+label {
+    margin-top: 10px;
+    display: block;
+    font-weight: bold;
+}
+
+input[type='text'],
+input[type='file'],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+/* Styling for Buttons */
+input[type='submit'],
+input[type='reset'],
+button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type='submit']:hover,
+input[type='reset']:hover,
+button:hover {
+    background: #555;
+}
+#courseContainer {
+    margin-top: 20px;
+}
+
+button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
+}
+
+input[type='checkbox'] {
+    margin-right: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    input[type='text'],
+    input[type='file'],
+    textarea {
+        width: 100%;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>   
+         <div data-include="components/header.html"></div>
+    </header>
+
+    <h2>BYO Intro</h2>
+
+    <h3>Time to BYO Intro page, please fill out the form below so we can create your own page.</h3>
+
+    <form id="introForm">
+        <label>Name: <input type="text" name="name" required placeholder="Your Name"></label><br>
+        <label>Mascot: <input type="text" name="mascot" required placeholder="Your Mascot"></label><br>
+        <label>Image: <input type="file" name="image" accept=".png, .jpg" required></label><br>
+        <label>Image Caption: <input type="text" name="caption" required placeholder="Image Caption"></label><br>
+        <div id="courseContainer">
+            <button type="button" onclick="addCourseField()">Add Course</button>
+        </div>
+        <label>Funny thing?: <input type="text" name="funny" placeholder="Something funny"></label><br>
+        <label>Anything else?: <textarea name="anythingElse"></textarea></label><br>
+        <label><input type="checkbox" name="agreement" required> I understand that what is on this page is not password protected and I will not put anything here that I don’t want publicly available.</label><br>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+
+    <footer>
+        <div data-include="components/footer.html"></div>
+    </footer>
+
+    <script src="survey.js"></script>
+    <script src="scripts/HTMLInclude.min.js"></script> 
+
+</body>
+</html>
+

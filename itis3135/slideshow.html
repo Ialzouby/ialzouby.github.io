@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issam Alzouby Gallery</title>
+    <link rel="stylesheet" href="styles/default.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+</head>
+<style>
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  text-align: center;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 1px;
+  color: white;
+  font-weight: bold;
+  font-size: 50px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s;
+}
+
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.next {
+  right: 0; 
+  border-radius: 0 3px 3px 0;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 25px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 0.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+</style>
+</head>
+<body>
+  <header>
+    <div data-include="components/header.html"></div>
+    <h2>Slideshow</h2>
+</header>
+<main>
+<div class="slideshow-container">
+
+
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 14</div>
+  <img src="images/elderlycare.png" style="width:50%">
+  <div class="text">ElderlyCare</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 14</div>
+  <img src="images/HDT.png" style="width:50%">
+  <div class="text">HDTs</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 14</div>
+  <img src="images/profile.jpg" style="width:50%">
+  <div class="text">profile</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">4 / 14</div>
+  <img src="images/sportscare.png" style="width:50%">
+  <div class="text">Sports Care</div>
+</div>
+
+
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  
+</div>
+<script>
+  
+</script>
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot"); // Change "demo" to "dot"
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+
+
+</script>
+</main>
+<footer>
+  <div data-include="components/footer.html"></div>
+</footer>
+<script src="scripts/HTMLInclude.min.js"></script>
+</body>
+</html>
