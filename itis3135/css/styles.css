@@ -499,7 +499,7 @@ header {
     color: #ffffff;
     width: 250px; /* Width of updates bar */
     position: fixed;
-    left: 1655px; /* Adjust this value as needed */
+    left: calc(100% - 265px);     
     top: 135px; /* Assuming the header height is 60px */
     bottom: 0; /* Stretch from header to bottom */
     overflow-y: auto;
