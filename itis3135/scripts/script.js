@@ -33,6 +33,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Add this code here to close all folders initially
+    var folderContents = document.querySelectorAll('.folder .folder-content');
+    folderContents.forEach(function(folderContent) {
+        folderContent.style.display = 'none'; // This line ensures that the folder contents are not displayed initially
+    });
+
     // Handle hamburger menu toggle
     var menuToggle = document.getElementById('menu-toggle');
     if (menuToggle) {
