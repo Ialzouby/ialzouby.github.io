@@ -64,7 +64,7 @@ header a:hover {
 .sidebar ul li {
     padding: 10px;
     cursor: pointer;
-    border-bottom: 1px solid #ddd;
+    border-bottom: none; 
 }
 
 .sidebar ul li a {
@@ -357,7 +357,7 @@ padding: 20px;
     height: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-top: 5px solid #333; /* Adjust color as needed */
+    border-bottom: 5px solid #333; /* Pointing downwards initially */
     margin-left: 10px;
     vertical-align: middle;
     transition: transform 0.3s ease;
@@ -365,4 +365,103 @@ padding: 20px;
 
 .folder-open .folder-name::after {
     transform: rotate(180deg); /* Flip carrot for open folders */
+}
+
+/* Updated Sidebar Styles */
+.sidebar ul li a, .sidebar ul li .folder-name {
+    display: block; /* Make the <a> tag fill the <li> */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    color: gray; /* Set the text color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 0; /* Add some padding */
+}
+
+.sidebar ul li a:hover, .sidebar ul li .folder-name:hover {
+    background-color: #ddd; /* Change background on hover */
+    text-decoration: none; /* Ensure no underline on hover */
+}
+
+/* Remove bottom borders from all list items */
+.sidebar ul li {
+    border-bottom: none; /* Remove lines under file names */
+}
+/* Make folder names bold */
+.sidebar ul li .folder-name {
+    font-weight: bold; /* This will make the text bold */
+    color: #4b4b4b; /* Darker color, adjust as needed */
+
+}
+/* Incremental padding for nested folders */
+.sidebar .folder .folder-content .folder {
+    padding-left: 20px; /* First level of nesting */
+}
+
+.sidebar .folder .folder-content .folder .folder-content .folder {
+    padding-left: 40px; /* Second level of nesting */
+}
+
+
+
+
+
+.sidebar-title {
+    font-size: 20px; /* Adjust the size as needed */
+    color: #333; /* Dark color for the text */
+    text-align: center; /* Center the title */
+    padding: 10px 0; /* Add some padding above and below the title */
+    margin-bottom: 15px; /* Space between the title and the rest of the content */
+    border-bottom: 2px solid #ddd; /* A subtle line below the title */
+    font-weight: bold; /* Make the title bold */
+    background-color: #f8f8f7; /* Light background color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow below the title */
+}
+
+#searchInput {
+    width: 90%; /* Adjust the width as needed */
+    padding: 10px; /* Larger padding for bigger appearance */
+    font-size: 16px; /* Increase font size */
+    margin: 10px; /* Ensure it's centered */
+    /* Add any additional styling as required */
+}
+
+.highlight {
+    background-color: yellow; /* Highlight color */
+    color: black; /* Text color */
+}
+
+#introSection {
+    background-color: #ffffff; /* Crisp white background */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin: 20px auto;
+    max-width: 800px; /* Restrict the width for better readability */
+    font-family: 'Arial', sans-serif;
+}
+
+#introSection h2 {
+    color: #0077cc; /* A calming shade of blue */
+    font-size: 30px;
+    text-align: center; /* Center align the heading */
+    margin-bottom: 30px;
+}
+
+.intro-content p {
+    font-size: 18px;
+    color: #333333; /* Darker text for readability */
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    #introSection {
+        padding: 20px;
+        font-size: 16px;
+    }
+
+    #introSection h2 {
+        font-size: 26px;
+    }
 }

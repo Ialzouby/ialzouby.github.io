@@ -50,3 +50,63 @@ document.querySelectorAll('.sidebar .folder-name').forEach(folderTitle => {
     });
 });
 
+document.getElementById('searchButton').addEventListener('click', function() {
+    var searchBar = document.getElementById('searchBarContainer');
+    searchBar.style.display = searchBar.style.display === 'none' ? 'block' : 'none';
+    document.getElementById('searchInput').focus(); // Focus on the search input when it appears
+});
+
+document.getElementById('searchInput').addEventListener('input', debounce(function() {
+    var searchText = this.value.toLowerCase();
+    removeAllHighlights();
+    if (searchText) {
+        highlightOccurrences(document.body, searchText);
+    }
+}, 250));
+
+function highlightOccurrences(node, searchText) {
+    const children = Array.from(node.childNodes);
+    children.forEach(function(child) {
+        if (child.nodeType === 3) { // Text node
+            const matches = child.nodeValue.match(new RegExp(searchText, 'gi'));
+            if (matches) {
+                const frag = document.createDocumentFragment();
+                let lastIdx = 0;
+                child.nodeValue.replace(new RegExp(searchText, 'gi'), (match, idx) => {
+                    const part = document.createTextNode(child.nodeValue.slice(lastIdx, idx));
+                    const highlighted = document.createElement('span');
+                    highlighted.className = 'highlight';
+                    highlighted.textContent = match;
+                    frag.appendChild(part);
+                    frag.appendChild(highlighted);
+                    lastIdx = idx + match.length;
+                });
+                frag.appendChild(document.createTextNode(child.nodeValue.slice(lastIdx)));
+                child.parentNode.replaceChild(frag, child);
+            }
+        } else if (child.nodeType === 1 && !['SCRIPT', 'STYLE'].includes(child.tagName)) { // Element node
+            highlightOccurrences(child, searchText);
+        }
+    });
+}
+
+function removeAllHighlights() {
+    var highlights = document.querySelectorAll('.highlight');
+    highlights.forEach(function(highlight) {
+        highlight.parentNode.replaceChild(document.createTextNode(highlight.textContent), highlight);
+    });
+}
+
+function debounce(func, wait, immediate) {
+    var timeout;
+    return function() {
+        var context = this, args = arguments;
+        var later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (immediate && !timeout) func.apply(context, args);
+    };
+}

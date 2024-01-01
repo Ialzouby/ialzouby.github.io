@@ -19,6 +19,8 @@
     <div data-include="components/header.html"></div>
 
     <div class="sidebar">
+        <div class="sidebar-title">Project Docs</div>
+
         <ul>
             <li class="folder">
                 <span class="folder-name">Wav2Lip Project</span>
@@ -51,9 +53,24 @@
                     <li><a href="#conv" class="navbar-title">conv.py</a></li>
                     <li><a href="#syncnet" class="navbar-title">syncnet.py</a></li>
                     <li><a href="#wav2lip" class="navbar-title">wav2lip.py</a></li>
+                </ul>
+                </li>
+
+                <li class="folder">
+                    <span class="folder-name">WaterProof Drone</span>
+                    <ul class="folder-content">
+                        <li><a href="#init" class="navbar-title">__init__.py</a></li>
+                        <li><a href="#conv" class="navbar-title">conv.py</a></li>
+                        <li><a href="#syncnet" class="navbar-title">syncnet.py</a></li>
+                        <li><a href="#wav2lip" class="navbar-title">wav2lip.py</a></li>
+                    </ul>
+                    </li>
+
             <!-- More folders can be added here -->
         </ul>
     </div>
+
+    
     
 
     <div class="main-content" id="mainContent">
@@ -73,8 +90,12 @@
                     <img src="images/github.png" alt="Icon 1">
                 </div>
                 <div class="button-container">
-                    <img src="images/search.jpeg" alt="Icon 2">
+                    <img src="images/search.jpeg" alt="Search Icon" id="searchButton">
                 </div>
+                <div id="searchBarContainer" style="display: none;">
+                    <input type="text" id="searchInput" placeholder="Search...">
+                </div>
+                
                 <div class="button-container">
                     <img src="images/icon3.png" alt="Icon 3">
                 </div>
@@ -82,9 +103,13 @@
         </div>
 
         <section id="introSection" class="content-section">
-            <h2>Welcome</h2>
-            <p>This is the introductory section of the documentation...</p>
+            <h2>Welcome to My AI Healthcare Research Documentation</h2>
+            <p>As an undergraduate researcher at the University of North Carolina at Charlotte (UNCC), I am deeply immersed in exploring the transformative potential of Artificial Intelligence in healthcare. This documentation is a comprehensive reflection of my journey and insights.</p>
+            <p>Here, you'll find detailed accounts of my personal projects and university-facilitated research. Each project is a testament to the power of open-source and publicly available information in advancing our understanding of AI's application in medical fields.</p>
+            <p>With strict adherence to ethical guidelines, this documentation contains no proprietary or confidential information, ensuring its suitability for academic peers, fellow researchers, and enthusiasts in the AI and healthcare domain.</p>
+            <p>I invite you to explore these pages, hoping they will inform, inspire, and contribute to ongoing dialogues and innovations in AI-driven healthcare.</p>
         </section>
+        
 
         <!-- Content Sections -->
         <section id="audioPySection" class="content-section">
