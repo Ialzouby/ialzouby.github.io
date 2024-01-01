@@ -54,6 +54,7 @@ header a:hover {
     padding: 20px;
     position: fixed;
     overflow-y: auto;
+    
 }
 
 .sidebar ul {
@@ -95,7 +96,7 @@ body.dark-mode .sidebar {
 /* Main Content Styles */
 .main-content {
     margin-left: 250px;
-    padding: 20px;
+    padding: 0px 30px;
     background-color: #fff;
 }
 
@@ -220,15 +221,19 @@ footer img {
     text-align: center;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
 }
 
 .button-container span {
     display: block;
     width: 25px;
-    height: 3px;
+    height: 2px;
     margin: 5px auto;
     background-color: #fff;
     transition: 0.3s;
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
 }
 
 /* Add more styles for the toggle button here if needed */
@@ -240,10 +245,12 @@ footer img {
     padding: 10px 10px;
     background-color: #fff;
     border-bottom: 1px solid #ccc;
+    height: 70px; 
 }
 
 .icon-buttons {
     display: flex; /* This ensures that the icons are in a line */
+    
 }
 
 .icon-buttons .button-container {
@@ -256,3 +263,106 @@ footer img {
     cursor: pointer;
 }
 
+.content-section {
+padding: 20px; 
+   margin-top: 20px; 
+   margin-left: 20px; 
+   margin-bottom: 20px 
+}
+
+
+.content-section h2 {
+    color: #333;
+    font-weight: normal;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.content-section p, .content-section li {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 25px; 
+}
+
+.content-section code {
+    background-color: #e1dfdf;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: monospace;
+}
+
+.custom-list {
+    counter-reset: item; /* Initialize the counter */
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.custom-list li {
+    margin-bottom: 20px;
+    counter-increment: item; /* Increment the counter for each list item */
+}
+
+.custom-list li::before {
+    color: #57b0dd; /* Or any color you prefer */
+    font-weight: bold;
+    content: counter(item) ". ";
+}
+
+.custom-list li strong {
+    color: #333;
+    font-weight: bold;
+}
+
+.text-container {
+    background-color: #fff; /* or any color you prefer */
+    border-radius: 10px; /* Rounded edges */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    padding: 15px; /* Space inside the container */
+    margin: 15px 0; /* Space outside the container */
+    /* Optional: max-width to control the width of the container */
+    max-width: 1300px; /* Adjust as needed */
+    margin-left: auto; /* Centering the container */
+    margin-right: auto; /* Centering the container */
+}
+
+.text-container:not(.summary-container) {
+    border-left: 4px solid green; /* Green stripe */
+}
+
+
+.summary-container {
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin: 15px 0;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    border-left: 4px solid rgb(7, 39, 196); /* Green stripe */
+
+}
+
+.sidebar ul li.folder > .folder-name:hover {
+    background-color: #ccc; /* Darker color on hover */
+    color: #fff; /* Change text color if needed */
+    cursor: pointer;
+}
+.folder-name::after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #333; /* Adjust color as needed */
+    margin-left: 10px;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+.folder-open .folder-name::after {
+    transform: rotate(180deg); /* Flip carrot for open folders */
+}

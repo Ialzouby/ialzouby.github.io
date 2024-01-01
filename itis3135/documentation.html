@@ -25,9 +25,32 @@
                 <ul class="folder-content">
                     <li><a href="#audioPySection" class="navbar-title">Audio.py</a></li>
                     <li><a href="#syncnet" class="navbar-title">Color_syncnet_train.py</a></li>
+                    <li><a href="#hparams" class="navbar-title">Hparams.py</a></li>
+                    <li><a href="#hqWav2LipTrain" class="navbar-title">hqWav2LipTrain.py</a></li>
+                    <li><a href="#inferencePy" class="navbar-title">inference.py</a></li>
+                    <li><a href="#preprocessPy" class="navbar-title">preprocess.py</a></li>
+                    <li><a href="#wav2lipTrain" class="navbar-title">wav2lipTrain.py</a></li>
+                    <li class="folder">
+                        <span class="folder-name">Models</span>
+                        <ul class="folder-content">
+                            <li><a href="#init" class="navbar-title">__init__.py</a></li>
+                            <li><a href="#conv" class="navbar-title">conv.py</a></li>
+                            <li><a href="#syncnet" class="navbar-title">syncnet.py</a></li>
+                            <li><a href="#wav2lip" class="navbar-title">wav2lip.py</a></li>
+</ul>
+</li>
+                    
                     <!-- Additional items here -->
                 </ul>
             </li>
+
+            <li class="folder">
+                <span class="folder-name">Ai4Health</span>
+                <ul class="folder-content">
+                    <li><a href="#init" class="navbar-title">__init__.py</a></li>
+                    <li><a href="#conv" class="navbar-title">conv.py</a></li>
+                    <li><a href="#syncnet" class="navbar-title">syncnet.py</a></li>
+                    <li><a href="#wav2lip" class="navbar-title">wav2lip.py</a></li>
             <!-- More folders can be added here -->
         </ul>
     </div>
@@ -47,10 +70,10 @@
             <!-- Right-aligned icon buttons -->
             <div class="icon-buttons">
                 <div class="button-container">
-                    <img src="images/icon1.png" alt="Icon 1">
+                    <img src="images/github.png" alt="Icon 1">
                 </div>
                 <div class="button-container">
-                    <img src="images/icon2.png" alt="Icon 2">
+                    <img src="images/search.jpeg" alt="Icon 2">
                 </div>
                 <div class="button-container">
                     <img src="images/icon3.png" alt="Icon 3">
@@ -66,15 +89,240 @@
         <!-- Content Sections -->
         <section id="audioPySection" class="content-section">
             <h2>Audio.py</h2>
-            <p>This Python file, likely named `audio.py` from the WAV2LIP repository, includes several functions for audio processing. The primary purpose of these functions is to load, save, preprocess, and manipulate audio data, particularly for use in machine learning models like WAV2LIP, which synchronizes lip movements in videos to a given audio input.
-                
-                </p>
+            <div class="text-container">
+                <p>This Python file, likely named <code>audio.py</code> from the WAV2LIP repository, includes several functions for audio processing. The primary purpose of these functions is to load, save, preprocess, and manipulate audio data, particularly for use in machine learning models like WAV2LIP, which synchronizes lip movements in videos to a given audio input. </p>
+            </div>
+                    
+            <ol class="custom-list">
+                <li><strong>Loading and Saving Audio</strong>: Functions <code>load_wav</code> and <code>save_wav</code> are used to load and save WAV files, respectively. <code>save_wavenet_wav</code> is another variant for saving audio, possibly tailored for WaveNet, a deep neural network for generating raw audio.</li>
+                <li><strong>Pre- and Post-Processing</strong>: The functions <code>preemphasis</code> and <code>inv_preemphasis</code> are for applying and reversing pre-emphasis, a process that amplifies higher frequencies to balance the frequency spectrum and improve the signal-to-noise ratio.</li>
+                <li><strong>Spectrogram Generation</strong>: <code>linearspectrogram</code> and <code>melspectrogram</code> functions convert audio waveforms to their respective spectrograms. A linear spectrogram represents the signal's frequency spectrum over time, while a mel spectrogram does so using the mel scale, which is more aligned with human auditory perception.</li>
+                <li><strong>STFT and LWS Processor</strong>: The Short-Time Fourier Transform (STFT) is implemented in <code>_stft</code>, crucial for converting time-domain signals into frequency-domain representations. The <code>_lws_processor</code> function suggests the use of the LWS (Lightweight and fast Waveform Synthesis) library, possibly for more efficient or high-quality audio processing.</li>
+                <li><strong>Auxiliary Functions</strong>: The file includes other helper functions for padding, frame calculation, and conversions between different audio formats and representations, such as <code>_linear_to_mel</code>, <code>_amp_to_db</code>, <code>_db_to_amp</code>, <code>_normalize</code>, and <code>_denormalize</code>.</li>
+                <li><strong>Hyperparameters</strong>: The script imports <code>hparams</code> (hyperparameters) from a module named <code>hparams</code>, which likely contains configuration settings like sample rate, frame size, mel scale parameters, etc.</li>
+            </ol>
         </section>
+        
+
+        <!-- Other sections... -->
         <section id="syncnet" class="content-section">
             <h2>Color_syncnet_train.py</h2>
-            <p>This section discusses the functionalities of the Color_syncnet_train.py file...</p>
+            <div class="text-container">
+                <p>This Python script, likely named <code>color_syncnet_train.py</code>, is dedicated to training the SyncNet model in the WAV2LIP project. SyncNet is a critical component in ensuring accurate lip-sync in the generated videos. The script uses various libraries and functionalities to prepare, process, and train the model with audio and video data                  .</p>
+            </div>
+        
+            <ol class="custom-list">
+                <li><strong>Imports and Setup</strong>: The script imports necessary libraries and modules for handling arrays (NumPy), deep learning (PyTorch), image processing (OpenCV), and more. It also imports a <code>SyncNet</code> model from a <code>models</code> module and various audio processing functions from an <code>audio</code> module.</li>
+                <li><strong>Argument Parsing</strong>: Using <code>argparse</code>, the script sets up command-line argument parsing for specifying dataset paths, checkpoint directories, and other configurations.</li>
+                <li><strong>Dataset Preparation</strong>: It defines a <code>Dataset</code> class for preparing and handling data. This class includes methods to extract and process frames from videos and corresponding audio features.</li>
+                <li><strong>Model Training and Evaluation</strong>: Functions like <code>train</code> and <code>eval_model</code> are defined for training and evaluating the SyncNet model. They include procedures for loading data, performing forward and backward passes, calculating losses (like cosine similarity loss), and saving checkpoints.</li>
+                <li><strong>Checkpoint Management</strong>: The script provides functionalities to save and load model checkpoints, enabling the continuation of training from a specific point and reducing the risk of data loss.</li>
+                <li><strong>Main Execution Flow</strong>: In the <code>main</code> section, the script sets up the dataset, data loaders, model, optimizer, and begins the training process. It handles both training and validation datasets.</li>
+            </ol>
+            
+
+            <div class="text-container summary-container">
+                <div class="blue-tab"></div>
+                <h3>Basic Summary</h3>
+                <p>This script is designed to train a neural network model called SyncNet, which plays a crucial role in the WAV2LIP project. The purpose of SyncNet is to ensure that the movement of lips in the video is in sync with the spoken words in the audio. The script sets up the training environment, processes video and audio data, trains the model using this data, and saves the progress at intervals. It's a key component in teaching the model how to accurately match lip movements with audio, an essential aspect of creating realistic lip-synced videos.
+                </p>
+            </div>
+            
         </section>
-        <!-- Other sections... -->
+
+        <section id="hparams" class="content-section">
+            <h2>Hparams.py</h2>
+            <div class="text-container">
+                <p>This Python script, likely named <code>color_syncnet_train.py</code>, is dedicated to training the SyncNet model in the WAV2LIP project. SyncNet is a critical component in ensuring accurate lip-sync in the generated videos. The script uses various libraries and functionalities to prepare, process, and train the model with audio and video data.</p>
+            </div>
+        
+            <ol class="custom-list">
+                <li><strong>Imports and Setup</strong>: The script imports necessary libraries and modules for handling arrays (NumPy), deep learning (PyTorch), image processing (OpenCV), and more. It also imports a <code>SyncNet</code> model from a <code>models</code> module and various audio processing functions from an <code>audio</code> module.</li>
+                <li><strong>Argument Parsing</strong>: Using <code>argparse</code>, the script sets up command-line argument parsing for specifying dataset paths, checkpoint directories, and other configurations.</li>
+                <li><strong>Dataset Preparation</strong>: It defines a <code>Dataset</code> class for preparing and handling data. This class includes methods to extract and process frames from videos and corresponding audio features.</li>
+                <li><strong>Model Training and Evaluation</strong>: Functions like <code>train</code> and <code>eval_model</code> are defined for training and evaluating the SyncNet model. They include procedures for loading data, performing forward and backward passes, calculating losses (like cosine similarity loss), and saving checkpoints.</li>
+                <li><strong>Checkpoint Management</strong>: The script provides functionalities to save and load model checkpoints, enabling the continuation of training from a specific point and reducing the risk of data loss.</li>
+                <li><strong>Main Execution Flow</strong>: In the <code>main</code> section, the script sets up the dataset, data loaders, model, optimizer, and begins the training process. It handles both training and validation datasets.</li>
+            </ol>
+        
+            <div class="text-container summary-container">
+                <div class="blue-tab"></div>
+                <h3>Basic Summary</h3>
+                <p>In simple terms, this script is designed to train a neural network model called SyncNet, which plays a crucial role in the WAV2LIP project. The purpose of SyncNet is to ensure that the movement of lips in the video is in sync with the spoken words in the audio. The script sets up the training environment, processes video and audio data, trains the model using this data, and saves the progress at intervals. It's a key component in teaching the model how to accurately match lip movements with audio, an essential aspect of creating realistic lip-synced videos.</p>
+            </div>
+        </section>
+        
+        <section id="hqWav2LipTrain" class="content-section">
+            <h2>Hq_wav2lip_train.py</h2>
+            <div class="text-container">
+                <p>This script, likely named <code>hq_wav2lip_train.py</code>, is designed for training the high-quality Wav2Lip model with a visual quality discriminator. The Wav2Lip model aims to generate realistic lip movements in sync with given audio, and the visual quality discriminator is used to improve the visual quality of the generated video.
+                </p>
+            </div>
+        
+            <ol class="custom-list">
+                <li><strong>Imports and Initial Setup</strong>: The script imports necessary libraries and modules for deep learning (PyTorch), image processing (OpenCV), and others. It also imports <code>Wav2Lip</code> and <code>Wav2Lip_disc_qual</code> models for training.</li>
+                <li><strong>Argument Parsing</strong>: Command-line arguments are defined for specifying dataset paths, checkpoint paths, and other configurations.</li>
+                <li><strong>Dataset Preparation</strong>: A <code>Dataset</code> class is defined to handle the loading and preprocessing of video frames and audio data. It includes methods for reading images, processing audio, and preparing data for the model.</li>
+                <li><strong>Model Training Functions</strong>:
+                    <ul>
+                        <li><code>train</code>: Manages the training loop, including forward and backward passes, loss calculations, and checkpoint saving.</li>
+                        <li><code>eval_model</code>: Evaluates the model's performance on a test dataset.</li>
+                        <li>Loss functions like <code>cosine_loss</code> and <code>get_sync_loss</code> are used to calculate how well the audio and video are synchronized and the visual quality of the generated output.</li>
+                    </ul>
+                </li>
+                <li><strong>Checkpoint Management</strong>: Functions for saving and loading checkpoints allow the training process to be paused and resumed, and also to initialize models with pre-trained weights.</li>
+                <li><strong>Main Training Loop</strong>:
+                    <ul>
+                        <li>The script sets up the dataset, data loaders, models (<code>Wav2Lip</code> and <code>Wav2Lip_disc_qual</code>), and optimizers.</li>
+                        <li>The training loop involves updating both the generator (Wav2Lip model) and the discriminator (<code>Wav2Lip_disc_qual</code> model), similar to a Generative Adversarial Network (GAN) setup.</li>
+                        <li>The training includes both L1 loss for reconstruction accuracy and a sync loss for lip-sync accuracy, along with the discriminator's perceptual loss.</li>
+                    </ul>
+                </li>
+            </ol>
+        
+            <div class="text-container summary-container">
+                <div class="blue-tab"></div>
+                <h3>Basic Summary</h3>
+                <p>In simple terms, this script is responsible for teaching the Wav2Lip model how to create videos where the lips move realistically in sync with audio. It uses a special component, the visual quality discriminator, to make sure the generated videos look as real as possible. The script handles everything from loading and processing data to training the model and checking how well it's doing. It's a key part of creating high-quality lip-synced videos in the WAV2LIP project.</p>
+            </div>
+        </section>
+        
+        <section id="inferencePy" class="content-section">
+            <h2>Inference.py</h2>
+            <div class="text-container">
+                <p>The <code>inference.py</code> script in the WAV2LIP repository is designed for generating lip-synced videos using pre-trained Wav2Lip models. This script takes a video or an image of a face and an audio file as input, then generates a video where the lip movements are synced with the audio.</p>
+            </div>
+        
+            <ol class="custom-list">
+                <li><strong>Argument Parsing</strong>: The script uses <code>argparse</code> to handle command-line arguments for specifying the paths to the face video/image, audio file, and other parameters like output file path, batch sizes, etc.</li>
+                <li><strong>Face and Audio Processing</strong>:
+                    <ul>
+                        <li><strong>Face Detection</strong>: The script uses a face detection module to locate faces in each frame of the input video or image. It also includes smoothing of face detections over a short temporal window.</li>
+                        <li><strong>Audio Processing</strong>: It loads and processes the audio file, converting it into a mel-spectrogram, which is a representation of the audio used by the model.</li>
+                    </ul>
+                </li>
+                <li><strong>Model Loading and Inference</strong>:
+                    <ul>
+                        <li>Loads the pre-trained Wav2Lip model from a checkpoint.</li>
+                        <li>The <code>datagen</code> function generates batches of face images and corresponding audio segments for model inference.</li>
+                        <li>Performs inference using the Wav2Lip model to generate the lip-synced frames.</li>
+                    </ul>
+                </li>
+                <li><strong>Video Generation</strong>:
+                    <ul>
+                        <li>The script combines the generated frames and the original audio to create a new video with the lip movements synchronized to the audio.</li>
+                        <li>Uses <code>ffmpeg</code> for audio extraction and video file creation.</li>
+                    </ul>
+                </li>
+                <li><strong>Utilities</strong>:
+                    <ul>
+                        <li>Functions like <code>get_smoothened_boxes</code> and <code>face_detect</code> for handling face detection.</li>
+                        <li>The <code>main</code> function orchestrates the entire process from loading data, performing inference, and saving the output video.</li>
+                    </ul>
+                </li>
+            </ol>
+        
+            <div class="text-container summary-container">
+                <div class="blue-tab"></div>
+                <h3>Basic Summary</h3>
+                <p>In simple terms, <code>inference.py</code> is used to create videos where the lips of a person in the video match the spoken words in an audio file. It first finds the face in the video, then uses a trained model to make the lips move in sync with the audio. Finally, it combines the modified video with the original audio to produce a lip-synced video. This script is key for applying the Wav2Lip model to real-world videos or images and audio files.</p>
+            </div>
+        </section>
+        
+        <section id="preprocessPy" class="content-section">
+            <h2>Preprocess.py</h2>
+            <div class="text-container">
+                <p>The <code>preprocess.py</code> script in the WAV2LIP repository is used for preprocessing videos from the LRS2 dataset. This preprocessing step is crucial to prepare the data for training the Wav2Lip model. The script processes both the video and audio components of the dataset.</p>
+            </div>
+        
+            <ol class="custom-list">
+                <li><strong>Environment Checks</strong>: The script starts by ensuring it's running in a suitable environment (Python 3.2 or higher) and checks if necessary files (like the face detection model) are in place.</li>
+                <li><strong>Argument Parsing</strong>: It uses <code>argparse</code> to parse command-line arguments, including paths for the dataset (<code>--data_root</code>), the location to save preprocessed data (<code>--preprocessed_root</code>), GPU settings, and batch size for processing.</li>
+                <li><strong>Face Detection Setup</strong>: The script initializes face detection models (<code>face_detection.FaceAlignment</code>) for each GPU specified. These models are used to detect faces in video frames.</li>
+                <li><strong>Video Processing</strong>:
+                    <ul>
+                        <li>Extracts frames from each video file in the dataset.</li>
+                        <li>Detects faces in batches of frames and saves the cropped face images to the specified preprocessed dataset directory.</li>
+                        <li>The function <code>process_video_file</code> handles this part, and it's parallelized across multiple GPUs.</li>
+                    </ul>
+                </li>
+                <li><strong>Audio Processing</strong>:
+                    <ul>
+                        <li>Extracts audio from the video files and saves it as a WAV file in the preprocessed dataset directory.</li>
+                        <li>Uses the <code>ffmpeg</code> tool for audio extraction.</li>
+                        <li>The function <code>process_audio_file</code> is responsible for this part.</li>
+                    </ul>
+                </li>
+                <li><strong>Multiprocessing and Threading</strong>:
+                    <ul>
+                        <li>The script uses Python's <code>concurrent.futures.ThreadPoolExecutor</code> for parallel processing across GPUs.</li>
+                        <li>It creates a list of jobs (video files and corresponding GPU IDs) and processes them in parallel threads.</li>
+                    </ul>
+                </li>
+                <li><strong>Main Function</strong>:
+                    <ul>
+                        <li>Orchestrates the entire preprocessing pipeline.</li>
+                        <li>Generates a list of video files to process and applies both audio and video processing.</li>
+                    </ul>
+                </li>
+            </ol>
+        
+            <div class="text-container summary-container">
+                <div class="blue-tab"></div>
+                <h3>Basic Summary</h3>
+                <p>In simple terms, <code>preprocess.py</code> is a script that prepares video and audio data for training the Wav2Lip model. It takes videos, extracts the faces from each frame, and saves them as images. It also extracts the audio from these videos and saves it separately. This preprocessing is a necessary step to get the data ready for training the model, ensuring that it has the right format and content for effective learning.</p>
+            </div>
+        </section>
+        
+        <section id="wav2lipTrain" class="content-section">
+            <h2>Wav2lip_train.py</h2>
+            <div class="text-container">
+                <p>The <code>wav2lip_train.py</code> script is designed for training the Wav2Lip model without the visual quality discriminator...</p>
+            </div>
+        
+            <ol class="custom-list">
+                <li><strong>Argument Parsing</strong>: The script uses <code>argparse</code> to handle command-line arguments, including paths for the LRS2 dataset, checkpoint directories, and the path to the pre-trained SyncNet discriminator model.</li>
+                <li><strong>Dataset Preparation</strong>: It defines a <code>Dataset</code> class to handle loading and preprocessing of video frames and audio data...</li>
+                <li><strong>Model Training Setup</strong>:
+                    <ul>
+                        <li>Initializes the Wav2Lip and SyncNet models and loads them onto the CUDA device if available.</li>
+                        <li>Sets up the training and evaluation data loaders using the <code>Dataset</code> class.</li>
+                        <li>Defines loss functions (<code>cosine_loss</code> for sync loss and <code>L1Loss</code> for reconstruction loss) and the training optimizer.</li>
+                    </ul>
+                </li>
+                <li><strong>Training Loop</strong>:
+                    <ul>
+                        <li>The script iterates over epochs and batches of data, training the Wav2Lip model.</li>
+                        <li>Calculates the sync loss and the L1 reconstruction loss.</li>
+                        <li>Checkpoints are saved at regular intervals.</li>
+                    </ul>
+                </li>
+                <li><strong>Evaluation Function (<code>eval_model</code>)</strong>:
+                    <ul>
+                        <li>This function evaluates the model's performance on a validation set.</li>
+                        <li>Calculates the average sync loss over a specified number of evaluation steps.</li>
+                    </ul>
+                </li>
+                <li><strong>Checkpoint Management</strong>:
+                    <ul>
+                        <li>Functions for saving and loading model checkpoints are included to allow the continuation of training from a specific point and to use pre-trained weights.</li>
+                    </ul>
+                </li>
+                <li><strong>Main Execution</strong>:
+                    <ul>
+                        <li>Sets up the dataset, model, optimizer, and starts the training process.</li>
+                    </ul>
+                </li>
+            </ol>
+        
+            <div class="text-container summary-container">
+                <div class="blue-tab"></div>
+                <h3>Basic Summary</h3>
+                <p>In simple terms, <code>wav2lip_train.py</code> is a training script for the Wav2Lip model. It focuses on teaching the model to generate videos where the lips are accurately synced with given audio...</p>
+            </div>
+        </section>
+        
+
     </div>
 
     <script src="scripts/HTMLInclude.min.js"></script>

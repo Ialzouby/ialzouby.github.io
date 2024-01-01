@@ -41,3 +41,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+document.querySelectorAll('.sidebar .folder-name').forEach(folderTitle => {
+    folderTitle.addEventListener('click', function() {
+        this.parentElement.classList.toggle('folder-open');
+        // Toggle the visibility of the folder content
+        this.nextElementSibling.style.display = this.parentElement.classList.contains('folder-open') ? 'block' : 'none';
+    });
+});
+
