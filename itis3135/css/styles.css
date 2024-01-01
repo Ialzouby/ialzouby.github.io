@@ -473,15 +473,26 @@ padding: 20px;
 
 /* Responsive Design for smaller screens */
 @media (max-width: 768px) {
-    #introSection {
-        padding: 20px;
-        font-size: 16px;
+    .sidebar {
+        width: 100%; /* Full width for smaller screens */
+        position: relative; /* Adjust as necessary */
     }
 
-    #introSection h2 {
-        font-size: 26px;
+    .updates-bar {
+        width: 100%; /* Full width */
+        position: fixed; /* Keep it fixed */
+        left: 0; /* Align to the left edge */
+        top: auto; /* Adjust top as necessary */
+        bottom: 0; /* Align to the bottom */
     }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    /* Adjust any other styles for smaller screens here */
 }
+
 
 /* Updates Bar Styles */
 /* Header Styles */
@@ -513,17 +524,19 @@ header {
 
 @media (max-width: 1024px) {
     .updates-bar {
-        width: 100%;
-        position: relative;
-        top: auto;
-        bottom: auto;
-        right: 0;
+        width: 100%; /* Full width */
+        position: fixed; /* Keep it fixed */
+        left: 0; /* Align to the left edge */
+        top: auto; /* Keep the top as it is */
+        bottom: 0; /* Align to the bottom */
     }
 
     .main-content {
         margin-left: 0;
         margin-right: 0;
     }
+
+    /* Add any additional styles for other elements here */
 }
 
 .updates-bar a {
