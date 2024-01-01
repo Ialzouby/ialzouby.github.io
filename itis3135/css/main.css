@@ -98,7 +98,7 @@ html {
   filter: grayscale(100%); }
 
 footer a:not(.nav-link) {
-  color: inherit;
+  color: #e60f0f;
   border-bottom: 1px dashed;
   text-decoration: none;
   cursor: pointer; }

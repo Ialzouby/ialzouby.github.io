@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issam Alzouby || ITIS 3135 Introduction</title>
+    <link rel="stylesheet" href="styles/default.css">
+  <style>
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFFFFF;
+    color: #333333;
+}
+
+
+
+h1 {
+    margin: 0;
+}
+
+.accordion-button {
+    background-color: #89CFF0;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5px; /* Space between buttons */
+}
+
+.active, .accordion-button:hover {
+    background-color: #6CACE4; /* Darker shade of baby blue for active/hover state */
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    margin-bottom: 5px; /* Space after the expanded panel */
+}
+
+
+
+
+  </style>
+</head>
+<body>
+    
+    <div data-include="components/header.html"></div>
+    <script src="scripts/HTMLInclude.min.js"></script>
+   
+    <main> 
+        <header>
+            <h1>Portfolio: Reverse Engineering Crypto Miners</h1>
+       
+    
+        <div class="accordion">
+            <button class="accordion-button">Personal Overview</button>
+            <div class="panel">
+                <p>As an experienced electrical engineer with a passion for cryptocurrency technology...</p>
+            </div>
+    
+            <button class="accordion-button">Project Highlights</button>
+            <div class="panel">
+                <ul>
+                    <li><strong>Technical Expertise:</strong> My role involved dissecting the hardware and software...</li>
+                    <li><strong>Problem Identification:</strong> We encountered common issues like the "0 ASIC" error...</li>
+                    <!-- Add more list items as needed -->
+                </ul>
+            </div>
+    
+            <button class="accordion-button">Skills and Competencies</button>
+            <div class="panel">
+                <p>Technical Skills: Proficiency in hardware engineering, circuit design...</p>
+            </div>
+    
+            <button class="accordion-button">Reflections</button>
+            <div class="panel">
+                <p>This project was more than a technical challenge; it was a journey in leadership...</p>
+            </div>
+        </div>
+        </main>
+    </header>
+    <footer>
+    <div data-include="components/footer.html"></div>
+    <script src="scripts/HTMLInclude.min.js"></script>
+    </footer>
+</body>
+</html>

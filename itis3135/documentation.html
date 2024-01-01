@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation Layout</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .main-content .content-section {
+            display: none;
+        }
+
+        .main-content #introSection {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div data-include="components/header.html"></div>
+
+    <div class="sidebar">
+        <ul>
+            <li class="folder">
+                <span class="folder-name">Wav2Lip Project</span>
+                <ul class="folder-content">
+                    <li><a href="#audioPySection" class="navbar-title">Audio.py</a></li>
+                    <li><a href="#syncnet" class="navbar-title">Color_syncnet_train.py</a></li>
+                    <!-- Additional items here -->
+                </ul>
+            </li>
+            <!-- More folders can be added here -->
+        </ul>
+    </div>
+    
+
+    <div class="main-content" id="mainContent">
+        <!-- Introductory Section -->
+      
+        <div class="button-bar">
+            <!-- Hamburger Menu -->
+            <div id="menu-toggle" class="button-container">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+    
+            <!-- Right-aligned icon buttons -->
+            <div class="icon-buttons">
+                <div class="button-container">
+                    <img src="images/icon1.png" alt="Icon 1">
+                </div>
+                <div class="button-container">
+                    <img src="images/icon2.png" alt="Icon 2">
+                </div>
+                <div class="button-container">
+                    <img src="images/icon3.png" alt="Icon 3">
+                </div>
+            </div>
+        </div>
+
+        <section id="introSection" class="content-section">
+            <h2>Welcome</h2>
+            <p>This is the introductory section of the documentation...</p>
+        </section>
+
+        <!-- Content Sections -->
+        <section id="audioPySection" class="content-section">
+            <h2>Audio.py</h2>
+            <p>This Python file, likely named `audio.py` from the WAV2LIP repository, includes several functions for audio processing. The primary purpose of these functions is to load, save, preprocess, and manipulate audio data, particularly for use in machine learning models like WAV2LIP, which synchronizes lip movements in videos to a given audio input.
+                
+                </p>
+        </section>
+        <section id="syncnet" class="content-section">
+            <h2>Color_syncnet_train.py</h2>
+            <p>This section discusses the functionalities of the Color_syncnet_train.py file...</p>
+        </section>
+        <!-- Other sections... -->
+    </div>
+
+    <script src="scripts/HTMLInclude.min.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+</html>
+
