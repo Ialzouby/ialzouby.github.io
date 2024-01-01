@@ -65,35 +65,41 @@ document.getElementById('searchInput').addEventListener('input', debounce(functi
 }, 250));
 
 function highlightOccurrences(node, searchText) {
-    const children = Array.from(node.childNodes);
-    children.forEach(function(child) {
-        if (child.nodeType === 3) { // Text node
-            const matches = child.nodeValue.match(new RegExp(searchText, 'gi'));
-            if (matches) {
-                const frag = document.createDocumentFragment();
-                let lastIdx = 0;
-                child.nodeValue.replace(new RegExp(searchText, 'gi'), (match, idx) => {
-                    const part = document.createTextNode(child.nodeValue.slice(lastIdx, idx));
-                    const highlighted = document.createElement('span');
-                    highlighted.className = 'highlight';
-                    highlighted.textContent = match;
-                    frag.appendChild(part);
-                    frag.appendChild(highlighted);
-                    lastIdx = idx + match.length;
-                });
-                frag.appendChild(document.createTextNode(child.nodeValue.slice(lastIdx)));
-                child.parentNode.replaceChild(frag, child);
-            }
-        } else if (child.nodeType === 1 && !['SCRIPT', 'STYLE'].includes(child.tagName)) { // Element node
-            highlightOccurrences(child, searchText);
+    removeAllHighlights();
+    var walk = document.createTreeWalker(node, NodeFilter.SHOW_TEXT, null, false);
+    var textNodes = [];
+    while(walk.nextNode()) textNodes.push(walk.currentNode);
+
+    textNodes.forEach(function(node) {
+        var nodeText = node.nodeValue;
+        var startIndex = 0;
+        var innerHTML = '';
+
+        while (nodeText.toLowerCase().indexOf(searchText, startIndex) > -1) {
+            var index = nodeText.toLowerCase().indexOf(searchText, startIndex);
+            var matchText = nodeText.substring(index, index + searchText.length);
+            innerHTML += nodeText.substring(startIndex, index) + '<span class="highlight">' + matchText + '</span>';
+            startIndex = index + searchText.length;
         }
+
+        innerHTML += nodeText.substring(startIndex);
+        var frag = document.createDocumentFragment();
+        var wrapper = document.createElement('div');
+        wrapper.innerHTML = innerHTML;
+        while (wrapper.firstChild) {
+            frag.appendChild(wrapper.firstChild);
+        }
+
+        var parent = node.parentNode;
+        parent.insertBefore(frag, node);
+        parent.removeChild(node);
     });
 }
 
 function removeAllHighlights() {
     var highlights = document.querySelectorAll('.highlight');
     highlights.forEach(function(highlight) {
-        highlight.parentNode.replaceChild(document.createTextNode(highlight.textContent), highlight);
+        highlight.outerHTML = highlight.textContent;
     });
 }
 
@@ -101,12 +107,11 @@ function debounce(func, wait, immediate) {
     var timeout;
     return function() {
         var context = this, args = arguments;
-        var later = function() {
+        clearTimeout(timeout);
+        timeout = setTimeout(function() {
             timeout = null;
             if (!immediate) func.apply(context, args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
+        }, wait);
         if (immediate && !timeout) func.apply(context, args);
     };
 }

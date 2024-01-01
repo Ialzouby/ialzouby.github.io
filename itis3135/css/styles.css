@@ -33,6 +33,8 @@ header {
     text-align: center;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(168, 2, 2, 0.1);
+    position: relative; 
+    z-index: 1000; 
 }
 
 header a {
@@ -94,9 +96,11 @@ body.dark-mode .sidebar {
 }
 
 /* Main Content Styles */
+/* Main Content Styles */
 .main-content {
-    margin-left: 250px;
-    padding: 0px 30px;
+    margin-left: 250px; /* Equal to the sidebar width */
+    margin-right: 250px; /* Equal to the updates bar width */
+    padding: 20px; /* Adjust padding as needed */
     background-color: #fff;
 }
 
@@ -112,15 +116,28 @@ body.dark-mode .main-content p {
     color: #ccc; /* Specific text color for headings and paragraphs in main content */
 }
 
-/* Styles for when the sidebar is open */
-.main-content {
-    margin-left: 250px; /* Adjust according to your sidebar's width */
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .sidebar, .updates-bar {
+        width: 100%;
+        position: relative;
+        top: auto;
+        bottom: auto;
+        right: 0;
+    }
+
+    .main-content {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
 }
 
 /* Styles for when the sidebar is closed */
 .sidebar-closed .main-content {
     margin-left: 0; /* No margin when sidebar is closed */
 }
+
 
 /* Additional responsive tweaks as needed */
 @media (max-width: 768px) {
@@ -464,4 +481,127 @@ padding: 20px;
     #introSection h2 {
         font-size: 26px;
     }
+}
+
+/* Updates Bar Styles */
+/* Header Styles */
+header {
+    /* Existing header styles... */
+    position: relative; /* Needed for z-index to work */
+    z-index: 1000; /* Ensure header stays on top */
+}
+
+/* Updates Bar Styles */
+/* Updates Bar Styles - Copying the style of the nav bar */
+/* Updates Bar Styles */
+.updates-bar {
+    background-color: #f8f8f7; /* Same as nav bar */
+    color: #ffffff;
+    width: 250px; /* Width of updates bar */
+    position: fixed;
+    left: 1655px; /* Adjust this value as needed */
+    top: 135px; /* Assuming the header height is 60px */
+    bottom: 0; /* Stretch from header to bottom */
+    overflow-y: auto;
+    padding: 12px;
+    box-shadow: 0 4px 6px rgba(168, 2, 2, 0.1);
+    z-index: 1000;
+}
+
+/* Adjust the right margin of the main content to avoid overlapping with updates bar */
+
+
+@media (max-width: 1024px) {
+    .updates-bar {
+        width: 100%;
+        position: relative;
+        top: auto;
+        bottom: auto;
+        right: 0;
+    }
+
+    .main-content {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+.updates-bar a {
+    display: block;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #0056b3;
+    text-decoration: none;
+    border-left: 4px solid #57b0dd;
+    transition: all 0.3s ease;
+}
+
+.updates-bar a:hover {
+    background-color: #e1e1e1;
+    border-left: 4px solid #004494;
+    color: #00275e;
+}
+
+/* Internship Section Styling */
+.email-notice {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 1px solid #bee5eb;
+    text-align: center;
+}
+
+.email-notice a {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.email-notice a:hover {
+    color: #0056b3;
+}
+
+/* Styling for the "Latest Updates" header to match the "Project Docs" in the sidebar */
+.updates-bar h3 {
+    font-size: 20px; /* Match the size of the sidebar title */
+    color: #333; /* Dark color for the text */
+    text-align: center; /* Center the title */
+    padding: 10px 0; /* Add some padding above and below the title */
+    margin-bottom: 15px; /* Space between the title and the rest of the content */
+    border-bottom: 2px solid #ddd; /* A subtle line below the title */
+    font-weight: bold; /* Make the title bold */
+    background-color: #f8f8f7; /* Light background color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow below the title */
+}
+
+.internship-notice {
+    background-color: #e8e8e8; /* Light grey background */
+    color: #333; /* Dark text color */
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.internship-notice a {
+    color: #57b0dd; /* Color for email link */
+    text-decoration: none;
+}
+
+.internship-notice a:hover {
+    text-decoration: underline;
+}
+
+/* Increase margin between Sneak Peeks */
+.updates-bar .sneak-peek {
+    margin-bottom: 20px; /* Adjust as needed */
+}
+
+/* Increase space between Sneak Peeks and Internship Section */
+.updates-bar .internship-notice {
+    margin-top: 30px; /* Adjust as needed */
 }
