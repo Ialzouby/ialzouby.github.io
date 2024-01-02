@@ -1,5 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Handle folders opening and closing
+
+    var modeToggle = document.getElementById('modeToggle');
+    var toggleIcon = document.getElementById('toggleIcon');
+
+    modeToggle.addEventListener('click', function() {
+        document.body.classList.toggle('dark-mode');
+        
+        if (document.body.classList.contains('dark-mode')) {
+            toggleIcon.src = 'images/dark.png'; // Path to your dark mode icon
+        } else {
+            toggleIcon.src = 'images/light.png'; // Path to your moon icon
+        }
+    });
+
+
+
+        // Handle folders opening and closing
     var folders = document.querySelectorAll('.folder');
     folders.forEach(function(folder) {
         var folderName = folder.querySelector('.folder-name');

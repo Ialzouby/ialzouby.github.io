@@ -266,17 +266,24 @@ footer img {
 }
 
 .icon-buttons {
-    display: flex; /* This ensures that the icons are in a line */
-    
+    display: flex;
+    justify-content: center; /* Centers buttons horizontally */
+    align-items: center; /* Aligns buttons vertically */
+    gap: 10px; /* Adjust the space between buttons as needed */
 }
+
 
 .icon-buttons .button-container {
-    margin-left: 10px; /* Adds spacing between icon buttons */
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
 }
 
-.button-container img {
-    width: 24px; /* Adjust the size of your icons */
-    height: 20px;
+.icon-buttons .button-container img {
+    width: 24px; /* Adjust as needed */
+    height: 20px; /* Adjust as needed */
     cursor: pointer;
 }
 
@@ -617,4 +624,62 @@ header {
 /* Increase space between Sneak Peeks and Internship Section */
 .updates-bar .internship-notice {
     margin-top: 30px; /* Adjust as needed */
+}
+
+body.dark-mode .updates-bar {
+    background-color: #333; /* Dark background for updates bar */
+    color: #f8f8f7; /* Light text color */
+}
+
+body.dark-mode .updates-bar a {
+    color: #f8f8f7; /* Light text color for links */
+}
+
+
+body.dark-mode nav a {
+    color: #f8f8f7; /* Light text color for navigation links */
+}
+body.dark-mode .sidebar ul li a, 
+body.dark-mode .sidebar ul li .folder-name {
+    color: #f8f8f7; /* Light text color for folder and file names */
+}
+body.dark-mode .main-content p {
+    color: #000000; /* Dark black color */
+}
+body.dark-mode .main-content ol li,
+body.dark-mode .main-content ul li {
+    color: #f8f8f7; /* Light white color */
+}
+body.dark-mode .main-content code {
+    color: #000000; /* Dark black color */
+}
+#modeToggle {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+
+#toggleIcon {
+    width: 70px; /* Adjust as needed */
+    height: 70px; /* Adjust as needed */
+    cursor: pointer;
+}
+.image-button {
+    border: none;
+    background: none;
+    margin-bottom: 5px; 
+    margin-left: 2px;
+    margin-right: 7px;  
+    padding: 0;
+    display: inline-flex; /* Change to flex to better control alignment */
+    align-items: center; /* Align the image vertically within the button */
+    justify-content: center; /* Center the image horizontally within the button */
+}
+
+.image-button img {
+    width: 24px; /* Adjust as needed */
+    height: 24px; /* Adjust as needed */
+    cursor: pointer;
 }

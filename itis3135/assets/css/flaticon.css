@@ -1,0 +1,90 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?buz9qd');
+  src:  url('../fonts/icomoon.eot?buz9qd#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?buz9qd') format('truetype'),
+    url('../fonts/icomoon.woff?buz9qd') format('woff'),
+    url('../fonts/icomoon.svg?buz9qd#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-17:before {
+  content: "\e910";
+}
+.icon-18:before {
+  content: "\e911";
+}
+.icon-16:before {
+  content: "\e90f";
+}
+.icon-01:before {
+  content: "\e900";
+}
+.icon-02:before {
+  content: "\e901";
+}
+.icon-03:before {
+  content: "\e902";
+}
+.icon-04:before {
+  content: "\e903";
+}
+.icon-05:before {
+  content: "\e904";
+}
+.icon-06:before {
+  content: "\e905";
+}
+.icon-07:before {
+  content: "\e906";
+}
+.icon-08:before {
+  content: "\e907";
+}
+.icon-09:before {
+  content: "\e908";
+}
+.icon-10:before {
+  content: "\e909";
+}
+.icon-11:before {
+  content: "\e90a";
+}
+.icon-12:before {
+  content: "\e90b";
+}
+.icon-13:before {
+  content: "\e90c";
+}
+.icon-14:before {
+  content: "\e90d";
+}
+.icon-15:before {
+  content: "\e90e";
+}
+.icon-19:before {
+  content: "\e912";
+}
+.icon-20:before {
+  content: "\e913";
+}
+.icon-fa-times:before {
+  content: "\e914";
+}

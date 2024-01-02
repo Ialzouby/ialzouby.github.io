@@ -1,0 +1,489 @@
+/* Responsive Css */
+
+
+
+@media only screen and (max-width: 1800px){
+  .choose___two .pattern-1{
+    display: none;
+  }
+  .choose__us__data:before{
+    left: 0px;
+  }
+}
+
+
+@media only screen and (max-width: 1449px){
+  .post__date ul li.two{
+    display: none;
+  }
+}
+
+
+/* Directly write styles for mobile without @media wrapper */
+.uniqueVideoBg {
+    object-fit: contain;
+    max-width: 100%;  /* Limit width to container's width */
+    max-height: 100%;
+    /* ... other styles ... */
+}
+
+.banner__one, .banner__one > * {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+
+.uniqueVideoBgContainer {
+    position: relative;
+    width: 90vw;
+    height: 25vh;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 15px;
+    display: flex;           /* Enable flexbox */
+    align-items: center;     /* Center vertically */
+    justify-content: center;
+}
+
+.choose__us.three .pattern-2{
+  left: 0;
+}
+.consultation__text {
+  position: relative;
+  width: auto;
+  left: 0;
+}
+
+.consultation__img {
+  margin-top: 50px;
+}
+.consultation__text {
+  position: relative;
+  left: 0;
+}
+
+.consultation__img {
+  margin-top: 50px;
+}
+body.home__three {
+  padding-left: 100px;
+}
+
+
+
+
+
+@media only screen and (max-width: 1231px){
+  .funfact__content.three{
+    margin-top: 0;
+  }
+}
+
+@media only screen and (max-width: 1200px){
+.main-header.header__style__one .btn-box {
+    display: none;
+}
+.choose__us__data:before{
+  left: 0;
+}
+.testimonial__section .swiper-wrapper>*:nth-child(even) {
+  margin-top: 0px;
+}
+.see__pad{
+  padding: 100px 0px;
+}
+br{
+  display: none;
+}
+.banner__one .banner__bg{
+  display: none;
+}
+.accomplised__section{
+  padding-top: 40px;
+}
+.funfact__content.three{
+  margin-top: 0px;
+}
+.test__bg{
+  display: none;
+}
+.news__block{
+  margin-bottom: 20px;
+}
+.post__date ul{
+  gap: 20px;
+}
+.protfolio__inner {
+  margin-right: 0;
+}
+.portfolio__block img {
+  width: 100%;
+}
+.page__title{
+  padding: 150px 0px;
+}
+.page__title .title {
+  font-size: 60px;
+  line-height: 70px;
+}
+.pride__block h1 {
+  font-size: 60px;
+  line-height: 70px;
+  padding: 0px 20px;
+}
+.testimonial___data .row >div:nth-child(even){
+  margin-top: 0px;
+}
+.testimonials__block__one.page {
+  margin-bottom: 50px;
+}
+.tags-list-1 {
+  display: block;
+} 
+.tags__left {
+  display: block;
+}
+.comments__box {
+  display: block;
+}
+.blog__inner__box {
+  padding: 20px;
+}
+.home__three .about__block {
+  margin-top: 0;
+}
+.consultation__text {
+  padding-top: 50px;
+}
+.footer__one{
+  padding-top: 100px;
+}
+.service__contact.three{
+  padding-bottom: 100px;
+}
+
+body.home__three {
+  padding-left: 0px;
+}
+.service__details__left {
+  margin-bottom: 50px;
+}
+.error__page h1.title {
+  font-size: 200px;
+}
+
+
+
+}
+
+
+
+@media only screen and (min-width: 768px){
+  .main-menu .navigation > li > ul,
+  .main-menu .navigation > li > ul > li > ul,
+  .main-menu .navigation > li > .megamenu{
+    display:block !important;
+    visibility:hidden;
+    opacity:0;
+  }
+}
+
+
+
+@media only screen and (max-width: 991px){
+
+
+  .menu-area .mobile-nav-toggler {
+    display: block;
+    padding: 10px;
+  }
+  .megamenu ul li:first-child{
+    display: none;
+  }
+  .pattern-layer{
+    display: none;
+  }
+
+  .brand__content .brand__name h1{
+    font-size: 40px;
+  }
+  .brand__section .brand-carousel{
+    padding: 40px 0px;
+  }
+  .icon__image__banner {
+    position: absolute;
+    left: 50%;
+    bottom: -61px;
+    transform: translate(-50%, 0%);
+  }
+  .banner__right {
+    padding-top: 100px;
+  }
+  .scroll-to-top{
+    display: none;
+  }
+  .banner__right figure.image-box img{
+    width: 100%;
+  }
+  .service__block:before{
+    padding: 1px;
+  }
+  .service__block {
+    margin-bottom: 20px;
+  }
+  .about__block {
+    padding-bottom: 50px;
+  }
+.funfact__content.about {
+  bottom: 50px;
+}
+.choose__block{
+  padding: 0px 0px 50px;
+}
+.team__block{
+  margin-bottom: 60px;
+}
+.funfact__data {
+  justify-content: start;
+  padding-top: 50px;
+}
+.accomplised__data {
+  padding: 100px 20px;
+}
+.testimonials__info {
+  padding: 100px;
+}
+.blog__section .normaol__text {
+  padding-left: 0;
+  padding-bottom: 50px;
+}
+.main__footer .top-inner {
+  display: block;
+}
+.main__footer .top-inner .right__top {
+  padding-top: 20px;
+}
+.footer-column{
+  padding-bottom: 20px;
+}
+
+.about__two__img__block figure img {
+  width: 100%;
+}
+.about__two__img__block .about__two__circle {
+  right: 20px;
+}
+.about__text__two {
+  padding-bottom: 20px;
+  justify-content: start;
+}
+.choose_img__block img{
+  width: 100%;
+}
+.choose__text__block{
+  padding-top: 50px;
+}
+.accomplised__data.two{
+  padding: 0;
+}
+.brand__section_two {
+  padding: 0px 20px 100px;
+}
+.price__content {
+  margin-bottom: 60px;
+}
+.service__form__data {
+  padding: 0;
+}
+.service__contact__block {
+  padding: 80px 40px;
+}
+.service__contact__img {
+  position: relative;
+  padding-top: 50px;
+}
+.project__page{
+  margin: 0 20px;
+}
+.contact__right{
+  padding: 40px;
+}
+
+.banner__media{
+  display: none;
+}
+.banner__one.home__three__banner {
+  padding-top: 0;
+}
+.consultation__img img {
+  width: 100%;
+}
+.accomplised__data.two.three {
+  padding: 20px;
+}
+.home__three__banner .banner__mission__block h3 {
+  padding-bottom: 10px;
+}
+.pro__info {
+  margin: 50px 0px 0px;
+  width: 100%;
+  max-width: 100%;
+}
+
+
+}
+
+
+@media only screen and (max-width: 767px){
+  .banner__title h1{
+    font-size: 50px;
+    line-height: 60px;
+  }
+  .sub__title h4{
+    font-size: 16px;
+    letter-spacing: 5.2px;
+  }
+  h2{
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 40px;
+  }
+  .team__data .team__data__left {
+    padding-bottom: 20px;
+  }
+  .team__data{
+    display: block;
+  }
+  .brand__section.p_relative.see__pad {
+    padding: 50px 0px 0px;
+}
+.mission__block {
+  padding: 40px;
+}
+.home__three__banner .banner__mission__block {
+  margin-bottom: 20px;
+}
+.pro__info {
+  margin: 50px 0px 0px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.pro__info ul {
+  display: block;
+}
+
+.pro__info ul li {
+  margin-bottom: 20px;
+}
+
+}
+
+@media only screen and (max-width: 599px){
+  .service__block{
+    padding: 40px 30px 80px;
+  }
+  .service__data{
+    padding: 90px 10px 0px;
+  }
+  .testimonials__info {
+    padding: 40px 49px 80px;
+  }
+  .testimonial__top {
+    display: block;
+  }
+  .main__footer .top-inner{
+    padding: 20px;
+  }
+  .main__footer .left__top h3{
+    font-size: 25px;
+    line-height: 35px;
+  }
+  .banner__two .content-box h2 {
+    font-size: 50px;
+    line-height: 60px;
+  }
+  section.banner__two {
+    padding-top: 200px;
+}
+.banner__mission__block{
+  display: block;
+}
+.pride__block h1 {
+  font-size: 40px;
+  line-height: 50px;
+  padding: 0px 20px;
+}
+.bread__crumb li{
+  letter-spacing: 4px;
+}
+
+}
+
+
+@media only screen and (max-width: 499px){
+
+  .mobile-menu{
+    width: 100%;
+  }
+
+  
+  .funfact__data {
+    justify-content: center;
+  }
+  .brand__content .brand__name h1 {
+    font-size: 30px;
+}
+.brand__section .brand-carousel {
+  padding: 45px 20px;
+}
+.banner__two .content-box h2 {
+  font-size: 40px;
+  line-height: 50px;
+}
+.service__block__two {
+  padding: 100px 40px 50px;
+}
+.brand__section_two .brand__content .brand__name h1 {
+  font-size: 35px;
+}
+.choose_us_block li {
+  font-size: 20px;
+  line-height: 30px;
+  padding: 15px 0px;
+}
+.consultation__list li a {
+  font-size: 20px;
+  padding: 20px 0px 20px 85px;
+}
+.sidebar__widget_network{
+  padding: 100px 20px;
+}
+.error__page h1.title {
+  font-size: 100px;
+}
+
+}
+
+
+@media only screen and (max-width: 399px){
+
+ 
+  .banner__left{
+    padding-top: 26px;
+  }
+  .testimonials__info{
+    clip-path:none;
+    padding: 41px 30px 80px;
+  }
+  .protfolio__button{
+    width: 80%;
+  }
+  .contact__right{
+    padding: 40px 20px;
+  }
+  .pro__info {
+    padding: 40px;
+  }
+
+}
