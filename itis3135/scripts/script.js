@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+    // Toggle dark/light mode
     var modeToggle = document.getElementById('modeToggle');
     var toggleIcon = document.getElementById('toggleIcon');
 
@@ -13,9 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-
-
-        // Handle folders opening and closing
+    // Handle folders opening and closing
     var folders = document.querySelectorAll('.folder');
     folders.forEach(function(folder) {
         var folderName = folder.querySelector('.folder-name');
@@ -24,35 +23,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 folder.classList.toggle('open');
                 var folderContent = folder.querySelector('.folder-content');
                 if (folderContent) {
-                    folderContent.style.display = folderContent.style.display === 'block' ? 'none' : 'block';
+                    folderContent.style.display = folder.classList.contains('open') ? 'block' : 'none';
                 }
             });
         }
-
-        var links = folder.querySelectorAll('a');
-        links.forEach(function(link) {
-            link.addEventListener('click', function(event) {
-                event.preventDefault();
-                event.stopPropagation();
-
-                var sections = document.querySelectorAll('.main-content .content-section');
-                sections.forEach(function(section) {
-                    section.style.display = 'none';
-                });
-
-                var sectionId = link.getAttribute('href');
-                var section = document.querySelector(sectionId);
-                if (section) {
-                    section.style.display = 'block';
-                }
-            });
-        });
     });
 
-    // Add this code here to close all folders initially
+    // Close all folders initially
     var folderContents = document.querySelectorAll('.folder .folder-content');
     folderContents.forEach(function(folderContent) {
-        folderContent.style.display = 'none'; // This line ensures that the folder contents are not displayed initially
+        folderContent.style.display = 'none';
     });
 
     // Handle hamburger menu toggle
@@ -62,78 +42,110 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.classList.toggle('sidebar-closed');
         });
     }
-});
 
-document.querySelectorAll('.sidebar .folder-name').forEach(folderTitle => {
-    folderTitle.addEventListener('click', function() {
-        this.parentElement.classList.toggle('folder-open');
-        // Toggle the visibility of the folder content
-        this.nextElementSibling.style.display = this.parentElement.classList.contains('folder-open') ? 'block' : 'none';
+    // Handle sidebar folder opening/closing
+    document.querySelectorAll('.sidebar .folder-name').forEach(folderTitle => {
+        folderTitle.addEventListener('click', function() {
+            this.parentElement.classList.toggle('folder-open');
+            this.nextElementSibling.style.display = this.parentElement.classList.contains('folder-open') ? 'block' : 'none';
+        });
     });
-});
 
-document.getElementById('searchButton').addEventListener('click', function() {
-    var searchBar = document.getElementById('searchBarContainer');
-    searchBar.style.display = searchBar.style.display === 'none' ? 'block' : 'none';
-    document.getElementById('searchInput').focus(); // Focus on the search input when it appears
-});
+    document.querySelectorAll('.sidebar .folder .folder-content a').forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default anchor behavior
 
-document.getElementById('searchInput').addEventListener('input', debounce(function() {
-    var searchText = this.value.toLowerCase();
-    removeAllHighlights();
-    if (searchText) {
-        highlightOccurrences(document.body, searchText);
+            // Hide all content sections in the main content area
+            document.querySelectorAll('.main-content .content-section').forEach(section => {
+                section.style.display = 'none';
+            });
+
+            // Get the ID of the content section to display
+            var sectionId = this.getAttribute('href');
+
+            // Display the linked content section
+            var sectionToShow = document.querySelector(sectionId);
+            if (sectionToShow) {
+                sectionToShow.style.display = 'block';
+            }
+        });
+    });
+
+    // Handle search functionality
+    document.getElementById('searchButton').addEventListener('click', function() {
+        var searchBar = document.getElementById('searchBarContainer');
+        searchBar.style.display = searchBar.style.display === 'none' ? 'block' : 'none';
+        document.getElementById('searchInput').focus();
+    });
+
+    document.getElementById('searchInput').addEventListener('input', debounce(function() {
+        var searchText = this.value.toLowerCase();
+        removeAllHighlights();
+        if (searchText) {
+            highlightOccurrences(document.body, searchText);
+        }
+    }, 250));
+
+    function highlightOccurrences(node, searchText) {
+        removeAllHighlights();
+        var walk = document.createTreeWalker(node, NodeFilter.SHOW_TEXT, null, false);
+        var textNodes = [];
+        while(walk.nextNode()) textNodes.push(walk.currentNode);
+
+        textNodes.forEach(function(node) {
+            var nodeText = node.nodeValue;
+            var startIndex = 0;
+            var innerHTML = '';
+
+            while (nodeText.toLowerCase().indexOf(searchText, startIndex) > -1) {
+                var index = nodeText.toLowerCase().indexOf(searchText, startIndex);
+                var matchText = nodeText.substring(index, index + searchText.length);
+                innerHTML += nodeText.substring(startIndex, index) + '<span class="highlight">' + matchText + '</span>';
+                startIndex = index + searchText.length;
+            }
+
+            innerHTML += nodeText.substring(startIndex);
+            var frag = document.createDocumentFragment();
+            var wrapper = document.createElement('div');
+            wrapper.innerHTML = innerHTML;
+            while (wrapper.firstChild) {
+                frag.appendChild(wrapper.firstChild);
+            }
+
+            var parent = node.parentNode;
+            parent.insertBefore(frag, node);
+            parent.removeChild(node);
+        });
     }
-}, 250));
 
-function highlightOccurrences(node, searchText) {
-    removeAllHighlights();
-    var walk = document.createTreeWalker(node, NodeFilter.SHOW_TEXT, null, false);
-    var textNodes = [];
-    while(walk.nextNode()) textNodes.push(walk.currentNode);
+    function removeAllHighlights() {
+        var highlights = document.querySelectorAll('.highlight');
+        highlights.forEach(function(highlight) {
+            highlight.outerHTML = highlight.textContent;
+        });
+    }
 
-    textNodes.forEach(function(node) {
-        var nodeText = node.nodeValue;
-        var startIndex = 0;
-        var innerHTML = '';
+    function debounce(func, wait, immediate) {
+        var timeout;
+        return function() {
+            var context = this, args = arguments;
+            clearTimeout(timeout);
+            timeout = setTimeout(function() {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            }, wait);
+            if (immediate && !timeout) func.apply(context, args);
+        };
+    }
 
-        while (nodeText.toLowerCase().indexOf(searchText, startIndex) > -1) {
-            var index = nodeText.toLowerCase().indexOf(searchText, startIndex);
-            var matchText = nodeText.substring(index, index + searchText.length);
-            innerHTML += nodeText.substring(startIndex, index) + '<span class="highlight">' + matchText + '</span>';
-            startIndex = index + searchText.length;
-        }
-
-        innerHTML += nodeText.substring(startIndex);
-        var frag = document.createDocumentFragment();
-        var wrapper = document.createElement('div');
-        wrapper.innerHTML = innerHTML;
-        while (wrapper.firstChild) {
-            frag.appendChild(wrapper.firstChild);
-        }
-
-        var parent = node.parentNode;
-        parent.insertBefore(frag, node);
-        parent.removeChild(node);
+    // Copy to clipboard functionality
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const codeBlock = document.querySelector(btn.getAttribute('data-copy-target'));
+            navigator.clipboard.writeText(codeBlock.textContent).then(() => {
+                btn.textContent = 'Copied!';
+                setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
+            });
+        });
     });
-}
-
-function removeAllHighlights() {
-    var highlights = document.querySelectorAll('.highlight');
-    highlights.forEach(function(highlight) {
-        highlight.outerHTML = highlight.textContent;
-    });
-}
-
-function debounce(func, wait, immediate) {
-    var timeout;
-    return function() {
-        var context = this, args = arguments;
-        clearTimeout(timeout);
-        timeout = setTimeout(function() {
-            timeout = null;
-            if (!immediate) func.apply(context, args);
-        }, wait);
-        if (immediate && !timeout) func.apply(context, args);
-    };
-}
+});

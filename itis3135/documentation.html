@@ -42,6 +42,7 @@
             <li class="folder">
                 <span class="folder-name">Wav2Lip Project</span>
                 <ul class="folder-content">
+                    <li><a href="#setup" class="navbar-title">Initial Set-Up</a></li>
                     <li><a href="#audioPySection" class="navbar-title">Audio.py</a></li>
                     <li><a href="#syncnet" class="navbar-title">Color_syncnet_train.py</a></li>
                     <li><a href="#hparams" class="navbar-title">Hparams.py</a></li>
@@ -139,6 +140,82 @@
         
 
         <!-- Content Sections -->
+
+        <section id="setup" class="content-section">
+            <h2>Wav2Lip Project Setup Guide</h2>
+            <div class="text-container">
+                <p>Follow these steps to set up the Wav2Lip project on your system. This guide covers installation of Python, setting up a virtual environment, cloning the Wav2Lip repository, and other necessary setup tasks.</p>
+            </div>
+        
+            <div class="setup-guide">
+                <h3>Initial Setup Steps</h3>
+                <ol class="custom-list">
+                    <li>
+                        Install Homebrew, a package manager for macOS, by running the following command in your terminal:
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy-target="#install-homebrew">Copy</button>
+                            <pre id="install-homebrew"><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></pre>
+                        </div>
+                    </li>
+                    <li>
+                        Use Homebrew to install Python 3.6 and Git:
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy-target="#brew-install">Copy</button>
+                            <pre id="brew-install"><code>brew install python@3.6 git</code></pre>
+                        </div>
+                    </li>
+                    <li>
+                        Create a project directory named <code>Wav2LipProject</code>:
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy-target="#create-dir">Copy</button>
+                            <pre id="create-dir"><code>mkdir Wav2LipProject
+        cd Wav2LipProject</code></pre>
+                        </div>
+                    </li>
+                    <li>
+                        Create and activate a Python 3.6 virtual environment:
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy-target="#create-env">Copy</button>
+                            <pre id="create-env"><code>python3.6 -m venv wav2lip_env
+        source wav2lip_env/bin/activate</code></pre>
+                        </div>
+                    </li>
+                    <li>
+                        Clone the Wav2Lip GitHub repository:
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy-target="#clone-repo">Copy</button>
+                            <pre id="clone-repo"><code>git clone https://github.com/Rudrabha/Wav2Lip.git
+        cd Wav2Lip</code></pre>
+                        </div>
+                    </li>
+                    <li>
+                        Install necessary Python libraries from <code>requirements.txt</code>:
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy-target="#install-libs">Copy</button>
+                            <pre id="install-libs"><code>pip install -r requirements.txt</code></pre>
+                        </div>
+                    </li>
+                    <li>
+                        Download the pretrained model weights from the repository.
+                    </li>
+                    <li>
+                        Verify the installation by running a simple script.
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="text-container tips-container">
+                <div class="blue-tab"></div>
+                <h3>Tips for Using Wav2Lip</h3>
+                <ul>
+                    <li>Always activate the environment in the <code>wav2lip_env</code> directory before running scripts.</li>
+                    <li>Run the main script for synchronization in the <code>Wav2Lip</code> directory.</li>
+                    <li>Ensure the <code>Wav2Lip</code> directory is correctly set up before proceeding.</li>
+                </ul>
+            </div>
+        </section>
+        
+
         <section id="audioPySection" class="content-section">
             <h2>Audio.py</h2>
             <div class="text-container">
