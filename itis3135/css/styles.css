@@ -47,54 +47,7 @@ header a:hover {
     color: #ab0b0b;
 }
 
-/* Sidebar Styles */
-.sidebar {
-    background-color: #f8f8f7; /* Light gray background */
-    color: #333;
-    width: 300px;
-    height: 100vh;
-    padding: 20px;
-    overflow-y: auto;
-    min-width: 300px;
-    position: relative;
-    
-}
 
-.sidebar ul {
-    list-style: none;
-}
-
-.sidebar ul li {
-    padding: 10px;
-    cursor: pointer;
-    border-bottom: none; 
-}
-
-.sidebar ul li a {
-    display: block; /* Make the <a> tag fill the <li> */
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    color: gray; /* Set the text color */
-    text-decoration: none; /* Remove underline */
-    padding: 10px 0; /* Add some padding */
-}
-
-.sidebar ul li a:hover {
-    background-color: #ddd; /* Change background on hover */
-    text-decoration: none; /* Ensure no underline on hover */
-}
-
-body.dark-mode .sidebar {
-    background-color: #444; /* Darker background for the sidebar */
-    color: #fff; /* Light text for the sidebar */
-}
-
-.sidebar-closed .sidebar {
-    width: 0;
-    overflow: hidden;
-    padding: 0; /* Ensures no internal padding pushes content out */
-    border: none; /* Remove any borders that might take up space */
-}
 
 /* Main Content Styles */
 /* Main Content Styles */
@@ -104,7 +57,6 @@ body.dark-mode .sidebar {
     padding: 20px; /* Adjust padding as needed */
     background-color: #fff;
     flex-grow: 1; /* Take available space */
-    max-width: 750px; /
     
 }
 
@@ -127,48 +79,6 @@ body.dark-mode .main-content p {
     color: #ccc; /* Specific text color for headings and paragraphs in main content */
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .sidebar, .updates-bar {
-        width: 100%;
-        position: relative;
-        top: auto;
-        bottom: auto;
-        right: 0;
-    }
-
-    .main-content {
-        margin-left: 0;
-        margin-right: 0;
-        padding: 10px; /* Adjust padding for smaller screens */
-    }
-}
-
-/* Styles for when the sidebar is closed */
-.sidebar-closed .main-content {
-    margin-left: 0; /* No margin when sidebar is closed */
-}
-
-
-/* Additional responsive tweaks as needed */
-@media (max-width: 768px) {
-    /* Ensure sidebar is hidden by default on smaller screens */
-    body.sidebar-closed .sidebar {
-        width: 0;
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .sidebar {
-        width: 100%;
-        position: relative;
-    }
-
-    .main-content {
-        margin-left: 0;
-    }
-}
 
 /* Add more dark mode specific styles as needed */
 
@@ -402,55 +312,6 @@ padding: 20px;
     transform: rotate(180deg); /* Flip carrot for open folders */
 }
 
-/* Updated Sidebar Styles */
-.sidebar ul li a, .sidebar ul li .folder-name {
-    display: block; /* Make the <a> tag fill the <li> */
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    color: gray; /* Set the text color */
-    text-decoration: none; /* Remove underline */
-    padding: 10px 0; /* Add some padding */
-}
-
-.sidebar ul li a:hover, .sidebar ul li .folder-name:hover {
-    background-color: #ddd; /* Change background on hover */
-    text-decoration: none; /* Ensure no underline on hover */
-}
-
-/* Remove bottom borders from all list items */
-.sidebar ul li {
-    border-bottom: none; /* Remove lines under file names */
-}
-/* Make folder names bold */
-.sidebar ul li .folder-name {
-    font-weight: bold; /* This will make the text bold */
-    color: #4b4b4b; /* Darker color, adjust as needed */
-
-}
-/* Incremental padding for nested folders */
-.sidebar .folder .folder-content .folder {
-    padding-left: 20px; /* First level of nesting */
-}
-
-.sidebar .folder .folder-content .folder .folder-content .folder {
-    padding-left: 40px; /* Second level of nesting */
-}
-
-
-
-
-
-.sidebar-title {
-    font-size: 20px; /* Adjust the size as needed */
-    color: #333; /* Dark color for the text */
-    text-align: center; /* Center the title */
-    padding: 10px 0; /* Add some padding above and below the title */
-    margin-bottom: 15px; /* Space between the title and the rest of the content */
-    border-bottom: 2px solid #ddd; /* A subtle line below the title */
-    font-weight: bold; /* Make the title bold */
-    background-color: #f8f8f7; /* Light background color */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow below the title */
-}
 
 #searchInput {
     width: 90%; /* Adjust the width as needed */
@@ -467,7 +328,10 @@ padding: 20px;
 
 #introSection {
     background-color: #ffffff; /* Crisp white background */
-    padding: 40px;
+    padding: 20px; 
+    margin-top: 20px; 
+    margin-left: 20px; 
+    margin-bottom: 20px;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     margin: 20px auto;
@@ -489,29 +353,8 @@ padding: 20px;
     line-height: 1.8;
 }
 
-/* Responsive Design for smaller screens */
-@media (max-width: 768px) {
-    .sidebar {
-        width: 100%; /* Full width for smaller screens */
-        position: relative; /* Adjust as necessary */
-    }
 
-    .updates-bar {
-        width: 100%; /* Full width */
-        position: fixed; /* Keep it fixed */
-        left: 0; /* Align to the left edge */
-        top: auto; /* Adjust top as necessary */
-        bottom: 0; /* Align to the bottom */
-    }
 
-    .main-content {
-        margin-left: 0;
-        flex-grow: 1; /* Takes the remaining space */
-
-    }
-
-    /* Adjust any other styles for smaller screens here */
-}
 
 
 /* Updates Bar Styles */
@@ -528,14 +371,15 @@ header {
 .updates-bar {
     background-color: #f8f8f7; /* Same as nav bar */
     color: #ffffff;
-    width: 300px; /* Width of updates bar */
+    width: 250px; /* Width of updates bar */
     top: 135px; /* Assuming the header height is 60px */
     bottom: 0; /* Stretch from header to bottom */
     overflow-y: auto;
     padding: 12px;
     box-shadow: 0 4px 6px rgba(168, 2, 2, 0.1);
     z-index: 1000;
-    min-width: 300px; 
+    min-width: 250px; 
+
     /* position: static; */ /* Removed fixed positioning */
 }
 
@@ -579,7 +423,6 @@ header {
     text-decoration: none;
     border-left: 4px solid #57b0dd;
     transition: all 0.3s ease;
-
 }
 
 .updates-bar a:hover {
@@ -742,155 +585,94 @@ body.dark-mode .main-content code {
     border-radius: 5px;
     padding: 5px 10px;
     cursor: pointer;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
 }
 
 .copy-btn:hover {
     background-color: #45a049;
 }
 
-.close-sidebar {
-    display: block;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 30px;
+/* Sidebar Styles */
+.sidebar {
+    background-color: #f8f8f7; /* Light gray background */
+    color: #333;
+    width: 250px; /* Fixed width */
+    height: 100vh;
+    padding: 20px;
+    overflow-y: auto;
+    transition: width 0.3s ease; /* Smooth transition for opening/closing */
+    min-width: 250px; /* Ensure it doesn't shrink */
+}
+
+/* Consistent Sidebar Title Styling */
+.sidebar-title {
+    font-size: 20px;
+    color: #333;
+    text-align: center;
+    padding: 10px 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ddd;
+    font-weight: bold;
+    background-color: #f8f8f7;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar List Styles */
+.sidebar ul {
+    list-style: none;
+    padding-left: 0; /* Remove default padding */
+}
+
+.sidebar ul li {
+    padding: 10px;
     cursor: pointer;
-    z-index: 10; /* Ensure it's above other content */
 }
 
-@media (max-width: 768px) {
-    /* Full-Screen Sidebar on Mobile */
-    .sidebar {
-        width: 100%;
-        height: 100vh;
-        position: fixed;
-        z-index: 1500;
-        left: 0;
-        top: 0;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease-in-out;
-    }
-    .sidebar-closed .sidebar {
-        transform: translateX(0);
-    }
+.sidebar ul li a, .sidebar ul li .folder-name {
+    display: block;
+    color: gray;
+    text-decoration: none;
+    padding: 10px 0;
 }
 
-@media (max-width: 768px) {
-    .close-sidebar {
-        display: block;
-    }
+.sidebar ul li a:hover, .sidebar ul li .folder-name:hover {
+    background-color: #ddd;
 }
 
+/* Dark Mode Styles */
+body.dark-mode .sidebar {
+    background-color: #444;
+    color: #fff;
+}
+
+/* Sidebar Closed State */
+.sidebar-closed .sidebar {
+    width: 0;
+    overflow: hidden;
+    padding: 0;
+    min-width: 0; /* Reset min-width when closed */
+}
+
+/* Responsive Design Adjustments */
 @media (max-width: 1024px) {
+    .sidebar {
+        width: 100%; /* Full width for smaller screens */
+        position: relative; /* Adjust as necessary */
+    }
+
+    .sidebar-closed .sidebar {
+        width: 0; /* Sidebar is hidden when closed */
+    }
+
+    .main-content {
+        margin-left: 0; /* Adjust main content when sidebar is closed */
+        padding: 10px;
+    }
+}
+
+
+@media (max-width: 768px) {
     .updates-bar {
-        display: none; /* Hide updates bar on smaller screens */
+        display: none;
     }
 }
-@media (min-width: 1024px) {
-    .main-content, .updates-bar {
-        display: block; /* or 'flex', depending on your layout */
-    }
-}
-/* Full-Screen Sidebar on Mobile */
-@media (max-width: 768px) {
-    .sidebar {
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease-in-out;
-    }
-    .sidebar-closed .sidebar {
-        transform: translateX(0);
-    }
-}
-
-/* Sidebar on larger screens */
-@media (min-width: 768px) {
-    .sidebar {
-        position: relative;
-        transform: translateX(0);
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-/* Default sidebar styles (for larger screens) */
-.sidebar {
-    /* Original sidebar styles here */
-    width: 300px;
-    /* other styles */
-}
-
-/* Hide the close button on larger screens by default */
-.close-sidebar {
-    display: none;
-}
-
-/* Mobile-specific styles */
-@media (max-width: 768px) {
-    /* Full-screen sidebar styles for mobile */
-    .sidebar {
-        width: 100%;
-        position: fixed;
-        left: 0;
-        top: 0;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease-in-out;
-        z-index: 1500; /* higher than other content */
-    }
-
-    /* Show the close button on mobile */
-    .close-sidebar {
-        display: block;
-        position: absolute;
-        top: 10px;
-        right: 20px;
-        font-size: 30px;
-        cursor: pointer;
-    }
-
-    /* Style for when the sidebar is open */
-    .sidebar-closed .sidebar {
-        transform: translateX(0);
-    }
-}
-/* Default Navbar Styles (for larger screens) */
-.sidebar {
-    /* Specify your preferred styles for larger screens */
-    font-size: 16px; /* Adjust as needed */
-    font-family: 'Arial', sans-serif; /* Default font */
-    /* Other styling */
-}
-
-/* Mobile-specific styles */
-@media (max-width: 768px) {
-    .sidebar {
-        /* Different styles for mobile */
-        font-size: 20px; /* Larger text size for mobile */
-        font-family: 'Helvetica Neue', Arial, sans-serif; /* Different font for mobile */
-        /* Any additional mobile-specific styling */
-    }
-}
-
-
-
-
-
-
-
 
