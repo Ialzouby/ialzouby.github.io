@@ -55,6 +55,8 @@ header a:hover {
     height: 100vh;
     padding: 20px;
     overflow-y: auto;
+    min-width: 300px;
+    position: relative;
     
 }
 
@@ -102,7 +104,7 @@ body.dark-mode .sidebar {
     padding: 20px; /* Adjust padding as needed */
     background-color: #fff;
     flex-grow: 1; /* Take available space */
-    max-width: 1200px; /
+    max-width: 750px; /
     
 }
 
@@ -533,6 +535,7 @@ header {
     padding: 12px;
     box-shadow: 0 4px 6px rgba(168, 2, 2, 0.1);
     z-index: 1000;
+    min-width: 300px; 
     /* position: static; */ /* Removed fixed positioning */
 }
 
@@ -576,6 +579,7 @@ header {
     text-decoration: none;
     border-left: 4px solid #57b0dd;
     transition: all 0.3s ease;
+
 }
 
 .updates-bar a:hover {
@@ -738,8 +742,155 @@ body.dark-mode .main-content code {
     border-radius: 5px;
     padding: 5px 10px;
     cursor: pointer;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }
 
 .copy-btn:hover {
     background-color: #45a049;
 }
+
+.close-sidebar {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 10; /* Ensure it's above other content */
+}
+
+@media (max-width: 768px) {
+    /* Full-Screen Sidebar on Mobile */
+    .sidebar {
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        z-index: 1500;
+        left: 0;
+        top: 0;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+    .sidebar-closed .sidebar {
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .close-sidebar {
+        display: block;
+    }
+}
+
+@media (max-width: 1024px) {
+    .updates-bar {
+        display: none; /* Hide updates bar on smaller screens */
+    }
+}
+@media (min-width: 1024px) {
+    .main-content, .updates-bar {
+        display: block; /* or 'flex', depending on your layout */
+    }
+}
+/* Full-Screen Sidebar on Mobile */
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+    .sidebar-closed .sidebar {
+        transform: translateX(0);
+    }
+}
+
+/* Sidebar on larger screens */
+@media (min-width: 768px) {
+    .sidebar {
+        position: relative;
+        transform: translateX(0);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Default sidebar styles (for larger screens) */
+.sidebar {
+    /* Original sidebar styles here */
+    width: 300px;
+    /* other styles */
+}
+
+/* Hide the close button on larger screens by default */
+.close-sidebar {
+    display: none;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    /* Full-screen sidebar styles for mobile */
+    .sidebar {
+        width: 100%;
+        position: fixed;
+        left: 0;
+        top: 0;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 1500; /* higher than other content */
+    }
+
+    /* Show the close button on mobile */
+    .close-sidebar {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    /* Style for when the sidebar is open */
+    .sidebar-closed .sidebar {
+        transform: translateX(0);
+    }
+}
+/* Default Navbar Styles (for larger screens) */
+.sidebar {
+    /* Specify your preferred styles for larger screens */
+    font-size: 16px; /* Adjust as needed */
+    font-family: 'Arial', sans-serif; /* Default font */
+    /* Other styling */
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    .sidebar {
+        /* Different styles for mobile */
+        font-size: 20px; /* Larger text size for mobile */
+        font-family: 'Helvetica Neue', Arial, sans-serif; /* Different font for mobile */
+        /* Any additional mobile-specific styling */
+    }
+}
+
+
+
+
+
+
+
+

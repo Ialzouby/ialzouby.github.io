@@ -1,32 +1,34 @@
 document.addEventListener('DOMContentLoaded', function() {
-
     // Toggle dark/light mode
     var modeToggle = document.getElementById('modeToggle');
     var toggleIcon = document.getElementById('toggleIcon');
-
     modeToggle.addEventListener('click', function() {
         document.body.classList.toggle('dark-mode');
-        
-        if (document.body.classList.contains('dark-mode')) {
-            toggleIcon.src = 'images/dark.png'; // Path to your dark mode icon
-        } else {
-            toggleIcon.src = 'images/light.png'; // Path to your moon icon
-        }
+        toggleIcon.src = document.body.classList.contains('dark-mode') ? 'images/dark.png' : 'images/light.png';
+    });
+
+    // Hamburger menu toggle
+    var menuToggle = document.getElementById('menu-toggle');
+    var sidebar = document.querySelector('.sidebar');
+    menuToggle.addEventListener('click', function() {
+        sidebar.classList.toggle('sidebar-open');
+    });
+
+    // Close sidebar button
+    var closeSidebar = document.getElementById('close-sidebar');
+    closeSidebar.addEventListener('click', function() {
+        sidebar.classList.remove('sidebar-open');
     });
 
     // Handle folders opening and closing
     var folders = document.querySelectorAll('.folder');
     folders.forEach(function(folder) {
         var folderName = folder.querySelector('.folder-name');
-        if (folderName) {
-            folderName.addEventListener('click', function() {
-                folder.classList.toggle('open');
-                var folderContent = folder.querySelector('.folder-content');
-                if (folderContent) {
-                    folderContent.style.display = folder.classList.contains('open') ? 'block' : 'none';
-                }
-            });
-        }
+        folderName.addEventListener('click', function() {
+            folder.classList.toggle('open');
+            var folderContent = folder.querySelector('.folder-content');
+            folderContent.style.display = folder.classList.contains('open') ? 'block' : 'none';
+        });
     });
 
     // Close all folders initially
@@ -35,50 +37,16 @@ document.addEventListener('DOMContentLoaded', function() {
         folderContent.style.display = 'none';
     });
 
-    // Handle hamburger menu toggle
-    var menuToggle = document.getElementById('menu-toggle');
-    if (menuToggle) {
-        menuToggle.addEventListener('click', function() {
-            document.body.classList.toggle('sidebar-closed');
-        });
-    }
-
-    // Handle sidebar folder opening/closing
-    document.querySelectorAll('.sidebar .folder-name').forEach(folderTitle => {
-        folderTitle.addEventListener('click', function() {
-            this.parentElement.classList.toggle('folder-open');
-            this.nextElementSibling.style.display = this.parentElement.classList.contains('folder-open') ? 'block' : 'none';
-        });
-    });
-
-    document.querySelectorAll('.sidebar .folder .folder-content a').forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent default anchor behavior
-
-            // Hide all content sections in the main content area
-            document.querySelectorAll('.main-content .content-section').forEach(section => {
-                section.style.display = 'none';
-            });
-
-            // Get the ID of the content section to display
-            var sectionId = this.getAttribute('href');
-
-            // Display the linked content section
-            var sectionToShow = document.querySelector(sectionId);
-            if (sectionToShow) {
-                sectionToShow.style.display = 'block';
-            }
-        });
-    });
-
     // Handle search functionality
-    document.getElementById('searchButton').addEventListener('click', function() {
-        var searchBar = document.getElementById('searchBarContainer');
+    var searchButton = document.getElementById('searchButton');
+    var searchBar = document.getElementById('searchBarContainer');
+    var searchInput = document.getElementById('searchInput');
+    searchButton.addEventListener('click', function() {
         searchBar.style.display = searchBar.style.display === 'none' ? 'block' : 'none';
-        document.getElementById('searchInput').focus();
+        searchInput.focus();
     });
 
-    document.getElementById('searchInput').addEventListener('input', debounce(function() {
+    searchInput.addEventListener('input', debounce(function() {
         var searchText = this.value.toLowerCase();
         removeAllHighlights();
         if (searchText) {
@@ -86,6 +54,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }, 250));
 
+    // Copy to clipboard functionality
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const codeBlock = document.querySelector(this.getAttribute('data-copy-target'));
+            navigator.clipboard.writeText(codeBlock.textContent).then(() => {
+                this.textContent = 'Copied!';
+                setTimeout(() => { this.textContent = 'Copy'; }, 2000);
+            });
+        });
+    });
+
+    // Utility functions
     function highlightOccurrences(node, searchText) {
         removeAllHighlights();
         var walk = document.createTreeWalker(node, NodeFilter.SHOW_TEXT, null, false);
@@ -138,14 +118,23 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // Copy to clipboard functionality
-    document.querySelectorAll('.copy-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const codeBlock = document.querySelector(btn.getAttribute('data-copy-target'));
-            navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-                btn.textContent = 'Copied!';
-                setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
-            });
+    // Sidebar link click event handling
+    document.querySelectorAll('.sidebar-link').forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            var contentId = this.getAttribute('href');
+            updateMainContent(contentId);
         });
     });
+
+    function updateMainContent(contentId) {
+        document.querySelectorAll('.content-section').forEach(section => {
+            section.style.display = 'none';
+        });
+
+        var targetSection = document.querySelector(contentId);
+        if (targetSection) {
+            targetSection.style.display = 'block';
+        }
+    }
 });
