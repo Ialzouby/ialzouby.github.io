@@ -39,12 +39,6 @@ html {
   /* Safari 6.0 - 9.0 */
   filter: grayscale(100%); }
 
-footer a:not(.nav-link) {
-  color: inherit;
-  border-bottom: 1px dashed;
-  text-decoration: none;
-  cursor: pointer; }
-
 @media (min-width: 48em) {
   .site-title {
     float: left; }

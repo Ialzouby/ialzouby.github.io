@@ -1,9 +1,5 @@
 /* Basic Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 
 /* Typography - Similar to Apple's style */
 body, h1, h2, h3, p {
@@ -30,28 +26,77 @@ body.dark-mode {
 }
 
 /* Header Styles */
+/* Basic Reset */
+/* Basic Reset */
+/* Header Styles */
+/* Header Styles */
+/* Header Styles */
 header {
     background-color: #57b0dd;
-    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 12px;
-    text-align: center;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(168, 2, 2, 0.1);
-    position: relative; 
-    z-index: 1000; 
+    color: #ffffff;
+    position: relative;
+}
+
+.profile-pic-container {
+    position: absolute;
+    left: 95px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.profile-pic {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+}
+
+.header-content {
+    text-align: center;
+}
+
+.title-image {
+    /* Adjust the size as needed */
+    max-width: 400px; /* Example size, adjust as necessary */
+    height: auto; /* Maintain aspect ratio */
+}
+
+header nav {
+    margin-top: 8px;
 }
 
 header a {
-    color: #2c0fab;
-    margin: 0 6px;
+    color: #ffffff;
+    margin: 0 10px;
     text-decoration: none;
+    font-weight: 500;
 }
 
 header a:hover {
     color: #ab0b0b;
 }
 
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
 
+    .profile-pic-container {
+        position: static;
+        transform: none;
+    }
+
+    .header-content {
+        width: 100%;
+    }
+}
 
 /* Main Content Styles */
 /* Main Content Styles */
@@ -125,7 +170,7 @@ nav a:hover {
 
 /* Footer Styles */
 footer {
-    background-color: #e8e8e8;
+    background-color: #04b0df;
     color: #444;
     padding: 12px;
     text-align: center;
@@ -362,12 +407,7 @@ padding: 20px;
 
 
 /* Updates Bar Styles */
-/* Header Styles */
-header {
-    /* Existing header styles... */
-    position: relative; /* Needed for z-index to work */
-    z-index: 1000; /* Ensure header stays on top */
-}
+
 
 /* Updates Bar Styles */
 /* Updates Bar Styles - Copying the style of the nav bar */
@@ -680,3 +720,28 @@ body.dark-mode .sidebar {
     }
 }
 
+
+/* Add any additional specific styles for the header here */
+footer {
+    background-color: #57b0dd; /* Unique background color */
+    color: #ffffff; /* Text color */
+    padding: 12px;
+    text-align: center;
+}
+
+footer a {
+    color: #2c0fab; /* Style for links in the footer */
+    margin: 0 6px;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ab0b0b; /* Hover effect for links */
+}
+
+footer p {
+    margin-top: 1em;
+    font-size: 0.9em;
+}
+
+/* Add any additional specific styles for the footer here */

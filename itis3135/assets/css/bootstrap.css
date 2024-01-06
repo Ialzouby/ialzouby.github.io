@@ -462,15 +462,7 @@ mark,
   font-size: 1.25rem;
 }
 
-.blockquote-footer {
-  display: block;
-  font-size: 80%;
-  color: #6c757d;
-}
 
-.blockquote-footer::before {
-  content: "\2014\00A0";
-}
 
 .img-fluid {
   max-width: 100%;
@@ -4783,15 +4775,7 @@ input[type="button"].btn-block {
 
 
 
-.card-footer {
-  padding: 0.75rem 1.25rem;
-  background-color: rgba(0, 0, 0, 0.03);
-  border-top: 1px solid rgba(0, 0, 0, 0.125);
-}
 
-.card-footer:last-child {
-  border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
-}
 
 
 .card-img-overlay {
@@ -6036,24 +6020,7 @@ a.close.disabled {
   padding: 1rem;
 }
 
-.modal-footer {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  padding: 0.75rem;
-  border-top: 1px solid #dee2e6;
-  border-bottom-right-radius: calc(0.3rem - 1px);
-  border-bottom-left-radius: calc(0.3rem - 1px);
-}
 
-.modal-footer > * {
-  margin: 0.25rem;
-}
 
 .modal-scrollbar-measure {
   position: absolute;
