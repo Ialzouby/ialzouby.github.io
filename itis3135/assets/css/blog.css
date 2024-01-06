@@ -90,6 +90,10 @@
 	text-align: center;
 	border-radius: 50%;
 	transition: all 500ms ease;
+	-webkit-transition: all 500ms ease;
+	-moz-transition: all 500ms ease;
+	-ms-transition: all 500ms ease;
+	-o-transition: all 500ms ease;
 }
 
 .news-block-one.carousel-block .owl-nav button.owl-prev{

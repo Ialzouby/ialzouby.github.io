@@ -122,6 +122,10 @@ estimonial page end */
 
 .blog__details__content .blog__image img {
     border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    -ms-border-radius: 5px 5px 0px 0px;
+    -o-border-radius: 5px 5px 0px 0px;
 }
 h3.blog__title {
     font-size: 26px;

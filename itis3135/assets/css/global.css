@@ -41,10 +41,10 @@
 
 body {
   font-size:16px;
-  color:#fff;
+  color:#f7eded;
   line-height:28px;
   font-weight:400;
-  background:#ffffff;
+  background:#a9afb0ae;
   font-family: 'Archivo', sans-serif;
   background-size:cover;
   background-repeat:no-repeat;
@@ -77,7 +77,7 @@ body {
   margin: 0 auto;
   overflow: hidden !important;
   width: 100%;
-  min-width: 300px;
+  min-width: 200px;
 }
 
 
@@ -1315,7 +1315,7 @@ img {
   visibility: visible;
   right: 100%;
   -webkit-transition: all .8s ease-out 0s;
-  -o-transition: all .8s ease-out 0s
+  -o-transition: all .8s ease-out 0s;
 }
 
 .mobile-menu .menu-box{
@@ -1936,7 +1936,7 @@ body.out .mouse-pointer {
 
 /* padding */
 .see__pad{
-  padding:140px 0px;
+  padding:70px 0px;
 }
 
 .p_relative{

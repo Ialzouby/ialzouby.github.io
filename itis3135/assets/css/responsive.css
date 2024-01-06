@@ -90,7 +90,7 @@ body.home__three {
   margin-top: 0px;
 }
 .see__pad{
-  padding: 100px 0px;
+  padding: 0px 0px;
 }
 br{
   display: none;
@@ -355,7 +355,7 @@ body.home__three {
     display: block;
   }
   .brand__section.p_relative.see__pad {
-    padding: 50px 0px 0px;
+    padding: 5px 0px 0px;
 }
 .mission__block {
   padding: 40px;

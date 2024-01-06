@@ -8,16 +8,20 @@
 /* Typography - Similar to Apple's style */
 body, h1, h2, h3, p {
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    color: #333;
+    color: #444444;
     line-height: 1.6;
 }
 
 /* Body Styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #e8e8e8;
-    color: #444;
+    background-color: #cccccc;
+    color: #3a3838;
     margin: 15px;
+}
+
+.blog-blog {
+    background: #00061A;
 }
 
 body.dark-mode {
