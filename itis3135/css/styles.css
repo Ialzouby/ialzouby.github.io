@@ -745,3 +745,24 @@ footer p {
 }
 
 /* Add any additional specific styles for the footer here */
+
+
+.blog__title {
+    color: #7ac3f5;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.blog__details__text p {
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+#keyFeatures ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+#keyFeatures ul li {
+    margin-bottom: 5px;
+}
