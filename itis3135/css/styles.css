@@ -25,131 +25,8 @@ body.dark-mode {
     color: #f8f8f7; /* Light text for the body */
 }
 
-/* Header Styles */
-/* Basic Reset */
-/* Basic Reset */
-/* Header Styles */
-/* Header Styles */
-/* Header Styles */
-header {
-    background-color: #57b0dd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(168, 2, 2, 0.1);
-    color: #ffffff;
-    position: relative;
-}
 
-.profile-pic-container {
-    position: absolute;
-    left: 95px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.profile-pic {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-}
-
-.header-content {
-    text-align: center;
-}
-
-.title-image {
-    /* Adjust the size as needed */
-    max-width: 400px; /* Example size, adjust as necessary */
-    height: auto; /* Maintain aspect ratio */
-}
-
-header nav {
-    margin-top: 8px;
-}
-
-header a {
-    color: #ffffff;
-    margin: 0 10px;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-header a:hover {
-    color: #ab0b0b;
-}
-
-/* Responsive Design Adjustments */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .profile-pic-container {
-        position: static;
-        transform: none;
-    }
-
-    .header-content {
-        width: 100%;
-    }
-}
-
-/* Main Content Styles */
-/* Main Content Styles */
-.main-content {
-    margin-left: 5px; /* Equal to the sidebar width */
-    margin-right: 5px; /* Equal to the updates bar width */
-    padding: 20px; /* Adjust padding as needed */
-    background-color: #fff;
-    flex-grow: 1; /* Take available space */
-    
-}
-
-@media (min-width: 1400px) {
-    .main-content {
-        max-width: 90%; /* Or any other percentage that looks good */
-    }
-}
-
-
-body.dark-mode .main-content {
-    background-color: #555; /* Slightly lighter background for main content */
-    color: #eee; /* Light text for main content */
-}
-
-body.dark-mode .main-content h1, 
-body.dark-mode .main-content h2, 
-body.dark-mode .main-content h3, 
-body.dark-mode .main-content p {
-    color: #ccc; /* Specific text color for headings and paragraphs in main content */
-}
-
-
-/* Add more dark mode specific styles as needed */
-
-
-/* Header Styles */
-header {
-    background-color: #57b0dd;
-    color: #ffffff;
-    padding: 12px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(168, 2, 2, 0.1);
-}
-
-/* Typography - Similar to Apple's style */
-h1, nav a, footer nav a, footer p {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    color: #333;
-    line-height: 1.6;
-}
-
-/* Navigation Link Styles */
+/* Navigation Link Styles 
 nav a {
     display: inline-block;
     padding: 5px 15px;
@@ -167,6 +44,8 @@ nav a {
 nav a:hover {
     background-color: #0077c0;
 }
+
+*/
 
 /* Footer Styles */
 footer {
@@ -765,4 +644,182 @@ footer p {
 
 #keyFeatures ul li {
     margin-bottom: 5px;
+}
+
+/* General styling for the navigation bar */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Adjust the space between the buttons */
+}
+
+/* Styling for the image buttons */
+.nav-button {
+    max-width: 100px;
+    margin-top: 5px; 
+    /*Setsthemaximumwidthofthebuttons*/max-height: 50px;
+    /*Setsthemaximumheightofthebuttons*/box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    /*Addsashadowfordepth*/transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /*Smoothtransitionforhovereffects*/border-radius: 10px;
+    /*Optional: Adds rounded corners */;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.nav-button:hover {
+    transform: scale(1.05); /* Slightly enlarges the button on hover */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Enhances the shadow on hover */
+}
+
+/* Additional styling for the header */
+.header-content {
+    text-align: center; /* Center the content */
+    padding: 10px; /* Add some padding around the content */
+}
+
+
+.link-text {
+    position: absolute;
+    left: -9999px;
+}
+
+
+header {
+    background-color: #57b0dd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(168, 2, 2, 0.1);
+    color: #ffffff;
+    position: relative;
+}
+
+.profile-pic-container {
+    position: absolute;
+    left: 95px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.profile-pic {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+}
+
+.header-content {
+    text-align: center;
+}
+
+.title-image {
+    /* Adjust the size as needed */
+    max-width: 400px; /* Example size, adjust as necessary */
+    height: auto; /* Maintain aspect ratio */
+}
+
+header nav {
+    margin-top: 8px;
+}
+
+header a {
+    color: #ffffff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+header a:hover {
+    color: #ab0b0b;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-pic-container {
+        position: static;
+        transform: none;
+    }
+
+    .header-content {
+        width: 100%;
+    }
+}
+
+/* Main Content Styles */
+/* Main Content Styles */
+.main-content {
+    margin-left: 5px; /* Equal to the sidebar width */
+    margin-right: 5px; /* Equal to the updates bar width */
+    padding: 20px; /* Adjust padding as needed */
+    background-color: #fff;
+    flex-grow: 1; /* Take available space */
+    
+}
+
+@media (min-width: 1400px) {
+    .main-content {
+        max-width: 90%; /* Or any other percentage that looks good */
+    }
+}
+
+
+body.dark-mode .main-content {
+    background-color: #555; /* Slightly lighter background for main content */
+    color: #eee; /* Light text for main content */
+}
+
+body.dark-mode .main-content h1, 
+body.dark-mode .main-content h2, 
+body.dark-mode .main-content h3, 
+body.dark-mode .main-content p {
+    color: #ccc; /* Specific text color for headings and paragraphs in main content */
+}
+
+
+/* Add more dark mode specific styles as needed */
+
+
+/* Header Styles */
+header {
+    background-color: #57b0dd;
+    color: #ffffff;
+    padding: 12px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(168, 2, 2, 0.1);
+}
+
+/* Typography - Similar to Apple's style */
+h1, nav a, footer nav a, footer p {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Typography */
+h1, nav a, footer nav a, footer p {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+.content-container {
+    display: flex;
+    margin: 10px; 
+    height: 100%; /* Full height */
+    width: 100%; /* Full width */
+    border: 2px solid black; /* Black ring around the container */
+    border-radius: 15px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    overflow: hidden; /* Ensures the content inside also respects the border radius */
 }
