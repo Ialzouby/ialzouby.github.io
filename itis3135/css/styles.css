@@ -24,6 +24,12 @@ body.dark-mode {
     background-color: #333; /* Dark background for the body */
     color: #f8f8f7; /* Light text for the body */
 }
+body hr.d-print-none {
+    border: 0;
+    border-top: 1.5px solid #000000; /* Thicker and darker line */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
 
 
 /* Navigation Link Styles 
@@ -672,6 +678,34 @@ nav {
 .nav-button:hover {
     transform: scale(1.05); /* Slightly enlarges the button on hover */
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Enhances the shadow on hover */
+}
+
+.footer .nav-button {
+    width: 60px; /* Adjust the size as needed */
+    height: 60px; 
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 10px; /* Adjust spacing as needed */
+    /* Add any additional styling here */
+}
+
+
+footer .nav-button:hover {
+    /* Hover effect - adjust as needed */
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .footer .nav-button {
+        width: 30px; /* Smaller size for mobile */
+        height: auto;
+        margin: 0 5px; /* Reduced spacing for mobile */
+    }
+
+    /* Adjust the footer navigation layout for mobile */
+    .footer nav {
+        text-align: center; /* Center-align the navigation links */
+        padding: 10px 0; /* Add some padding */
+    }
 }
 
 /* Additional styling for the header */
