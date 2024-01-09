@@ -754,6 +754,27 @@ header a:hover {
     }
 }
 
+@media (max-width: 768px) {
+    .header-content img {
+        max-width: 80%; /* Resize the title image */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .profile-pic-container img {
+        width: 100px; /* Resize the profile picture */
+        height: 100px; /* Maintain aspect ratio */
+    }
+
+    .header-content nav {
+        margin-top: 10px; /* Adjust spacing */
+    }
+
+    nav a img {
+        width: 30px; /* Resize nav button images */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
 /* Main Content Styles */
 /* Main Content Styles */
 .main-content {
