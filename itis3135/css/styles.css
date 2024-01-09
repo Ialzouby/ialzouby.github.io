@@ -598,14 +598,13 @@ body.dark-mode .sidebar {
         display: none;
     }
 }
-
-
-/* Add any additional specific styles for the header here */
 footer {
     background-color: #57b0dd; /* Unique background color */
     color: #ffffff; /* Text color */
     padding: 12px;
     text-align: center;
+    border-radius: 10px; /* Rounded edges */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow effect */
 }
 
 footer a {
@@ -622,6 +621,7 @@ footer p {
     margin-top: 1em;
     font-size: 0.9em;
 }
+
 
 /* Add any additional specific styles for the footer here */
 
