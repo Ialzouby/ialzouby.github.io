@@ -516,18 +516,23 @@ body.dark-mode .main-content code {
     .code-block {
         padding: 5px;
         margin-bottom: 5px;
+        overflow-x: auto; /* Enables horizontal scrolling for the entire block if needed */
     }
 
     .code-block pre {
         white-space: pre-wrap; /* Allows the code to wrap */
         word-wrap: break-word; /* Breaks long words */
-        overflow-x: auto; /* Enables horizontal scrolling if needed */
+        overflow-x: auto; /* Enables horizontal scrolling for pre tag */
+        max-width: 100%; /* Ensures the pre tag does not exceed the container width */
     }
 
     .code-block code {
         font-size: smaller; /* Optionally reduce the font size */
+        display: inline-block; /* Changes display to inline-block for better wrapping */
+        max-width: 100%; /* Ensures code does not exceed the container width */
     }
 }
+
 
   
 .copy-btn {
