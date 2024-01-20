@@ -886,3 +886,89 @@ h1, nav a, footer nav a, footer p {
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
     overflow: hidden; /* Ensures the content inside also respects the border radius */
 }
+
+
+body.dark-mode .text-container, body.dark-mode .code-block, body.dark-mode .code-block pre {
+    background-color: #333; /* Dark grey background */
+    color: #f8f8f7; /* White text color */
+}
+
+body.dark-mode .code-block code {
+    background-color: transparent;
+    color: #f8f8f7; /* White text color for code */
+}
+
+/* Existing styles */
+body.dark-mode .updates-bar {
+    background-color: #333;
+    color: #f8f8f7;
+}
+
+body.dark-mode .updates-bar a {
+    color: #f8f8f7;
+}
+
+body.dark-mode nav a {
+    color: #f8f8f7;
+}
+
+body.dark-mode .sidebar ul li a, body.dark-mode .sidebar ul li .folder-name {
+    color: #f8f8f7;
+}
+
+body.dark-mode .main-content p {
+    color: #f8f8f7; /* Adjusting to white color for dark mode */
+}
+
+body.dark-mode .main-content ol li, body.dark-mode .main-content ul li {
+    color: #f8f8f7;
+}
+
+body.dark-mode .main-content code {
+    color: #f8f8f7; /* Adjusting to white color for dark mode */
+}
+body.dark-mode code {
+    background-color: #333; /* Dark grey background for code elements in dark mode */
+    color: #f8f8f7; /* Light color for the text, optional */
+    /* Additional styling */
+    padding: 2px 4px;
+    border-radius: 2px;
+    font-family: monospace;
+}
+body.dark-mode .internship-notice a {
+    color: #02b2fe; /* White color for links in dark mode */
+    text-decoration: none;
+}
+
+body.dark-mode #introSection {
+    background-color: #333; /* Dark background color for the intro section in dark mode */
+    color: #f8f8f7; /* Light color for the text in dark mode */
+}
+
+body.dark-mode #introSection h2,
+body.dark-mode #introSection p {
+    color: #f8f8f7; /* Ensuring all text elements are styled for dark mode */
+}
+
+
+
+
+body.dark-mode .button-bar {
+    background-color: #333; /* Dark background for the button bar in dark mode */
+    /* Additional dark mode styling for the button bar */
+}
+
+body.dark-mode #menu-toggle .button-container span {
+    background-color: #f8f8f7; /* Light color for hamburger lines in dark mode */
+}
+
+body.dark-mode .icon-buttons .image-button img {
+    filter: invert(1); /* Inverts the color of the icons for better visibility in dark mode */
+}
+
+body.dark-mode #searchInput {
+    background-color: #555; /* Darker background for the search field */
+    color: #f8f8f7; /* Light color for the text */
+    /* Additional dark mode styling for the search input */
+}
+
