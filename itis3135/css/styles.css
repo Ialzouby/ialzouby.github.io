@@ -533,6 +533,16 @@ body.dark-mode .main-content code {
     }
 }
 
+@media (max-width: 480px) {
+    .custom-list li, 
+    .custom-list li strong, 
+    .custom-list li h3 {
+        word-wrap: break-word; /* Breaks long words to prevent overflow */
+        white-space: normal; /* Allows wrapping */
+        overflow-wrap: break-word; /* Ensures proper word breaking */
+        hyphens: auto; /* Automatically adds hyphens where appropriate */
+    }
+}
 
   
 .copy-btn {
