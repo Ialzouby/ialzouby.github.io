@@ -504,6 +504,14 @@ body.dark-mode .main-content code {
     background-color: transparent;
     color: #333;
 }
+
+@media (max-width: 480px) {
+    .code-snippets {
+      padding: 10px;
+      border-radius: 2px;
+    }
+  }
+  
 .copy-btn {
     position: absolute;
     top: 5px;
