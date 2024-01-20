@@ -511,6 +511,24 @@ body.dark-mode .main-content code {
       border-radius: 2px;
     }
   }
+
+  @media (max-width: 480px) {
+    .code-block {
+        padding: 5px;
+        margin-bottom: 5px;
+    }
+
+    .code-block pre {
+        white-space: pre-wrap; /* Allows the code to wrap */
+        word-wrap: break-word; /* Breaks long words */
+        overflow-x: auto; /* Enables horizontal scrolling if needed */
+    }
+
+    .code-block code {
+        font-size: smaller; /* Optionally reduce the font size */
+    }
+}
+
   
 .copy-btn {
     position: absolute;
