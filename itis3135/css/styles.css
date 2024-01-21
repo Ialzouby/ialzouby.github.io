@@ -1145,3 +1145,161 @@ body.dark-mode #searchInput {
         }
     }
     
+
+
+
+
+/* Styles for larger screens */
+@media (min-width: 768px) {
+    .nav-button {
+        width: 60px; /* Or your preferred size */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+/* Styles for smaller screens */
+@media (max-width: 767px) {
+    .profile-pic-container img, .title-image {
+        width: 50%; /* Adjust the size to fit smaller screens */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .nav-button {
+        width: 40px; /* Increase size for better visibility on small screens */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .header-content {
+        text-align: center; /* Center the content for smaller screens */
+    }
+
+    nav {
+        display: flex;
+        justify-content: center; /* Center navigation buttons */
+    }
+}
+
+
+
+/* Styles for smaller screens */
+@media (max-width: 767px) {
+    .profile-pic-container {
+        width: 50%; /* Adjust the width of the container */
+        margin: 0 auto; /* Center the container */
+    }
+
+    .profile-pic-container img {
+        width: 100%; /* The image will take the full width of its container */
+    }
+
+    /* ... other styles ... */
+}
+
+/* ... other existing styles ... */
+
+
+
+
+
+
+
+
+
+
+
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.center-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-image {
+    width: 400px; /* Example fixed width, adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure it doesn't exceed the width of its container */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 767px) {
+    .title-image {
+        width: 150px; /* Smaller width for mobile devices */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px; /* Space between title image and nav buttons */
+}
+
+.nav-button {
+    /* Adjust size as necessary */
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 767px) {
+    /* Responsive adjustments */
+  
+
+.profile-pic {
+    width: 800px; /* Precise size for larger screens */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 10vw; /* Scale size relative to the viewport width */
+}
+}
+
+
+
+/* Styles for smaller screens */
+@media (max-width: 767px) {
+    .profile-pic-container {
+        margin-left: 0; /* Removes any left margin */
+        padding-left: 5px; /* Adds a little padding if needed */
+        /* Alternatively, you can use absolute positioning */
+        position: absolute;
+        left: 5px; /* Adjust this value as needed */
+    }
+}
+
+
+
+
+
+
+
+.profile-pic-container {
+    flex: 0 0 auto; /* Allows this container to maintain its size */
+    padding-left: 10px; /* Adjust as needed for mobile layout */
+}
+
+@media (max-width: 767px) {
+    .profile-pic-container {
+        flex-grow: 1; /* Allows the container to grow if needed */
+        display: flex;
+        justify-content: flex-start; /* Aligns the profile picture to the left */
+        padding-left: 25px; /* Adjust left padding for smaller screens */
+        margin-top: -40px;
+        
+    }
+
+    .profile-pic {
+        max-width: 70px; /* Adjust the maximum width of the profile picture */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    /* Add additional styling for other header elements */
+}
+

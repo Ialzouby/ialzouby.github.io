@@ -144,9 +144,24 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+
+
+
+
+    // Handle sidebar link click for mobile view
+    var sidebarLinks = document.querySelectorAll('.sidebar a');
+    sidebarLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+            if (window.innerWidth < 1025) {
+                // Close the sidebar
+                document.body.classList.toggle('sidebar-closed');
+            }
+        });
+    });
 });
 
-
+// Additional code outside of DOMContentLoaded
 if (window.innerWidth < 768) {
     document.body.classList.add('sidebar-closed');
 }
