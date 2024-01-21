@@ -1303,3 +1303,6 @@ nav {
     /* Add additional styling for other header elements */
 }
 
+.blog__image {
+    margin-top: 20px; /* Adjust the value as needed */
+}
