@@ -142,35 +142,6 @@ footer img {
     cursor: pointer;
 }
 
-.content-section {
-padding: 20px; 
-   margin-top: 20px; 
-   margin-left: 20px; 
-   margin-bottom: 20px 
-}
-
-
-.content-section h2 {
-    color: #333;
-    font-weight: normal;
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.content-section p, .content-section li {
-    color: #666;
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 25px; 
-}
-
-.content-section code {
-    background-color: #e1dfdf;
-    padding: 2px 4px;
-    border-radius: 3px;
-    font-family: monospace;
-}
-
 .custom-list {
     counter-reset: item; /* Initialize the counter */
     list-style-type: none;
@@ -310,6 +281,11 @@ padding: 20px;
     min-width: 250px; 
 
     /* position: static; */ /* Removed fixed positioning */
+}
+@media (max-width: 1024px) {
+    .updates-bar {
+        display: none;
+    }
 }
 
 .content-flex-container {
@@ -487,51 +463,6 @@ body.dark-mode .main-content code {
     padding: 15px;
 }
 
-.code-block {
-    position: relative;
-
-    background-color: #f0f0f0;
-    border-left: 3px solid #9b59b6;
-    margin-bottom: 10px;
-    padding: 10px;
-}
-
-.code-block pre {
-    margin: 0;
-}
-
-.code-block code {
-    background-color: transparent;
-    color: #333;
-}
-
-@media (max-width: 480px) {
-    .code-snippets {
-      padding: 10px;
-      border-radius: 2px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .code-block {
-        padding: 5px;
-        margin-bottom: 5px;
-        overflow-x: auto; /* Enables horizontal scrolling for the entire block if needed */
-    }
-
-    .code-block pre {
-        white-space: pre-wrap; /* Allows the code to wrap */
-        word-wrap: break-word; /* Breaks long words */
-        overflow-x: auto; /* Enables horizontal scrolling for pre tag */
-        max-width: 100%; /* Ensures the pre tag does not exceed the container width */
-    }
-
-    .code-block code {
-        font-size: smaller; /* Optionally reduce the font size */
-        display: inline-block; /* Changes display to inline-block for better wrapping */
-        max-width: 100%; /* Ensures code does not exceed the container width */
-    }
-}
 
 @media (max-width: 480px) {
     .custom-list li, 
@@ -543,8 +474,19 @@ body.dark-mode .main-content code {
         hyphens: auto; /* Automatically adds hyphens where appropriate */
     }
 }
+@media (max-width: 480px) {
+    #setup p, 
+    #setup li, 
+    #setup h3 {
+        word-wrap: break-word; /* Breaks long words to prevent overflow */
+        white-space: normal; /* Allows wrapping */
+        overflow-wrap: break-word; /* Ensures proper word breaking */
+        hyphens: auto; /* Automatically adds hyphens where appropriate */
+    }
+}
 
-  
+
+
 .copy-btn {
     position: absolute;
     top: 5px;
@@ -1005,3 +947,201 @@ body.dark-mode #searchInput {
     /* Additional dark mode styling for the search input */
 }
 
+.content-section {
+    padding: 20px; 
+       margin-top: 20px; 
+       margin-left: 20px; 
+       margin-bottom: 20px 
+    }
+    
+    
+    .content-section h2 {
+        color: #333;
+        font-weight: normal;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    
+    .content-section p, .content-section li {
+        color: #666;
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 25px; 
+    }
+    
+    .content-section code {
+        background-color: #e1dfdf;
+        padding: 2px 4px;
+        border-radius: 3px;
+        font-family: monospace;
+    }
+    
+    #setup.content-section {
+        padding: 20px; 
+        margin-top: 20px; 
+        margin-left: 20px; 
+        margin-bottom: 20px; 
+    }
+    
+    #setup.content-section h2 {
+        color: #333;
+        font-weight: normal;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    
+    #setup.content-section p, #setup.content-section li {
+        color: #666;
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 25px; 
+    }
+    
+    #setup.content-section code {
+        background-color: #e1dfdf;
+        padding: 2px 4px;
+        border-radius: 3px;
+        font-family: monospace;
+    }
+
+
+    @media (max-width: 480px) {
+        #setup.content-section {
+            width: 100%; /* Ensures the section takes up the full width of its container */
+            padding: 10px; /* Adjust padding for smaller screens */
+            box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+            
+            /* Additional responsive adjustments as needed */
+        }
+    
+        #setup.content-section .text-container,
+        #setup.content-section .setup-guide {
+            /* Adjust the internal elements if necessary */
+            width: 100%; /* Full width for smaller screens */
+            padding: 5px; /* Smaller padding for internal elements */
+        }
+    
+    }
+
+    .code-block {
+        position: relative;
+    
+        background-color: #f0f0f0;
+        border-left: 3px solid #9b59b6;
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+    
+    .code-block pre {
+        margin: 0;
+    }
+    
+    .code-block code {
+        background-color: transparent;
+        color: #333;
+    }
+    
+    @media (max-width: 480px) {
+        .code-snippets {
+          padding: 10px;
+          border-radius: 2px;
+        }
+      }
+    
+      @media (max-width: 480px) {
+        .code-block {
+            padding: 5px;
+            margin-bottom: 5px;
+            overflow-x: auto; /* Enables horizontal scrolling for the entire block if needed */
+        }
+    
+        .code-block pre {
+            white-space: pre-wrap; /* Allows the code to wrap */
+            word-wrap: break-word; /* Breaks long words */
+            overflow-x: auto; /* Enables horizontal scrolling for pre tag */
+            max-width: 100%; /* Ensures the pre tag does not exceed the container width */
+        }
+    
+        .code-block code {
+            font-size: smaller; /* Optionally reduce the font size */
+            display: inline-block; /* Changes display to inline-block for better wrapping */
+            max-width: 100%; /* Ensures code does not exceed the container width */
+        }
+    }
+    @media (max-width: 480px) {
+        .content-section, #setup.content-section {
+            padding: 10px; 
+            margin-top: 10px; 
+            margin-left: 10px; 
+            margin-bottom: 10px; 
+            margin-right: 10px;
+        }
+    
+        .content-section h2, #setup.content-section h2 {
+            font-size: 20px; /* Slightly smaller for mobile */
+            margin-bottom: 5px;
+        }
+    
+        .content-section p, .content-section li, 
+        #setup.content-section p, #setup.content-section li {
+            font-size: 14px; /* Slightly smaller font size */
+            margin-bottom: 15px;
+        }
+    
+        .content-section code, #setup.content-section code,
+        .code-snippets, .code-block, .code-block pre, .code-block code {
+            font-size: smaller; /* Adjust font size */
+            overflow-x: auto; /* Add horizontal scroll if needed */
+            max-width: 100%; /* Prevent overflow */
+        }
+    }
+    .code-block pre {
+        white-space: pre-wrap; /* Allows the text to wrap */
+        word-wrap: break-word; /* Ensures long words do not cause overflow */
+        overflow-x: auto; /* Adds horizontal scrolling if necessary */
+        max-width: 100%; /* Prevents the element from extending beyond its container */
+        margin: 0; /* Adjust margin as needed */
+    }
+    
+ 
+    
+    @media (max-width: 480px) {
+        .code-block {
+            padding: 5px; /* Reduced padding */
+            margin-bottom: 5px;
+        }
+    
+        .code-block pre {
+            white-space: pre-wrap; /* Allows the text to wrap */
+            word-wrap: break-word; /* Breaks long words */
+            overflow-x: auto; /* Enables horizontal scrolling */
+            max-width: 100%; /* Prevents overflow */
+            font-size: 12px; /* Smaller font size for mobile */
+            padding: 5px; /* Reduced padding */
+        }
+    
+        .code-block code {
+            font-size: 12px; /* Smaller font size for code */
+        }
+    }
+    .code-block {
+        /* Existing styles... */
+        max-height: 300px; /* Or any other suitable value */
+        overflow-y: auto; /* Enables vertical scrolling if content overflows */
+    }
+    .code-block pre {
+        white-space: pre-wrap; /* Allows text to wrap to the next line */
+        word-wrap: break-word; /* Legacy wrapping for older browsers */
+        overflow-x: auto; /* Horizontal scrolling if needed */
+        max-width: 100%; /* Prevents extending past the container */
+        word-break: break-all; /* Breaks long words/URLs to prevent overflow */
+    }
+    
+    @media (max-width: 480px) {
+        .code-block pre {
+            /* Adjustments for smaller screens */
+            padding: 5px;
+            font-size: smaller;
+        }
+    }
+    
