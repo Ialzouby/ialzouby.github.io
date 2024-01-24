@@ -398,10 +398,7 @@ footer img {
     margin-top: 30px; /* Adjust as needed */
 }
 
-body.dark-mode .updates-bar {
-    background-color: #333; /* Dark background for updates bar */
-    color: #f8f8f7; /* Light text color */
-}
+
 
 body.dark-mode .updates-bar a {
     color: #f8f8f7; /* Light text color for links */
@@ -422,9 +419,7 @@ body.dark-mode .main-content ol li,
 body.dark-mode .main-content ul li {
     color: #f8f8f7; /* Light white color */
 }
-body.dark-mode .main-content code {
-    color: #000000; /* Dark black color */
-}
+
 #modeToggle {
     border: none;
     background: none;
@@ -863,9 +858,12 @@ h1, nav a, footer nav a, footer p {
 }
 
 
+
+
+
 body.dark-mode .text-container, body.dark-mode .code-block, body.dark-mode .code-block pre {
     background-color: #333; /* Dark grey background */
-    color: #f8f8f7; /* White text color */
+    color: #ffffff; /* White text color */
 }
 
 body.dark-mode .code-block code {
@@ -873,11 +871,17 @@ body.dark-mode .code-block code {
     color: #f8f8f7; /* White text color for code */
 }
 
+body.dark-mode .main-content code {
+    color: #000000; /* Dark black color */
+}
+
 /* Existing styles */
 body.dark-mode .updates-bar {
-    background-color: #333;
+    background-color: #444;
     color: #f8f8f7;
 }
+
+
 
 body.dark-mode .updates-bar a {
     color: #f8f8f7;
@@ -1305,4 +1309,119 @@ nav {
 
 .blog__image {
     margin-top: 20px; /* Adjust the value as needed */
+}
+
+
+/* Styling for code containers */
+.code-container {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.code-header {
+    background-color: #8c8c8c;
+    color: #1e1e1e;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.code-block {
+    padding: 10px;
+    position: relative;
+}
+
+.code-block pre {
+    margin: 0;
+    overflow-x: auto;
+}
+
+
+
+
+/* code block */
+
+
+
+.code-container {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.code-header {
+    background-color: #eee;
+    color: #333;
+    padding: 10px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Adding relative positioning */
+}
+
+.code-block {
+    padding: 10px;
+    position: relative;
+}
+
+.code-block pre {
+    margin: 0;
+    overflow-x: auto;
+}
+
+/* Enhanced code styling */
+.keyword {
+    color: #008b8b; /* Teal */
+}
+
+.class-name {
+    color: #00BFFF; /* Deep Sky Blue */
+}
+
+.variable {
+    color: #6A5ACD; /* Slate Blue */
+}
+
+.string {
+    color: #00762d; /* Goldenrod */
+}
+
+.comment {
+    color: #B22222; /* Firebrick */
+    font-style: italic;
+}
+
+.copy-btn {
+    padding: 5px 10px;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    position: absolute; /* Positioning the button absolutely within its parent */
+    right: 10px; /* Positioning the button to the right */
+    top: 50%;
+    transform: translateY(-50%); /* Centering the button vertically */
+}
+
+.copy-btn:hover {
+    background-color: #1976D2;
+}
+
+/* Dark mode styles */
+body.dark-mode .code-block pre, body.dark-mode .code-block pre code {
+    background-color: #1e1e1e; /* Dark background for all code blocks */
+    color: #f8f8f7; /* Light text color for better contrast */
+    padding: 10px;
+    border-radius: 4px;
+    overflow-x: auto;
+}
+
+body.dark-mode .code-block pre code {
+    background-color: transparent;
 }
