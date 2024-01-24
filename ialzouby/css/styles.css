@@ -1425,3 +1425,86 @@ body.dark-mode .code-block pre, body.dark-mode .code-block pre code {
 body.dark-mode .code-block pre code {
     background-color: transparent;
 }
+
+.assembly-guide-section {
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .assembly-guide-section {
+    background-color: #2c3e50;
+    color: #f8f8f7;
+}
+
+.guide-title {
+    color: #d35400; /* Vibrant orange */
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.intro-text {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.materials-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.tools-list, .parts-list {
+    background-color: #ecf0f1;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 45%;
+}
+
+body.dark-mode .tools-list, body.dark-mode .parts-list {
+    background-color: #34495e;
+}
+
+.materials-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.tools-title {
+    color: #8e44ad; /* Purple */
+}
+
+.parts-title {
+    color: #16a085; /* Teal */
+}
+
+body.dark-mode .tools-title, body.dark-mode .parts-title {
+    color: #48c9b0; /* Light teal for dark mode */
+}
+
+.steps-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.assembly-step {
+    margin-bottom: 20px;
+}
+
+.step-title {
+    font-weight: bold;
+    color: #3498db; /* Blue */
+    margin-bottom: 10px;
+}
+
+.step-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-top: 10px;
+}

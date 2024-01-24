@@ -169,3 +169,6 @@ if (window.innerWidth < 768) {
 document.getElementById('menu-toggle').addEventListener('click', function() {
     document.querySelector('.sidebar').classList.toggle('sidebar-closed');
 });
+
+
+
