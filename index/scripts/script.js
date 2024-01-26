@@ -8,8 +8,30 @@ document.addEventListener('DOMContentLoaded', function() {
         toggleIcon.src = document.body.classList.contains('dark-mode') ? 'images/dark.png' : 'images/light.png';
     });
 
-    // Add the 'active' class to trigger the fade-in animation
+    document.addEventListener('click', function(event) {
+        if (event.target.classList.contains('copy-btn')) {
+            var button = event.target;
+            var code = document.querySelector(button.getAttribute('data-copy-target')).innerText;
+            
+            navigator.clipboard.writeText(code).then(function() {
+                // Change button text to 'Copied'
+                button.textContent = 'Copied';
 
+                // Optional: Change back to 'Copy' after a few seconds
+                setTimeout(function() {
+                    button.textContent = 'Copy';
+                }, 3000); // Change back after 3 seconds
+
+            }, function(err) {
+                console.error('Error in copying text: ', err);
+                // Optional: Inform the user that the copy failed
+                button.textContent = 'Copy failed';
+                setTimeout(function() {
+                    button.textContent = 'Copy';
+                }, 3000);
+            });
+        }
+    });
 
 
     // Handle hamburger menu toggle
@@ -147,31 +169,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     loadNavbar();
-
-    // Copy to clipboard functionality
-    document.body.addEventListener('click', function(event) {
-        if (event.target.classList.contains('copy-btn')) {
-            const codeBlock = document.querySelector(event.target.getAttribute('data-copy-target'));
-            if (codeBlock) {
-                navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-                    event.target.textContent = 'Copied!';
-                    setTimeout(() => { event.target.textContent = 'Copy'; }, 2000);
-                }).catch(error => {
-                    console.error('Copy failed:', error);
-                    // Optionally, provide user feedback here
-                });
-            }
-        }
-    });
-    
-
-// Function to copy text to clipboard
-function copyToClipboard(text) {
-    const tempTextArea = document.createElement('textarea');
-    tempTextArea.value = text;
-    document.body.appendChild(tempTextArea);
-    tempTextArea.select();
-    document.execCommand('copy');
-    document.body.removeChild(tempTextArea);
-}
+   
 });

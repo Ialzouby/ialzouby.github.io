@@ -1406,7 +1406,7 @@ nav {
 
 /* Dark mode styles */
 body.dark-mode .code-block pre, body.dark-mode .code-block pre code {
-    background-color: #1e1e1e; /* Dark background for all code blocks */
+    /*background-color: #1e1e1e;  Dark background for all code blocks */
     color: #f8f8f7; /* Light text color for better contrast */
     padding: 10px;
     border-radius: 4px;
