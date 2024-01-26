@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="styles/default.css">
+    <style>
+       
+        .main-containerr {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 30vh;
+            background-color: #f0f0f0; 
+        }
+
+        .cylinder-button {
+            display: inline-block;
+            padding: 20px 40px;
+            background-color: #088cd8; 
+            color: #fff; 
+            border: none;
+            border-radius: 50px; 
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); 
+            transition: transform 0.2s ease-in-out;
+            margin: 10px; 
+        }
+
+        .cylinder-button:hover {
+            transform: translateY(-5px); 
+        }
+
+       
+        .button-container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div data-include="components/header.html"></div>
+        <script src="scripts/HTMLInclude.min.js"></script>
+    </header>
+
+    <main class="main-containerr"> 
+        <div class="button-containerr">
+            <a href="https://ai4health-production.up.railway.app/" class="cylinder-button" target="_blank">Ai4Health</a>
+            <a href="https://www.haircolorxpertsalon.com/" class="cylinder-button" target="_blank">HairColorXperts</a>
+            <a href="https://sonicsounds.up.railway.app/" class="cylinder-button" target="_blank">NASA</a>
+
+        </div> 
+    </main>
+
+    <footer>
+        <div data-include="components/footer.html"></div>
+        <script src="scripts/HTMLInclude.min.js"></script>
+    </footer>
+</body>
+</html>

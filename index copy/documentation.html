@@ -1,0 +1,705 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Docs</title>
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/styles.css">
+    
+
+    <style>
+        .main-content .content-section {
+            display: none;
+        }
+
+        .main-content #introSection {
+            display: block;
+        }
+        
+    </style>
+     <noscript>
+        <style type="text/css">
+            [data-aos] {
+                opacity: 1 !important;
+                transform: translate(0) scale(1) !important;
+            }
+        </style>
+    </noscript>
+</head>
+<body>
+    <div data-include="components/header.html"></div>
+
+    <div class="content-flex-container">
+
+        <div class="content-container">
+
+
+
+    <div class="sidebar">
+        <div class="sidebar-title">Project Docs</div>
+
+        <ul>
+            <li class="folder">
+                <span class="folder-name">Wav2Lip Project</span>
+                <ul class="folder-content">
+                    <li><a href="#setup" class="navbar-title">Initial Set-Up</a></li>
+
+                    <li><a href="#audioPySection" class="navbar-title">Audio.py</a></li>
+                    <li><a href="#syncnet" class="navbar-title">Color_syncnet_train.py</a></li>
+                    <li><a href="#hparams" class="navbar-title">Hparams.py</a></li>
+                    <li><a href="#hqWav2LipTrain" class="navbar-title">hqWav2LipTrain.py</a></li>
+                    <li><a href="#inferencePy" class="navbar-title">inference.py</a></li>
+                    <li><a href="#preprocessPy" class="navbar-title">preprocess.py</a></li>
+                    <li><a href="#wav2lipTrain" class="navbar-title">wav2lipTrain.py</a></li>
+
+                    <li class="folder">
+                        <span class="folder-name">Models</span>
+                        <ul class="folder-content">
+                            <li><a href="#init" class="navbar-title">__init__.py</a></li>
+                            <li><a href="#conv" class="navbar-title">conv.py</a></li>
+                            <li><a href="#syncnet" class="navbar-title">syncnet.py</a></li>
+                            <li><a href="#wav2lip" class="navbar-title">wav2lip.py</a></li>
+</ul>
+</li>
+                    
+                    <!-- Additional items here -->
+                </ul>
+            </li>
+
+            <li class="folder">
+                <span class="folder-name">Convert to CoreML</span>
+                <ul class="folder-content">
+                    <li><a href="#modelConversion" class="navbar-title">Convert using ONNX</a></li>
+
+                </ul>
+                </li>
+
+            <li class="folder">
+                <span class="folder-name">Virtual Box Optimization</span>
+                <ul class="folder-content">
+                    <li><a href="#virtualbox1" class="navbar-title">MacOS Lag Fix</a></li>
+
+                </ul>
+                </li>
+
+           
+
+                <li class="folder">
+                    <span class="folder-name">WaterProof Drone</span>
+                    <ul class="folder-content">
+                        <li><a href="#fpvQuadAssembly" class="navbar-title">FPV Build</a></li>
+                       
+                    </ul>
+                    </li>
+
+
+                    <li class="folder">
+                        <span class="folder-name">Ai4Health</span>
+                        <ul class="folder-content">
+                            <li><a href="#init" class="navbar-title">__init__.py</a></li>
+                            <li><a href="#conv" class="navbar-title">conv.py</a></li>
+                            <li><a href="#syncnet" class="navbar-title">syncnet.py</a></li>
+                            <li><a href="#wav2lip" class="navbar-title">wav2lip.py</a></li>
+        
+                        </ul>
+                        </li>
+            <!-- More folders can be added here -->
+        </ul>
+    </div>
+
+    
+  
+     
+    
+        <!-- Main content here -->
+    
+        <!-- Rest of the body content -->
+
+
+    <div class="main-content" id="mainContent">
+        <!-- Introductory Section -->
+      
+        <div class="button-bar">
+            <!-- Hamburger Menu -->
+            <div id="menu-toggle" class="button-container">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+    
+            <!-- Right-aligned icon buttons -->
+            <div class="icon-buttons">
+                <a href="https://github.com/ialzouby" target="_blank" class="image-button">
+                    <img src="images/hub.png" alt="GitHub Icon">
+                </a>
+                <div class="image-button">
+                    <img src="images/search.png" alt="Search Icon" id="searchButton">
+                </div>
+                <div id="searchBarContainer" style="display: none;">
+                    <input type="text" id="searchInput" placeholder="Search...">
+                </div>
+                
+                <div id="modeToggle">
+                    <img src="images/light.png" alt="Toggle Dark/Light Mode" id="toggleIcon" style="cursor: pointer;">
+                </div>
+                
+                
+            </div>
+        </div>
+
+
+
+        <section id="introSection" class="content-section">
+            <h2>Welcome to My Project/Research Documentation</h2>
+            <p>As an undergraduate research assistant at the University of North Carolina at Charlotte (UNCC), I am deeply immersed in exploring the transformative potential of Artificial Intelligence in healthcare. This documentation is a comprehensive reflection of my journey and insights.</p>
+            <p>Here, you'll find detailed accounts of my personal projects and university-facilitated research. Each project is a testament to the power of open-source and publicly available information in advancing our understanding of AI's application in medical fields.</p>
+            <p>With strict adherence to ethical guidelines, this documentation contains no proprietary or confidential information, ensuring its suitability for academic peers, fellow researchers, and enthusiasts in the AI and healthcare domain.</p>
+            <p>I invite you to explore these pages, hoping they will inform, inspire, and contribute to ongoing dialogues and innovations in AI and Tech.</p>
+        </section>
+        
+
+        <!-- Content Sections -->
+
+        <section id="setup" class="content-section">
+          
+        
+
+
+
+            <h2>Wav2Lip Project Setup Guide</h2>
+            <div class="text-container">
+                <p>Follow these steps to set up the Wav2Lip project on your system. This guide covers installation of Python, setting up a virtual environment, cloning the Wav2Lip repository, and other necessary setup tasks.</p>
+            </div>
+        
+            <div class="setup-guide">
+                <h3>Initial Setup Steps</h3>
+                <ol class="custom-list">
+                    <li>
+                        Install Homebrew, a package manager for macOS, by running the following command in your terminal:
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy-target="#install-homebrew">Copy</button>
+                            <pre id="install-homebrew">/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</pre>
+                        </div>
+                    </li>
+                    <li>
+                        Use Homebrew to install Python 3.6 and Git:
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy-target="#brew-install">Copy</button>
+                            <pre id="brew-install">brew install python@3.6 git</pre>
+                        </div>
+                    </li>
+                    <li>
+                        Create a project directory named <code>Wav2LipProject</code>:
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy-target="#create-dir">Copy</button>
+                            <pre id="create-dir">mkdir Wav2LipProject
+        cd Wav2LipProject</pre>
+                        </div>
+                    </li>
+                    <li>
+                        Create and activate a Python 3.6 virtual environment:
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy-target="#create-env">Copy</button>
+                            <pre id="create-env">python3.6 -m venv wav2lip_env
+        source wav2lip_env/bin/activate</pre>
+                        </div>
+                    </li>
+                    <li>
+                        Clone the Wav2Lip GitHub repository:
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy-target="#clone-repo">Copy</button>
+                            <pre id="clone-repo">git clone https://github.com/Rudrabha/Wav2Lip.git
+        cd Wav2Lip</pre>
+                        </div>
+                    </li>
+                    <li>
+                        Install necessary Python libraries from requirements.txt:
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy-target="#install-libs">Copy</button>
+                            <pre id="install-libs">pip install -r requirements.txt</pre>
+                        </div>
+                    </li>
+                    <li>
+                        Download the pretrained model weights from the repository.
+                    </li>
+                    <li>
+                        Verify the installation by running a simple script.
+                    </li>
+                </ol>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="text-container tips-container">
+                <div class="blue-tab"></div>
+                <h3>Tips for Using Wav2Lip</h3>
+                <ul>
+                    <li>Always activate the environment in the <code>wav2lip_env</code> directory before running scripts.</li>
+                    <li>Run the main script for synchronization in the <code>Wav2Lip</code> directory.</li>
+                    <li>Ensure the <code>Wav2Lip</code> directory is correctly set up before proceeding.</li>
+                </ul>
+            </div>
+        </section>
+
+       
+        
+
+        <section id="audioPySection" class="content-section">
+            <h2>Audio.py</h2>
+            <div class="text-container">
+                <p>This Python file, likely named <code>audio.py</code> from the WAV2LIP repository, includes several functions for audio processing. The primary purpose of these functions is to load, save, preprocess, and manipulate audio data, particularly for use in machine learning models like WAV2LIP, which synchronizes lip movements in videos to a given audio input. </p>
+            </div>
+                    
+            <ol class="custom-list">
+                <li><strong>Loading and Saving Audio</strong>: Functions <code>load_wav</code> and <code>save_wav</code> are used to load and save WAV files, respectively. <code>save_wavenet_wav</code> is another variant for saving audio, possibly tailored for WaveNet, a deep neural network for generating raw audio.</li>
+                <li><strong>Pre- and Post-Processing</strong>: The functions <code>preemphasis</code> and <code>inv_preemphasis</code> are for applying and reversing pre-emphasis, a process that amplifies higher frequencies to balance the frequency spectrum and improve the signal-to-noise ratio.</li>
+                <li><strong>Spectrogram Generation</strong>: <code>linearspectrogram</code> and <code>melspectrogram</code> functions convert audio waveforms to their respective spectrograms. A linear spectrogram represents the signal's frequency spectrum over time, while a mel spectrogram does so using the mel scale, which is more aligned with human auditory perception.</li>
+                <li><strong>STFT and LWS Processor</strong>: The Short-Time Fourier Transform (STFT) is implemented in <code>_stft</code>, crucial for converting time-domain signals into frequency-domain representations. The <code>_lws_processor</code> function suggests the use of the LWS (Lightweight and fast Waveform Synthesis) library, possibly for more efficient or high-quality audio processing.</li>
+                <li><strong>Auxiliary Functions</strong>: The file includes other helper functions for padding, frame calculation, and conversions between different audio formats and representations, such as <code>_linear_to_mel</code>, <code>_amp_to_db</code>, <code>_db_to_amp</code>, <code>_normalize</code>, and <code>_denormalize</code>.</li>
+                <li><strong>Hyperparameters</strong>: The script imports <code>hparams</code> (hyperparameters) from a module named <code>hparams</code>, which likely contains configuration settings like sample rate, frame size, mel scale parameters, etc.</li>
+            </ol>
+        </section>
+        
+
+        <!-- Other sections... -->
+        <section id="syncnet" class="content-section">
+            <h2>Color_syncnet_train.py</h2>
+            <div class="text-container">
+                <p>This Python script, likely named <code>color_syncnet_train.py</code>, is dedicated to training the SyncNet model in the WAV2LIP project. SyncNet is a critical component in ensuring accurate lip-sync in the generated videos. The script uses various libraries and functionalities to prepare, process, and train the model with audio and video data                  .</p>
+            </div>
+        
+            <ol class="custom-list">
+                <li><strong>Imports and Setup</strong>: The script imports necessary libraries and modules for handling arrays (NumPy), deep learning (PyTorch), image processing (OpenCV), and more. It also imports a <code>SyncNet</code> model from a <code>models</code> module and various audio processing functions from an <code>audio</code> module.</li>
+                <li><strong>Argument Parsing</strong>: Using <code>argparse</code>, the script sets up command-line argument parsing for specifying dataset paths, checkpoint directories, and other configurations.</li>
+                <li><strong>Dataset Preparation</strong>: It defines a <code>Dataset</code> class for preparing and handling data. This class includes methods to extract and process frames from videos and corresponding audio features.</li>
+                <li><strong>Model Training and Evaluation</strong>: Functions like <code>train</code> and <code>eval_model</code> are defined for training and evaluating the SyncNet model. They include procedures for loading data, performing forward and backward passes, calculating losses (like cosine similarity loss), and saving checkpoints.</li>
+                <li><strong>Checkpoint Management</strong>: The script provides functionalities to save and load model checkpoints, enabling the continuation of training from a specific point and reducing the risk of data loss.</li>
+                <li><strong>Main Execution Flow</strong>: In the <code>main</code> section, the script sets up the dataset, data loaders, model, optimizer, and begins the training process. It handles both training and validation datasets.</li>
+            </ol>
+            
+
+            <div class="text-container summary-container">
+                <div class="blue-tab"></div>
+                <h3>Basic Summary</h3>
+                <p>This script is designed to train a neural network model called SyncNet, which plays a crucial role in the WAV2LIP project. The purpose of SyncNet is to ensure that the movement of lips in the video is in sync with the spoken words in the audio. The script sets up the training environment, processes video and audio data, trains the model using this data, and saves the progress at intervals. It's a key component in teaching the model how to accurately match lip movements with audio, an essential aspect of creating realistic lip-synced videos.
+                </p>
+            </div>
+            
+        </section>
+
+        <section id="hparams" class="content-section">
+            <h2>Hparams.py</h2>
+            <div class="text-container">
+                <p>This Python script, likely named <code>color_syncnet_train.py</code>, is dedicated to training the SyncNet model in the WAV2LIP project. SyncNet is a critical component in ensuring accurate lip-sync in the generated videos. The script uses various libraries and functionalities to prepare, process, and train the model with audio and video data.</p>
+            </div>
+        
+            <ol class="custom-list">
+                <li><strong>Imports and Setup</strong>: The script imports necessary libraries and modules for handling arrays (NumPy), deep learning (PyTorch), image processing (OpenCV), and more. It also imports a <code>SyncNet</code> model from a <code>models</code> module and various audio processing functions from an <code>audio</code> module.</li>
+                <li><strong>Argument Parsing</strong>: Using <code>argparse</code>, the script sets up command-line argument parsing for specifying dataset paths, checkpoint directories, and other configurations.</li>
+                <li><strong>Dataset Preparation</strong>: It defines a <code>Dataset</code> class for preparing and handling data. This class includes methods to extract and process frames from videos and corresponding audio features.</li>
+                <li><strong>Model Training and Evaluation</strong>: Functions like <code>train</code> and <code>eval_model</code> are defined for training and evaluating the SyncNet model. They include procedures for loading data, performing forward and backward passes, calculating losses (like cosine similarity loss), and saving checkpoints.</li>
+                <li><strong>Checkpoint Management</strong>: The script provides functionalities to save and load model checkpoints, enabling the continuation of training from a specific point and reducing the risk of data loss.</li>
+                <li><strong>Main Execution Flow</strong>: In the <code>main</code> section, the script sets up the dataset, data loaders, model, optimizer, and begins the training process. It handles both training and validation datasets.</li>
+            </ol>
+        
+            <div class="text-container summary-container">
+                <div class="blue-tab"></div>
+                <h3>Basic Summary</h3>
+                <p>In simple terms, this script is designed to train a neural network model called SyncNet, which plays a crucial role in the WAV2LIP project. The purpose of SyncNet is to ensure that the movement of lips in the video is in sync with the spoken words in the audio. The script sets up the training environment, processes video and audio data, trains the model using this data, and saves the progress at intervals. It's a key component in teaching the model how to accurately match lip movements with audio, an essential aspect of creating realistic lip-synced videos.</p>
+            </div>
+        </section>
+        
+        <section id="hqWav2LipTrain" class="content-section">
+            <h2>Hq_wav2lip_train.py</h2>
+            <div class="text-container">
+                <p>This script, likely named <code>hq_wav2lip_train.py</code>, is designed for training the high-quality Wav2Lip model with a visual quality discriminator. The Wav2Lip model aims to generate realistic lip movements in sync with given audio, and the visual quality discriminator is used to improve the visual quality of the generated video.
+                </p>
+            </div>
+        
+            <ol class="custom-list">
+                <li><strong>Imports and Initial Setup</strong>: The script imports necessary libraries and modules for deep learning (PyTorch), image processing (OpenCV), and others. It also imports <code>Wav2Lip</code> and <code>Wav2Lip_disc_qual</code> models for training.</li>
+                <li><strong>Argument Parsing</strong>: Command-line arguments are defined for specifying dataset paths, checkpoint paths, and other configurations.</li>
+                <li><strong>Dataset Preparation</strong>: A <code>Dataset</code> class is defined to handle the loading and preprocessing of video frames and audio data. It includes methods for reading images, processing audio, and preparing data for the model.</li>
+                <li><strong>Model Training Functions</strong>:
+                    <ul>
+                        <li><code>train</code>: Manages the training loop, including forward and backward passes, loss calculations, and checkpoint saving.</li>
+                        <li><code>eval_model</code>: Evaluates the model's performance on a test dataset.</li>
+                        <li>Loss functions like <code>cosine_loss</code> and <code>get_sync_loss</code> are used to calculate how well the audio and video are synchronized and the visual quality of the generated output.</li>
+                    </ul>
+                </li>
+                <li><strong>Checkpoint Management</strong>: Functions for saving and loading checkpoints allow the training process to be paused and resumed, and also to initialize models with pre-trained weights.</li>
+                <li><strong>Main Training Loop</strong>:
+                    <ul>
+                        <li>The script sets up the dataset, data loaders, models (<code>Wav2Lip</code> and <code>Wav2Lip_disc_qual</code>), and optimizers.</li>
+                        <li>The training loop involves updating both the generator (Wav2Lip model) and the discriminator (<code>Wav2Lip_disc_qual</code> model), similar to a Generative Adversarial Network (GAN) setup.</li>
+                        <li>The training includes both L1 loss for reconstruction accuracy and a sync loss for lip-sync accuracy, along with the discriminator's perceptual loss.</li>
+                    </ul>
+                </li>
+            </ol>
+        
+            <div class="text-container summary-container">
+                <div class="blue-tab"></div>
+                <h3>Basic Summary</h3>
+                <p>In simple terms, this script is responsible for teaching the Wav2Lip model how to create videos where the lips move realistically in sync with audio. It uses a special component, the visual quality discriminator, to make sure the generated videos look as real as possible. The script handles everything from loading and processing data to training the model and checking how well it's doing. It's a key part of creating high-quality lip-synced videos in the WAV2LIP project.</p>
+            </div>
+        </section>
+        
+        <section id="inferencePy" class="content-section">
+            <h2>Inference.py</h2>
+            <div class="text-container">
+                <p>The <code>inference.py</code> script in the WAV2LIP repository is designed for generating lip-synced videos using pre-trained Wav2Lip models. This script takes a video or an image of a face and an audio file as input, then generates a video where the lip movements are synced with the audio.</p>
+            </div>
+        
+            <ol class="custom-list">
+                <li><strong>Argument Parsing</strong>: The script uses <code>argparse</code> to handle command-line arguments for specifying the paths to the face video/image, audio file, and other parameters like output file path, batch sizes, etc.</li>
+                <li><strong>Face and Audio Processing</strong>:
+                    <ul>
+                        <li><strong>Face Detection</strong>: The script uses a face detection module to locate faces in each frame of the input video or image. It also includes smoothing of face detections over a short temporal window.</li>
+                        <li><strong>Audio Processing</strong>: It loads and processes the audio file, converting it into a mel-spectrogram, which is a representation of the audio used by the model.</li>
+                    </ul>
+                </li>
+                <li><strong>Model Loading and Inference</strong>:
+                    <ul>
+                        <li>Loads the pre-trained Wav2Lip model from a checkpoint.</li>
+                        <li>The <code>datagen</code> function generates batches of face images and corresponding audio segments for model inference.</li>
+                        <li>Performs inference using the Wav2Lip model to generate the lip-synced frames.</li>
+                    </ul>
+                </li>
+                <li><strong>Video Generation</strong>:
+                    <ul>
+                        <li>The script combines the generated frames and the original audio to create a new video with the lip movements synchronized to the audio.</li>
+                        <li>Uses <code>ffmpeg</code> for audio extraction and video file creation.</li>
+                    </ul>
+                </li>
+                <li><strong>Utilities</strong>:
+                    <ul>
+                        <li>Functions like <code>get_smoothened_boxes</code> and <code>face_detect</code> for handling face detection.</li>
+                        <li>The <code>main</code> function orchestrates the entire process from loading data, performing inference, and saving the output video.</li>
+                    </ul>
+                </li>
+            </ol>
+        
+            <div class="text-container summary-container">
+                <div class="blue-tab"></div>
+                <h3>Basic Summary</h3>
+                <p>In simple terms, <code>inference.py</code> is used to create videos where the lips of a person in the video match the spoken words in an audio file. It first finds the face in the video, then uses a trained model to make the lips move in sync with the audio. Finally, it combines the modified video with the original audio to produce a lip-synced video. This script is key for applying the Wav2Lip model to real-world videos or images and audio files.</p>
+            </div>
+        </section>
+        
+        <section id="preprocessPy" class="content-section">
+            <h2>Preprocess.py</h2>
+            <div class="text-container">
+                <p>The <code>preprocess.py</code> script in the WAV2LIP repository is used for preprocessing videos from the LRS2 dataset. This preprocessing step is crucial to prepare the data for training the Wav2Lip model. The script processes both the video and audio components of the dataset.</p>
+            </div>
+        
+            <ol class="custom-list">
+                <li><strong>Environment Checks</strong>: The script starts by ensuring it's running in a suitable environment (Python 3.2 or higher) and checks if necessary files (like the face detection model) are in place.</li>
+                <li><strong>Argument Parsing</strong>: It uses <code>argparse</code> to parse command-line arguments, including paths for the dataset (<code>--data_root</code>), the location to save preprocessed data (<code>--preprocessed_root</code>), GPU settings, and batch size for processing.</li>
+                <li><strong>Face Detection Setup</strong>: The script initializes face detection models (<code>face_detection.FaceAlignment</code>) for each GPU specified. These models are used to detect faces in video frames.</li>
+                <li><strong>Video Processing</strong>:
+                    <ul>
+                        <li>Extracts frames from each video file in the dataset.</li>
+                        <li>Detects faces in batches of frames and saves the cropped face images to the specified preprocessed dataset directory.</li>
+                        <li>The function <code>process_video_file</code> handles this part, and it's parallelized across multiple GPUs.</li>
+                    </ul>
+                </li>
+                <li><strong>Audio Processing</strong>:
+                    <ul>
+                        <li>Extracts audio from the video files and saves it as a WAV file in the preprocessed dataset directory.</li>
+                        <li>Uses the <code>ffmpeg</code> tool for audio extraction.</li>
+                        <li>The function <code>process_audio_file</code> is responsible for this part.</li>
+                    </ul>
+                </li>
+                <li><strong>Multiprocessing and Threading</strong>:
+                    <ul>
+                        <li>The script uses Python's <code>concurrent.futures.ThreadPoolExecutor</code> for parallel processing across GPUs.</li>
+                        <li>It creates a list of jobs (video files and corresponding GPU IDs) and processes them in parallel threads.</li>
+                    </ul>
+                </li>
+                <li><strong>Main Function</strong>:
+                    <ul>
+                        <li>Orchestrates the entire preprocessing pipeline.</li>
+                        <li>Generates a list of video files to process and applies both audio and video processing.</li>
+                    </ul>
+                </li>
+            </ol>
+        
+            <div class="text-container summary-container">
+                <div class="blue-tab"></div>
+                <h3>Basic Summary</h3>
+                <p>In simple terms, <code>preprocess.py</code> is a script that prepares video and audio data for training the Wav2Lip model. It takes videos, extracts the faces from each frame, and saves them as images. It also extracts the audio from these videos and saves it separately. This preprocessing is a necessary step to get the data ready for training the model, ensuring that it has the right format and content for effective learning.</p>
+            </div>
+        </section>
+        
+        <section id="wav2lipTrain" class="content-section">
+            <h2>Wav2lip_train.py</h2>
+            <div class="text-container">
+                <p>The <code>wav2lip_train.py</code> script is designed for training the Wav2Lip model without the visual quality discriminator...</p>
+            </div>
+        
+            <ol class="custom-list">
+                <li><strong>Argument Parsing</strong>: The script uses <code>argparse</code> to handle command-line arguments, including paths for the LRS2 dataset, checkpoint directories, and the path to the pre-trained SyncNet discriminator model.</li>
+                <li><strong>Dataset Preparation</strong>: It defines a <code>Dataset</code> class to handle loading and preprocessing of video frames and audio data...</li>
+                <li><strong>Model Training Setup</strong>:
+                    <ul>
+                        <li>Initializes the Wav2Lip and SyncNet models and loads them onto the CUDA device if available.</li>
+                        <li>Sets up the training and evaluation data loaders using the <code>Dataset</code> class.</li>
+                        <li>Defines loss functions (<code>cosine_loss</code> for sync loss and <code>L1Loss</code> for reconstruction loss) and the training optimizer.</li>
+                    </ul>
+                </li>
+                <li><strong>Training Loop</strong>:
+                    <ul>
+                        <li>The script iterates over epochs and batches of data, training the Wav2Lip model.</li>
+                        <li>Calculates the sync loss and the L1 reconstruction loss.</li>
+                        <li>Checkpoints are saved at regular intervals.</li>
+                    </ul>
+                </li>
+                <li><strong>Evaluation Function (<code>eval_model</code>)</strong>:
+                    <ul>
+                        <li>This function evaluates the model's performance on a validation set.</li>
+                        <li>Calculates the average sync loss over a specified number of evaluation steps.</li>
+                    </ul>
+                </li>
+                <li><strong>Checkpoint Management</strong>:
+                    <ul>
+                        <li>Functions for saving and loading model checkpoints are included to allow the continuation of training from a specific point and to use pre-trained weights.</li>
+                    </ul>
+                </li>
+                <li><strong>Main Execution</strong>:
+                    <ul>
+                        <li>Sets up the dataset, model, optimizer, and starts the training process.</li>
+                    </ul>
+                </li>
+            </ol>
+        
+            <div class="text-container summary-container">
+                <div class="blue-tab"></div>
+                <h3>Basic Summary</h3>
+                <p>In simple terms, <code>wav2lip_train.py</code> is a training script for the Wav2Lip model. It focuses on teaching the model to generate videos where the lips are accurately synced with given audio...</p>
+            </div>
+        </section>
+        
+
+
+
+        <section id="virtualbox1" class="content-section">
+            <h2>Enhancing VirtualBox on MacBook Pro with Retina Display</h2>
+            <div class="text-container">
+                <p>Improve the performance of VirtualBox on your MacBook Pro with retina display using this guide. Suitable for macOS Big Sur 11.1 and MacBook Pro (16-inch, 2019), this tutorial assists in optimizing VirtualBox for running Kali Linux, Ubuntu, and Debian VMs more efficiently.</p>
+            </div>
+            <div class="optimization-guide">
+                <h3>Optimization Steps</h3>
+                <ol class="custom-list">
+                    <li>
+                        <strong>Allocate More Resources:</strong>
+                        <ul>
+                            <li>Increase base memory and CPU processors in VirtualBox settings.</li>
+                            <li>Explore additional settings, install guest additions and extension packs, then restart the VM.</li>
+                        </ul>
+                        <div class="image-block">
+                            <img src="[PATH_TO_INCREASE_RESOURCES_IMAGE]" alt="Increasing Resources in VirtualBox" class="step-image">
+                        </div>
+                    </li>
+                    <li>
+                        <strong>Switch to Low Resolution Mode:</strong>
+                        <ul>
+                            <li>Right-click on VirtualBox in Applications and select 'Show Package Contents'.</li>
+                            <li>Navigate to Contents -> Resources -> VirtualBox VM, right-click and select 'Get Info'.</li>
+                            <li>Check 'Open in Low Resolution' and restart your VM.</li>
+                        </ul>
+                        <div class="image-block">
+                            <img src="[PATH_TO_LOW_RESOLUTION_MODE_IMAGE]" alt="Enabling Low Resolution Mode in VirtualBox" class="step-image">
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="text-container tips-container">
+                <div class="blue-tab"></div>
+                <h3>Additional Tips</h3>
+                <ul>
+                    <li>Regularly update VirtualBox to the latest version for optimal performance.</li>
+                    <li>Consider using an external monitor if the low-resolution mode on the retina display is not satisfactory.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="fpvQuadAssembly" class="content-section">
+            <h2 class="guide-title">How To Build Your FPV Quad</h2>
+            <p class="intro-text">Introduction: Building and flying drones has always been a passion of mine. For myself and many others, it is a great way to be creative while sharpening our technical skills. I began building and flying drones in high school and have come to love it. One of the issues with this hobby is the lack of quality instructional materials. While there are many around the world that have the same passion as I do, there are very few guides that are concise and easy to understand! I have put together this assembly instruction guide with the assumption that you have the required tools, parts and soldering experience. 
+            </p>
+        
+            <div class="materials-container">
+                <div class="tools-list">
+                    <h3 class="materials-title tools-title">Tools Required</h3>
+                    <ul>
+                        <li>Micro-Soldering Station</li>
+                        <li>Flux</li>
+                        <li>Screw Driver Set</li>
+                        <li>Smoke Stopper</li>
+                    </ul>
+                </div>
+                <div class="parts-list">
+                    <h3 class="materials-title parts-title">Parts for the Quad</h3>
+                    <ul>
+                        <li>Battery</li>
+                        <li>Desired Frame</li>
+                        <li>Crossfire RX</li>
+                        <li>2305k Motors 
+                        </li>
+                        <!-- More parts listed here -->
+                    </ul>
+                </div>
+            </div>
+        
+            <div class="assembly-instructions">
+                <h3 class="assembly-title">Assembly Steps</h3>
+                <ol class="steps-list">
+                    <!-- Assembly Steps Here -->
+                </ol>
+            </div>
+        </section>
+        
+
+
+
+        <section id="modelConversion" class="content-section">
+            <h2>Converting PyTorch Model to CoreML Using ONNX</h2>
+            <div class="text-container">
+                <p>This section provides a detailed guide on converting a PyTorch model to CoreML format using ONNX. This conversion is useful for deploying machine learning models in iOS applications.</p>
+            </div>
+        
+            <h3>Prerequisites</h3>
+            <ol class="custom-list">
+                <li>Install Python, PyTorch, ONNX, and CoreMLTools. Use commands like <code>pip install torch onnx coremltools</code>.</li>
+                <li>Ensure you have the model file and weights for the PyTorch model you wish to convert.</li>
+            </ol>
+        
+            <h3>Step 1: Determine Model Input Requirements</h3>
+            <p>Understand the input shape and type required by your PyTorch model. This information is crucial for creating dummy inputs and for successful conversion.</p>
+        
+            <h3>Step 2: Export PyTorch Model to ONNX Format</h3>
+            <div class="code-container">
+                <div class="code-header">
+                    export.py
+                    <button class="copy-btn" data-copy-target="#export-code">Copy</button>
+                </div>
+                <div class="code-block">
+                    <pre id="export-code"><code class="language-python">
+        import <span class="keyword">torch</span>
+        from <span class="keyword">models.wav2lip</span> import <span class="class-name">Wav2Lip</span>
+        
+        <span class="comment"># Initialize and load your model</span>
+        <span class="variable">model</span> = <span class="class-name">Wav2Lip</span>()
+        <span class="variable">checkpoint</span> = <span class="keyword">torch</span>.load('<span class="string">/path/to/checkpoint.pth</span>', map_location='<span class="string">cpu</span>')
+        if '<span class="string">state_dict</span>' in <span class="variable">checkpoint</span>:
+            <span class="variable">state_dict</span> = <span class="variable">checkpoint</span>['<span class="string">state_dict</span>']
+            <span class="variable">model</span>.load_state_dict(<span class="variable">state_dict</span>)
+        else:
+            <span class="variable">model</span>.load_state_dict(<span class="variable">checkpoint</span>)
+        <span class="variable">model</span>.eval()
+        
+        <span class="comment"># Create dummy inputs</span>
+        <span class="variable">dummy_audio_input</span> = <span class="keyword">torch</span>.randn(1, 1, 80, 16)
+        <span class="variable">dummy_face_input</span> = <span class="keyword">torch</span>.randn(1, 6, 96, 96)
+        
+        <span class="comment"># Export the model to ONNX</span>
+        <span class="keyword">torch</span>.onnx.export(<span class="variable">model</span>, (<span class="variable">dummy_audio_input</span>, <span class="variable">dummy_face_input</span>), '<span class="string">wav2lip.onnx</span>')
+                    </code></pre>
+                </div>
+            </div>
+            <p>Run <code>python export.py</code> in your command line to execute this script.</p>
+        
+            <h3>Step 3: Convert ONNX Model to CoreML Format</h3>
+            <div class="code-container">
+                <div class="code-header">
+                    coremlconversion.py
+                    <button class="copy-btn" data-copy-target="#coreml-code">Copy</button>
+                </div>
+                <div class="code-block">
+                    <pre id="coreml-code"><code class="language-python">
+        import <span class="keyword">onnx</span>
+        from <span class="keyword">onnx_coreml</span> import <span class="keyword">convert</span>
+        
+        <span class="comment"># Path to the ONNX model</span>
+        <span class="variable">onnx_model_path</span> = '<span class="string">/path/to/wav2lip.onnx</span>'
+        
+        <span class="comment"># Load the ONNX model</span>
+        <span class="variable">onnx_model</span> = <span class="keyword">onnx</span>.load(<span class="variable">onnx_model_path</span>)
+        
+        <span class="comment"># Convert ONNX to CoreML</span>
+        <span class="variable">coreml_model</span> = <span class="keyword">convert</span>(<span class="variable">onnx_model</span>)
+        
+        <span class="comment"># Save the CoreML model</span>
+        <span class="variable">coreml_model</span>.save('<span class="string">wav2lip.mlmodel</span>')
+                    </code></pre>
+                </div>
+            </div>
+            <p>Run <code>python coremlconversion.py</code> to perform the conversion.</p>
+        
+            <h3>Additional Notes</h3>
+            <ul>
+                <li>Review the generated CoreML model to ensure it has the correct input and output layers as expected.</li>
+                <li>Test the CoreML model in a development environment before deploying it in a production application.</li>
+            </ul>
+        
+            <div class="text-container summary-container">
+                <div class="blue-tab"></div>
+                <h3>Summary</h3>
+                <p>This guide covers the conversion of a PyTorch model to CoreML using ONNX, which facilitates the deployment of machine learning models in iOS applications.</p>
+            </div>
+        </section>
+        
+        
+    
+        
+
+
+
+
+    </div>
+
+
+        <!-- Updates Bar -->
+        <div class="updates-bar">
+            <h3>Latest Blogs</h3>
+            <a href="23-12-2023.html">A Student's View on Ai</a>
+            <a href="30-12-2023.html">Creativity in tech</a>
+            <!-- Add more links or content as needed -->
+
+            <div class="internship-notice">
+
+            I'm looking for an Internship!<br>
+            If you have opportunities, please contact me at<a href="mailto:ialzouby@gmail.com">ialzouby@gmail.com</a> 
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+    <div data-include="components/footer.html"></div>
+
+    <script src="scripts/HTMLInclude.min.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

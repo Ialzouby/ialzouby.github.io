@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Docs</title>
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/styles.css">
+    
+
+   
+     <noscript>
+        <style type="text/css">
+            [data-aos] {
+                opacity: 1 !important;
+                transform: translate(0) scale(1) !important;
+            }
+        </style>
+    </noscript>
+</head>
+<body>
+    <div data-include="components/header.html"></div>
+
+    <div class="content-flex-container">
+
+        <div class="content-container">
+
+
+
+
+
+            <div data-include="components/navbar.html"></div>
+
+     
+    
+        <!-- Main content here -->
+    
+        <!-- Rest of the body content -->
+
+
+    <div class="main-content" id="mainContent">
+        <!-- Introductory Section -->
+      
+        <div class="button-bar">
+            <!-- Hamburger Menu -->
+            <div id="menu-toggle" class="button-container">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+    
+            <!-- Right-aligned icon buttons -->
+            <div class="icon-buttons">
+                <a href="https://github.com/ialzouby" target="_blank" class="image-button">
+                    <img src="images/hub.png" alt="GitHub Icon">
+                </a>
+                <div class="image-button">
+                    <img src="images/search.png" alt="Search Icon" id="searchButton">
+                </div>
+                <div id="searchBarContainer" style="display: none;">
+                    <input type="text" id="searchInput" placeholder="Search...">
+                </div>
+                
+                <div id="modeToggle">
+                    <img src="images/light.png" alt="Toggle Dark/Light Mode" id="toggleIcon" style="cursor: pointer;">
+                </div>
+                
+                
+            </div>
+        </div>
+
+
+
+        <!-- Content Sections -->
+
+          
+        
+
+
+
+
+
+
+  
+        <section id="hparams" class="content-section">
+            <h2>Hparams.py</h2>
+            <div class="fade-in" style="opacity: 0; animation: fadeIn 1s ease-in-out forwards;">
+
+            <div class="text-container">
+                <p>This Python script, likely named <code>color_syncnet_train.py</code>, is dedicated to training the SyncNet model in the WAV2LIP project. SyncNet is a critical component in ensuring accurate lip-sync in the generated videos. The script uses various libraries and functionalities to prepare, process, and train the model with audio and video data.</p>
+            </div>
+        
+            <ol class="custom-list">
+                <li><strong>Imports and Setup</strong>: The script imports necessary libraries and modules for handling arrays (NumPy), deep learning (PyTorch), image processing (OpenCV), and more. It also imports a <code>SyncNet</code> model from a <code>models</code> module and various audio processing functions from an <code>audio</code> module.</li>
+                <li><strong>Argument Parsing</strong>: Using <code>argparse</code>, the script sets up command-line argument parsing for specifying dataset paths, checkpoint directories, and other configurations.</li>
+                <li><strong>Dataset Preparation</strong>: It defines a <code>Dataset</code> class for preparing and handling data. This class includes methods to extract and process frames from videos and corresponding audio features.</li>
+                <li><strong>Model Training and Evaluation</strong>: Functions like <code>train</code> and <code>eval_model</code> are defined for training and evaluating the SyncNet model. They include procedures for loading data, performing forward and backward passes, calculating losses (like cosine similarity loss), and saving checkpoints.</li>
+                <li><strong>Checkpoint Management</strong>: The script provides functionalities to save and load model checkpoints, enabling the continuation of training from a specific point and reducing the risk of data loss.</li>
+                <li><strong>Main Execution Flow</strong>: In the <code>main</code> section, the script sets up the dataset, data loaders, model, optimizer, and begins the training process. It handles both training and validation datasets.</li>
+            </ol>
+        
+            <div class="text-container summary-container">
+                <div class="blue-tab"></div>
+                <h3>Basic Summary</h3>
+                <p>In simple terms, this script is designed to train a neural network model called SyncNet, which plays a crucial role in the WAV2LIP project. The purpose of SyncNet is to ensure that the movement of lips in the video is in sync with the spoken words in the audio. The script sets up the training environment, processes video and audio data, trains the model using this data, and saves the progress at intervals. It's a key component in teaching the model how to accurately match lip movements with audio, an essential aspect of creating realistic lip-synced videos.</p>
+            </div>
+        </section>
+        
+   
+
+
+    </div>
+
+
+        <!-- Updates Bar -->
+        <div class="updates-bar">
+            <h3>Latest Blogs</h3>
+            <a href="blog/23-12-2023.html">A Student's View on Ai</a>
+            <a href="blog/30-12-2023.html">Creativity in tech</a>
+            <!-- Add more links or content as needed -->
+
+            <div class="internship-notice">
+
+            I'm looking for an Internship!<br>
+            If you have opportunities, please contact me at<a href="mailto:ialzouby@gmail.com">ialzouby@gmail.com</a> 
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+    <div data-include="components/footer.html"></div>
+
+    <script src="scripts/HTMLInclude.min.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

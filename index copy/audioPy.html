@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Docs</title>
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/styles.css">
+    
+
+   
+     <noscript>
+        <style type="text/css">
+            [data-aos] {
+                opacity: 1 !important;
+                transform: translate(0) scale(1) !important;
+            }
+        </style>
+    </noscript>
+</head>
+<body>
+    <div data-include="components/header.html"></div>
+
+    <div class="content-flex-container">
+
+        <div class="content-container">
+
+
+
+            <div data-include="components/navbar.html"></div>
+
+
+    
+  
+     
+    
+        <!-- Main content here -->
+    
+        <!-- Rest of the body content -->
+
+
+    <div class="main-content" id="mainContent">
+        <!-- Introductory Section -->
+      
+        <div class="button-bar">
+            <!-- Hamburger Menu -->
+            <div id="menu-toggle" class="button-container">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+    
+            <!-- Right-aligned icon buttons -->
+            <div class="icon-buttons">
+                <a href="https://github.com/ialzouby" target="_blank" class="image-button">
+                    <img src="images/hub.png" alt="GitHub Icon">
+                </a>
+                <div class="image-button">
+                    <img src="images/search.png" alt="Search Icon" id="searchButton">
+                </div>
+                <div id="searchBarContainer" style="display: none;">
+                    <input type="text" id="searchInput" placeholder="Search...">
+                </div>
+                
+                <div id="modeToggle">
+                    <img src="images/light.png" alt="Toggle Dark/Light Mode" id="toggleIcon" style="cursor: pointer;">
+                </div>
+                
+                
+            </div>
+        </div>
+
+
+
+        <!-- Content Sections -->
+
+          
+        
+
+
+
+
+
+
+        <section class="content-section">
+            <h2>Audio.py</h2>
+            <div class="fade-in" style="opacity: 0; animation: fadeIn 1s ease-in-out forwards;">
+
+            <div class="text-container">
+                <p>This Python file, likely named <code>audio.py</code> from the WAV2LIP repository, includes several functions for audio processing. The primary purpose of these functions is to load, save, preprocess, and manipulate audio data, particularly for use in machine learning models like WAV2LIP, which synchronizes lip movements in videos to a given audio input. </p>
+            </div>
+                    
+            <ol class="custom-list">
+                <li><strong>Loading and Saving Audio</strong>: Functions <code>load_wav</code> and <code>save_wav</code> are used to load and save WAV files, respectively. <code>save_wavenet_wav</code> is another variant for saving audio, possibly tailored for WaveNet, a deep neural network for generating raw audio.</li>
+                <li><strong>Pre- and Post-Processing</strong>: The functions <code>preemphasis</code> and <code>inv_preemphasis</code> are for applying and reversing pre-emphasis, a process that amplifies higher frequencies to balance the frequency spectrum and improve the signal-to-noise ratio.</li>
+                <li><strong>Spectrogram Generation</strong>: <code>linearspectrogram</code> and <code>melspectrogram</code> functions convert audio waveforms to their respective spectrograms. A linear spectrogram represents the signal's frequency spectrum over time, while a mel spectrogram does so using the mel scale, which is more aligned with human auditory perception.</li>
+                <li><strong>STFT and LWS Processor</strong>: The Short-Time Fourier Transform (STFT) is implemented in <code>_stft</code>, crucial for converting time-domain signals into frequency-domain representations. The <code>_lws_processor</code> function suggests the use of the LWS (Lightweight and fast Waveform Synthesis) library, possibly for more efficient or high-quality audio processing.</li>
+                <li><strong>Auxiliary Functions</strong>: The file includes other helper functions for padding, frame calculation, and conversions between different audio formats and representations, such as <code>_linear_to_mel</code>, <code>_amp_to_db</code>, <code>_db_to_amp</code>, <code>_normalize</code>, and <code>_denormalize</code>.</li>
+                <li><strong>Hyperparameters</strong>: The script imports <code>hparams</code> (hyperparameters) from a module named <code>hparams</code>, which likely contains configuration settings like sample rate, frame size, mel scale parameters, etc.</li>
+            </ol>
+        </section>
+        
+
+        
+    
+        
+
+
+
+
+    </div>
+
+
+        <!-- Updates Bar -->
+        <div class="updates-bar">
+            <h3>Latest Blogs</h3>
+            <a href="blog/23-12-2023.html">A Student's View on Ai</a>
+            <a href="blog/30-12-2023.html">Creativity in tech</a>
+            <!-- Add more links or content as needed -->
+
+            <div class="internship-notice">
+
+            I'm looking for an Internship!<br>
+            If you have opportunities, please contact me at<a href="mailto:ialzouby@gmail.com">ialzouby@gmail.com</a> 
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+    <div data-include="components/footer.html"></div>
+
+    <script src="scripts/HTMLInclude.min.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Docs</title>
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/styles.css">
+    
+
+   
+     <noscript>
+        <style type="text/css">
+            [data-aos] {
+                opacity: 1 !important;
+                transform: translate(0) scale(1) !important;
+            }
+        </style>
+    </noscript>
+</head>
+<body>
+    <div data-include="components/header.html"></div>
+
+    <div class="content-flex-container">
+
+        <div class="content-container">
+
+
+
+
+
+
+
+
+            <div data-include="components/navbar.html"></div>
+
+    
+  
+     
+    
+        <!-- Main content here -->
+    
+        <!-- Rest of the body content -->
+
+
+    <div class="main-content" id="mainContent">
+        <!-- Introductory Section -->
+      
+        <div class="button-bar">
+            <!-- Hamburger Menu -->
+            <div id="menu-toggle" class="button-container">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+    
+            <!-- Right-aligned icon buttons -->
+            <div class="icon-buttons">
+                <a href="https://github.com/ialzouby" target="_blank" class="image-button">
+                    <img src="images/hub.png" alt="GitHub Icon">
+                </a>
+                <div class="image-button">
+                    <img src="images/search.png" alt="Search Icon" id="searchButton">
+                </div>
+                <div id="searchBarContainer" style="display: none;">
+                    <input type="text" id="searchInput" placeholder="Search...">
+                </div>
+                
+                <div id="modeToggle">
+                    <img src="images/light.png" alt="Toggle Dark/Light Mode" id="toggleIcon" style="cursor: pointer;">
+                </div>
+                
+                
+            </div>
+        </div>
+
+
+
+        <!-- Content Sections -->
+
+          
+        
+
+
+
+
+
+
+        <section id="hqWav2LipTrain" class="content-section">
+            <h2>Hq_wav2lip_train.py</h2>
+            <div class="fade-in" style="opacity: 0; animation: fadeIn 1s ease-in-out forwards;">
+
+            <div class="text-container">
+                <p>This script, likely named <code>hq_wav2lip_train.py</code>, is designed for training the high-quality Wav2Lip model with a visual quality discriminator. The Wav2Lip model aims to generate realistic lip movements in sync with given audio, and the visual quality discriminator is used to improve the visual quality of the generated video.
+                </p>
+            </div>
+        
+            <ol class="custom-list">
+                <li><strong>Imports and Initial Setup</strong>: The script imports necessary libraries and modules for deep learning (PyTorch), image processing (OpenCV), and others. It also imports <code>Wav2Lip</code> and <code>Wav2Lip_disc_qual</code> models for training.</li>
+                <li><strong>Argument Parsing</strong>: Command-line arguments are defined for specifying dataset paths, checkpoint paths, and other configurations.</li>
+                <li><strong>Dataset Preparation</strong>: A <code>Dataset</code> class is defined to handle the loading and preprocessing of video frames and audio data. It includes methods for reading images, processing audio, and preparing data for the model.</li>
+                <li><strong>Model Training Functions</strong>:
+                    <ul>
+                        <li><code>train</code>: Manages the training loop, including forward and backward passes, loss calculations, and checkpoint saving.</li>
+                        <li><code>eval_model</code>: Evaluates the model's performance on a test dataset.</li>
+                        <li>Loss functions like <code>cosine_loss</code> and <code>get_sync_loss</code> are used to calculate how well the audio and video are synchronized and the visual quality of the generated output.</li>
+                    </ul>
+                </li>
+                <li><strong>Checkpoint Management</strong>: Functions for saving and loading checkpoints allow the training process to be paused and resumed, and also to initialize models with pre-trained weights.</li>
+                <li><strong>Main Training Loop</strong>:
+                    <ul>
+                        <li>The script sets up the dataset, data loaders, models (<code>Wav2Lip</code> and <code>Wav2Lip_disc_qual</code>), and optimizers.</li>
+                        <li>The training loop involves updating both the generator (Wav2Lip model) and the discriminator (<code>Wav2Lip_disc_qual</code> model), similar to a Generative Adversarial Network (GAN) setup.</li>
+                        <li>The training includes both L1 loss for reconstruction accuracy and a sync loss for lip-sync accuracy, along with the discriminator's perceptual loss.</li>
+                    </ul>
+                </li>
+            </ol>
+        
+            <div class="text-container summary-container">
+                <div class="blue-tab"></div>
+                <h3>Basic Summary</h3>
+                <p>In simple terms, this script is responsible for teaching the Wav2Lip model how to create videos where the lips move realistically in sync with audio. It uses a special component, the visual quality discriminator, to make sure the generated videos look as real as possible. The script handles everything from loading and processing data to training the model and checking how well it's doing. It's a key part of creating high-quality lip-synced videos in the WAV2LIP project.</p>
+            </div>
+        </section>
+        
+    
+
+    </div>
+
+
+        <!-- Updates Bar -->
+        <div class="updates-bar">
+            <h3>Latest Blogs</h3>
+            <a href="blog/23-12-2023.html">A Student's View on Ai</a>
+            <a href="blog/30-12-2023.html">Creativity in tech</a>
+            <!-- Add more links or content as needed -->
+
+            <div class="internship-notice">
+
+            I'm looking for an Internship!<br>
+            If you have opportunities, please contact me at<a href="mailto:ialzouby@gmail.com">ialzouby@gmail.com</a> 
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+    <div data-include="components/footer.html"></div>
+
+    <script src="scripts/HTMLInclude.min.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

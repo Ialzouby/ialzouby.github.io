@@ -1,0 +1,14 @@
+/* template-color */
+
+.handle-preloader{
+	background: linear-gradient(224deg, #800599 0%, #FF0E75 100%);
+}
+.handle-preloader.home-2{
+	background: -webkit-linear-gradient(0deg, #41a0ea, #f18e95 75%);
+}
+.theme-btn-one {
+	background: linear-gradient(219deg, #97e4ff 0%, #910694 100%);
+}
+.theme-btn-one:before {
+    background: linear-gradient(219deg, #97e4ff 0%, #910694 100%);
+}

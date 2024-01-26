@@ -1,0 +1,276 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e8e8e8;
+    color: #444;
+    margin: 15px;
+}
+
+header, footer {
+    background-color: #57b0dd;
+    color: #ffffff;
+    padding: 12px;
+    text-align: center;
+    border-radius: 10px; 
+    box-shadow: 0 4px 6px rgba(168, 2, 2, 0.1); 
+}
+/* CSS for Validation Buttons */
+
+
+header a, footer a {
+    color: #2c0fab;
+    margin: 0 6px;
+    text-decoration: none;
+
+}
+
+main {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+header a:hover, footer a:hover {
+    color: #ab0b0b;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Style for all navigation links (buttons) */
+nav a {
+    display: inline-block;
+    padding: 5px 15px;
+    margin: 5px 10px;
+    text-decoration: none;
+    background-color: #088cd8;
+    color: #fff;
+    border-radius: 25px; /* Add round cutout */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add shadow */
+    margin-right: 10px; /* Add right margin */
+    margin-left: 10px; /* Add left margin */
+    transition: background-color 0.3s;
+}
+
+/* Change color of navigation links on hover */
+nav a:hover {
+    background-color: #0077c0; /* Change color on hover */
+}
+
+/* Style for the dropdown content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Style for the dropdown links inside the dropdown content */
+.dropdown-content a {
+    padding: 10px 15px; /* Adjust padding for dropdown links */
+    text-decoration: none;
+    display: block;
+    color: #333;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown content when hovering over the dropdown */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Style for the Stuff and Midterm tabs to match the format */
+.dropdown-content a.stuff,
+.dropdown-content a.midterm {
+    padding: 12px 16px;
+}
+
+.image-container {
+    display: inline-block;
+    margin: 20px auto;
+}
+
+.img-wrapper {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+figure img {
+    width: 150px;
+    height: 250px;
+    object-fit: cover;
+}
+
+figure {
+    margin: 0;
+    display: inline-block;
+}
+
+figcaption {
+    font-style: italic;
+}
+
+
+.custom-container {
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+  }
+  
+  .slider-container {
+    width: 100%;
+    height: 400px; 
+    overflow: hidden; 
+    overflow-y: scroll; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    margin-bottom: 28px;
+}
+
+.slider {
+    display: flex;
+    animation: slide 20s linear infinite alternate;
+    width: 80%;
+    
+}
+
+  
+  .slider-block {
+    flex: 0 0 40%;
+    min-height: 300px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 18px; 
+    border-radius: 10px;
+    margin-right: 18px;
+    transition: opacity 0.5s, transform 0.5s;
+    cursor: pointer;
+    padding: 10px;
+    overflow: hidden; 
+   
+}
+  
+  
+  .slider-block:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+  
+
+   .image {
+    max-width: 20%;
+    max-height: 20%;
+    background-color: #fff;
+    margin-bottom: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-top: 15px; 
+}
+
+  
+
+  .image-containerrr {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+  
+@keyframes slide {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-120%); /* Scroll to the end of the blocks */
+    }
+}
+  
+  .post-image img {
+   max-width: 100%; 
+    max-height: 100%; 
+    width: auto; 
+    height: auto;  
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px; 
+   
+  
+  }
+  
+ 
+  
+  .post-text {
+    text-align: center;
+    margin: 0; 
+    max-height: 50%; 
+    overflow: hidden; 
+}
+
+.post-text h3 {
+    margin: 5px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+   
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+h3{
+    font-weight: bold;
+}
+
+.post-text p {
+    white-space: normal;
+        text-overflow: clip;
+        max-height: 70%; 
+        font-size: 16px;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center content horizontally */
+    /* Space evenly between header and footer */
+    min-height: calc(100vh - 30px); /* Calculate minimum height to fill viewport */
+    
+}
+
+  
+
+@media (min-width: 768px) {
+    .feature-three__list li+li {
+      margin-left: 50px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .feature-three__list li+li {
+      margin-left: 70px;
+    }
+  }

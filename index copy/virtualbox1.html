@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Docs</title>
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/styles.css">
+    
+
+   
+     <noscript>
+        <style type="text/css">
+            [data-aos] {
+                opacity: 1 !important;
+                transform: translate(0) scale(1) !important;
+            }
+        </style>
+    </noscript>
+</head>
+<body>
+    <div data-include="components/header.html"></div>
+
+    <div class="content-flex-container">
+
+        <div class="content-container">
+
+
+
+            <div data-include="components/navbar.html"></div>
+
+     
+    
+        <!-- Main content here -->
+    
+        <!-- Rest of the body content -->
+
+
+    <div class="main-content" id="mainContent">
+        <!-- Introductory Section -->
+      
+        <div class="button-bar">
+            <!-- Hamburger Menu -->
+            <div id="menu-toggle" class="button-container">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+    
+            <!-- Right-aligned icon buttons -->
+            <div class="icon-buttons">
+                <a href="https://github.com/ialzouby" target="_blank" class="image-button">
+                    <img src="images/hub.png" alt="GitHub Icon">
+                </a>
+                <div class="image-button">
+                    <img src="images/search.png" alt="Search Icon" id="searchButton">
+                </div>
+                <div id="searchBarContainer" style="display: none;">
+                    <input type="text" id="searchInput" placeholder="Search...">
+                </div>
+                
+                <div id="modeToggle">
+                    <img src="images/light.png" alt="Toggle Dark/Light Mode" id="toggleIcon" style="cursor: pointer;">
+                </div>
+                
+                
+            </div>
+        </div>
+
+
+
+        <!-- Content Sections -->
+
+          
+        
+
+
+
+
+
+
+   
+
+        <section id="virtualbox1" class="content-section">
+            <h2>Enhancing VirtualBox on MacBook Pro with Retina Display</h2>
+            <div class="fade-in" style="opacity: 0; animation: fadeIn 1s ease-in-out forwards;">
+
+            <div class="text-container">
+                <p>Improve the performance of VirtualBox on your MacBook Pro with retina display using this guide. Suitable for macOS Big Sur 11.1 and MacBook Pro (16-inch, 2019), this tutorial assists in optimizing VirtualBox for running Kali Linux, Ubuntu, and Debian VMs more efficiently.</p>
+            </div>
+            <div class="optimization-guide">
+                <h3>Optimization Steps</h3>
+                <ol class="custom-list">
+                    <li>
+                        <strong>Allocate More Resources:</strong>
+                        <ul>
+                            <li>Increase base memory and CPU processors in VirtualBox settings.</li>
+                            <li>Explore additional settings, install guest additions and extension packs, then restart the VM.</li>
+                        </ul>
+                        <div class="image-block">
+                            <img src="[PATH_TO_INCREASE_RESOURCES_IMAGE]" alt="Increasing Resources in VirtualBox" class="step-image">
+                        </div>
+                    </li>
+                    <li>
+                        <strong>Switch to Low Resolution Mode:</strong>
+                        <ul>
+                            <li>Right-click on VirtualBox in Applications and select 'Show Package Contents'.</li>
+                            <li>Navigate to Contents -> Resources -> VirtualBox VM, right-click and select 'Get Info'.</li>
+                            <li>Check 'Open in Low Resolution' and restart your VM.</li>
+                        </ul>
+                        <div class="image-block">
+                            <img src="[PATH_TO_LOW_RESOLUTION_MODE_IMAGE]" alt="Enabling Low Resolution Mode in VirtualBox" class="step-image">
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="text-container tips-container">
+                <div class="blue-tab"></div>
+                <h3>Additional Tips</h3>
+                <ul>
+                    <li>Regularly update VirtualBox to the latest version for optimal performance.</li>
+                    <li>Consider using an external monitor if the low-resolution mode on the retina display is not satisfactory.</li>
+                </ul>
+            </div>
+        </section>
+        
+        
+        
+    
+        
+
+
+
+
+    </div>
+
+
+        <!-- Updates Bar -->
+        <div class="updates-bar">
+            <h3>Latest Blogs</h3>
+            <a href="blog/23-12-2023.html">A Student's View on Ai</a>
+            <a href="blog/30-12-2023.html">Creativity in tech</a>
+            <!-- Add more links or content as needed -->
+
+            <div class="internship-notice">
+
+            I'm looking for an Internship!<br>
+            If you have opportunities, please contact me at<a href="mailto:ialzouby@gmail.com">ialzouby@gmail.com</a> 
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+    <div data-include="/components/footer.html"></div>
+
+    <script src="scripts/HTMLInclude.min.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

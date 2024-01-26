@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Docs</title>
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/styles.css">
+    
+
+   
+     <noscript>
+        <style type="text/css">
+            [data-aos] {
+                opacity: 1 !important;
+                transform: translate(0) scale(1) !important;
+            }
+        </style>
+    </noscript>
+</head>
+<body>
+    <div data-include="components/header.html"></div>
+
+    <div class="content-flex-container">
+
+        <div class="content-container">
+
+
+
+
+
+
+
+
+            <div data-include="components/navbar.html"></div>
+
+  
+     
+    
+        <!-- Main content here -->
+    
+        <!-- Rest of the body content -->
+
+
+    <div class="main-content" id="mainContent">
+        <!-- Introductory Section -->
+      
+        <div class="button-bar">
+            <!-- Hamburger Menu -->
+            <div id="menu-toggle" class="button-container">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+    
+            <!-- Right-aligned icon buttons -->
+            <div class="icon-buttons">
+                <a href="https://github.com/ialzouby" target="_blank" class="image-button">
+                    <img src="images/hub.png" alt="GitHub Icon">
+                </a>
+                <div class="image-button">
+                    <img src="images/search.png" alt="Search Icon" id="searchButton">
+                </div>
+                <div id="searchBarContainer" style="display: none;">
+                    <input type="text" id="searchInput" placeholder="Search...">
+                </div>
+                
+                <div id="modeToggle">
+                    <img src="images/light.png" alt="Toggle Dark/Light Mode" id="toggleIcon" style="cursor: pointer;">
+                </div>
+                
+                
+            </div>
+        </div>
+
+
+
+        <!-- Content Sections -->
+
+          
+        
+
+
+
+
+
+        <section id="inferencePy" class="content-section">
+            <h2>Inference.py</h2>
+            <div class="fade-in" style="opacity: 0; animation: fadeIn 1s ease-in-out forwards;">
+
+            <div class="text-container">
+                <p>The <code>inference.py</code> script in the WAV2LIP repository is designed for generating lip-synced videos using pre-trained Wav2Lip models. This script takes a video or an image of a face and an audio file as input, then generates a video where the lip movements are synced with the audio.</p>
+            </div>
+        
+            <ol class="custom-list">
+                <li><strong>Argument Parsing</strong>: The script uses <code>argparse</code> to handle command-line arguments for specifying the paths to the face video/image, audio file, and other parameters like output file path, batch sizes, etc.</li>
+                <li><strong>Face and Audio Processing</strong>:
+                    <ul>
+                        <li><strong>Face Detection</strong>: The script uses a face detection module to locate faces in each frame of the input video or image. It also includes smoothing of face detections over a short temporal window.</li>
+                        <li><strong>Audio Processing</strong>: It loads and processes the audio file, converting it into a mel-spectrogram, which is a representation of the audio used by the model.</li>
+                    </ul>
+                </li>
+                <li><strong>Model Loading and Inference</strong>:
+                    <ul>
+                        <li>Loads the pre-trained Wav2Lip model from a checkpoint.</li>
+                        <li>The <code>datagen</code> function generates batches of face images and corresponding audio segments for model inference.</li>
+                        <li>Performs inference using the Wav2Lip model to generate the lip-synced frames.</li>
+                    </ul>
+                </li>
+                <li><strong>Video Generation</strong>:
+                    <ul>
+                        <li>The script combines the generated frames and the original audio to create a new video with the lip movements synchronized to the audio.</li>
+                        <li>Uses <code>ffmpeg</code> for audio extraction and video file creation.</li>
+                    </ul>
+                </li>
+                <li><strong>Utilities</strong>:
+                    <ul>
+                        <li>Functions like <code>get_smoothened_boxes</code> and <code>face_detect</code> for handling face detection.</li>
+                        <li>The <code>main</code> function orchestrates the entire process from loading data, performing inference, and saving the output video.</li>
+                    </ul>
+                </li>
+            </ol>
+        
+            <div class="text-container summary-container">
+                <div class="blue-tab"></div>
+                <h3>Basic Summary</h3>
+                <p>In simple terms, <code>inference.py</code> is used to create videos where the lips of a person in the video match the spoken words in an audio file. It first finds the face in the video, then uses a trained model to make the lips move in sync with the audio. Finally, it combines the modified video with the original audio to produce a lip-synced video. This script is key for applying the Wav2Lip model to real-world videos or images and audio files.</p>
+            </div>
+        </section>
+        
+        <section id="preprocessPy" class="content-section">
+            <h2>Preprocess.py</h2>
+            <div class="text-container">
+                <p>The <code>preprocess.py</code> script in the WAV2LIP repository is used for preprocessing videos from the LRS2 dataset. This preprocessing step is crucial to prepare the data for training the Wav2Lip model. The script processes both the video and audio components of the dataset.</p>
+            </div>
+        
+            <ol class="custom-list">
+                <li><strong>Environment Checks</strong>: The script starts by ensuring it's running in a suitable environment (Python 3.2 or higher) and checks if necessary files (like the face detection model) are in place.</li>
+                <li><strong>Argument Parsing</strong>: It uses <code>argparse</code> to parse command-line arguments, including paths for the dataset (<code>--data_root</code>), the location to save preprocessed data (<code>--preprocessed_root</code>), GPU settings, and batch size for processing.</li>
+                <li><strong>Face Detection Setup</strong>: The script initializes face detection models (<code>face_detection.FaceAlignment</code>) for each GPU specified. These models are used to detect faces in video frames.</li>
+                <li><strong>Video Processing</strong>:
+                    <ul>
+                        <li>Extracts frames from each video file in the dataset.</li>
+                        <li>Detects faces in batches of frames and saves the cropped face images to the specified preprocessed dataset directory.</li>
+                        <li>The function <code>process_video_file</code> handles this part, and it's parallelized across multiple GPUs.</li>
+                    </ul>
+                </li>
+                <li><strong>Audio Processing</strong>:
+                    <ul>
+                        <li>Extracts audio from the video files and saves it as a WAV file in the preprocessed dataset directory.</li>
+                        <li>Uses the <code>ffmpeg</code> tool for audio extraction.</li>
+                        <li>The function <code>process_audio_file</code> is responsible for this part.</li>
+                    </ul>
+                </li>
+                <li><strong>Multiprocessing and Threading</strong>:
+                    <ul>
+                        <li>The script uses Python's <code>concurrent.futures.ThreadPoolExecutor</code> for parallel processing across GPUs.</li>
+                        <li>It creates a list of jobs (video files and corresponding GPU IDs) and processes them in parallel threads.</li>
+                    </ul>
+                </li>
+                <li><strong>Main Function</strong>:
+                    <ul>
+                        <li>Orchestrates the entire preprocessing pipeline.</li>
+                        <li>Generates a list of video files to process and applies both audio and video processing.</li>
+                    </ul>
+                </li>
+            </ol>
+        
+            <div class="text-container summary-container">
+                <div class="blue-tab"></div>
+                <h3>Basic Summary</h3>
+                <p>In simple terms, <code>preprocess.py</code> is a script that prepares video and audio data for training the Wav2Lip model. It takes videos, extracts the faces from each frame, and saves them as images. It also extracts the audio from these videos and saves it separately. This preprocessing is a necessary step to get the data ready for training the model, ensuring that it has the right format and content for effective learning.</p>
+            </div>
+        </section>
+        
+
+        
+
+
+    
+        
+
+
+
+
+    </div>
+
+
+        <!-- Updates Bar -->
+        <div class="updates-bar">
+            <h3>Latest Blogs</h3>
+            <a href="blog/23-12-2023.html">A Student's View on Ai</a>
+            <a href="blog/30-12-2023.html">Creativity in tech</a>
+            <!-- Add more links or content as needed -->
+
+            <div class="internship-notice">
+
+            I'm looking for an Internship!<br>
+            If you have opportunities, please contact me at<a href="mailto:ialzouby@gmail.com">ialzouby@gmail.com</a> 
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+    <div data-include="/components/footer.html"></div>
+
+    <script src="scripts/HTMLInclude.min.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+</html>
