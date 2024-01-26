@@ -398,6 +398,9 @@ footer img {
     margin-top: 30px; /* Adjust as needed */
 }
 
+.folder-content {
+    display: none;
+}
 
 
 body.dark-mode .updates-bar a {
@@ -1507,4 +1510,92 @@ body.dark-mode .tools-title, body.dark-mode .parts-title {
     height: auto;
     border-radius: 4px;
     margin-top: 10px;
+}
+@keyframes fillBar {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@media (max-width: 768px) {
+    .collapse {
+        display: none;
+    }
+}
+/* Read More Button Styling */
+.read-more-btn {
+    background-color: transparent;
+    border: 2px solid #007bff; /* Blue border, change color as needed */
+    color: #007bff; /* Blue text, change color as needed */
+    border-radius: 30px;
+    padding: 8px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    outline: none;
+}
+
+.read-more-btn:hover,
+.read-more-btn:focus {
+    background-color: #007bff; /* Blue background on hover/focus */
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3); /* Slight shadow for depth */
+}
+
+/* Optional: Change the appearance of the button when the section is expanded */
+.read-more-btn.collapsed {
+    border-color: #6c757d; /* Different color when collapsed */
+    color: #6c757d; /* Different text color when collapsed */
+}
+.collapse-content {
+    transition: all 0.3s ease;
+    height: 0;
+    overflow: hidden;
+}
+
+.collapse-content.show {
+    height: auto; /* Adjust as needed, or use max-height for a smoother transition */
+}
+.collapse-content {
+    display: none;
+    transition: all 0.3s ease;
+    padding-top: 15px; /* Space above the collapsible content */
+}
+
+.collapse-content.show {
+    display: block;
+}
+
+.collapse-content ul li {
+    padding-bottom: 10px; /* Space between list items */
+}
+
+/* Additional styling as needed */
+.sidebar {
+    height: auto; /* or not set */
+    overflow-y: auto; /* for scrolling if content is too long */
+}
+
+/* Parent container example for a flex layout */
+.content-flex-container {
+    display: flex;
+    /* other properties */
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
 }

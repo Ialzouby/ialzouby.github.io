@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Docs</title>
+    <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/styles.css">
+    
+
+   
+     <noscript>
+        <style type="text/css">
+            [data-aos] {
+                opacity: 1 !important;
+                transform: translate(0) scale(1) !important;
+            }
+        </style>
+    </noscript>
+</head>
+<body>
+    <div data-include="/components/header.html"></div>
+
+    <div class="content-flex-container">
+
+        <div class="content-container">
+
+
+
+
+            <div data-include="/components/navbar.html"></div>
+
+
+
+     
+    
+        <!-- Main content here -->
+    
+        <!-- Rest of the body content -->
+
+
+    <div class="main-content" id="mainContent">
+        <!-- Introductory Section -->
+      
+        <div class="button-bar">
+            <!-- Hamburger Menu -->
+            <div id="menu-toggle" class="button-container">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+    
+            <!-- Right-aligned icon buttons -->
+            <div class="icon-buttons">
+                <a href="https://github.com/ialzouby" target="_blank" class="image-button">
+                    <img src="/images/hub.png" alt="GitHub Icon">
+                </a>
+                <div class="image-button">
+                    <img src="/images/search.png" alt="Search Icon" id="searchButton">
+                </div>
+                <div id="searchBarContainer" style="display: none;">
+                    <input type="text" id="searchInput" placeholder="Search...">
+                </div>
+                
+                <div id="modeToggle">
+                    <img src="/images/light.png" alt="Toggle Dark/Light Mode" id="toggleIcon" style="cursor: pointer;">
+                </div>
+                
+                
+            </div>
+        </div>
+
+
+
+        <!-- Content Sections -->
+
+          
+        
+
+
+
+
+
+
+        <section id="modelConversion" class="content-section">
+            <h2>Converting PyTorch Model to CoreML Using ONNX</h2>
+            <div class="fade-in" style="opacity: 0; animation: fadeIn 1s ease-in-out forwards;">
+
+            <div class="text-container">
+                <p>This section provides a detailed guide on converting a PyTorch model to CoreML format using ONNX. This conversion is useful for deploying machine learning models in iOS applications.</p>
+            </div>
+        
+            <h3>Prerequisites</h3>
+            <ol class="custom-list">
+                <li>Install Python, PyTorch, ONNX, and CoreMLTools. Use commands like <code>pip install torch onnx coremltools</code>.</li>
+                <li>Ensure you have the model file and weights for the PyTorch model you wish to convert.</li>
+            </ol>
+        
+            <h3>Step 1: Determine Model Input Requirements</h3>
+            <p>Understand the input shape and type required by your PyTorch model. This information is crucial for creating dummy inputs and for successful conversion.</p>
+        
+            <h3>Step 2: Export PyTorch Model to ONNX Format</h3>
+            <div class="code-container">
+                <div class="code-header">
+                    export.py
+                    <button class="copy-btn" data-copy-target="#export-code">Copy</button>
+                </div>
+                <div class="code-block">
+                    <pre id="export-code"><code class="language-python">
+        import <span class="keyword">torch</span>
+        from <span class="keyword">models.wav2lip</span> import <span class="class-name">Wav2Lip</span>
+        
+        <span class="comment"># Initialize and load your model</span>
+        <span class="variable">model</span> = <span class="class-name">Wav2Lip</span>()
+        <span class="variable">checkpoint</span> = <span class="keyword">torch</span>.load('<span class="string">/path/to/checkpoint.pth</span>', map_location='<span class="string">cpu</span>')
+        if '<span class="string">state_dict</span>' in <span class="variable">checkpoint</span>:
+            <span class="variable">state_dict</span> = <span class="variable">checkpoint</span>['<span class="string">state_dict</span>']
+            <span class="variable">model</span>.load_state_dict(<span class="variable">state_dict</span>)
+        else:
+            <span class="variable">model</span>.load_state_dict(<span class="variable">checkpoint</span>)
+        <span class="variable">model</span>.eval()
+        
+        <span class="comment"># Create dummy inputs</span>
+        <span class="variable">dummy_audio_input</span> = <span class="keyword">torch</span>.randn(1, 1, 80, 16)
+        <span class="variable">dummy_face_input</span> = <span class="keyword">torch</span>.randn(1, 6, 96, 96)
+        
+        <span class="comment"># Export the model to ONNX</span>
+        <span class="keyword">torch</span>.onnx.export(<span class="variable">model</span>, (<span class="variable">dummy_audio_input</span>, <span class="variable">dummy_face_input</span>), '<span class="string">wav2lip.onnx</span>')
+                    </code></pre>
+                </div>
+            </div>
+            <p>Run <code>python export.py</code> in your command line to execute this script.</p>
+        
+            <h3>Step 3: Convert ONNX Model to CoreML Format</h3>
+            <div class="code-container">
+                <div class="code-header">
+                    coremlconversion.py
+                    <button class="copy-btn" data-copy-target="#coreml-code">Copy</button>
+                </div>
+                <div class="code-block">
+                    <pre id="coreml-code"><code class="language-python">
+        import <span class="keyword">onnx</span>
+        from <span class="keyword">onnx_coreml</span> import <span class="keyword">convert</span>
+        
+        <span class="comment"># Path to the ONNX model</span>
+        <span class="variable">onnx_model_path</span> = '<span class="string">/path/to/wav2lip.onnx</span>'
+        
+        <span class="comment"># Load the ONNX model</span>
+        <span class="variable">onnx_model</span> = <span class="keyword">onnx</span>.load(<span class="variable">onnx_model_path</span>)
+        
+        <span class="comment"># Convert ONNX to CoreML</span>
+        <span class="variable">coreml_model</span> = <span class="keyword">convert</span>(<span class="variable">onnx_model</span>)
+        
+        <span class="comment"># Save the CoreML model</span>
+        <span class="variable">coreml_model</span>.save('<span class="string">wav2lip.mlmodel</span>')
+                    </code></pre>
+                </div>
+            </div>
+            <p>Run <code>python coremlconversion.py</code> to perform the conversion.</p>
+        
+            <h3>Additional Notes</h3>
+            <ul>
+                <li>Review the generated CoreML model to ensure it has the correct input and output layers as expected.</li>
+                <li>Test the CoreML model in a development environment before deploying it in a production application.</li>
+            </ul>
+        
+            <div class="text-container summary-container">
+                <div class="blue-tab"></div>
+                <h3>Summary</h3>
+                <p>This guide covers the conversion of a PyTorch model to CoreML using ONNX, which facilitates the deployment of machine learning models in iOS applications.</p>
+            </div>
+        </section>
+        
+        
+    
+        
+
+
+
+
+    </div>
+
+
+        <!-- Updates Bar -->
+        <div class="updates-bar">
+            <h3>Latest Blogs</h3>
+            <a href="/blog/23-12-2023.html">A Student's View on Ai</a>
+            <a href="/blog/30-12-2023.html">Creativity in tech</a>
+            <!-- Add more links or content as needed -->
+
+            <div class="internship-notice">
+
+            I'm looking for an Internship!<br>
+            If you have opportunities, please contact me at<a href="mailto:ialzouby@gmail.com">ialzouby@gmail.com</a> 
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+    <div data-include="/components/footer.html"></div>
+
+    <script src="/scripts/HTMLInclude.min.js"></script>
+    <script src="/scripts/main.js"></script>
+    <script src="/scripts/script.js"></script>
+</body>
+</html>

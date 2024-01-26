@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Docs</title>
+    <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/styles.css">
+    
+
+   
+     <noscript>
+        <style type="text/css">
+            [data-aos] {
+                opacity: 1 !important;
+                transform: translate(0) scale(1) !important;
+            }
+        </style>
+    </noscript>
+</head>
+<body>
+    <div data-include="/components/header.html"></div>
+
+    <div class="content-flex-container">
+
+        <div class="content-container">
+
+
+
+            <div data-include="/components/navbar.html"></div>
+
+
+    
+  
+     
+    
+        <!-- Main content here -->
+    
+        <!-- Rest of the body content -->
+
+
+    <div class="main-content" id="mainContent">
+        <!-- Introductory Section -->
+      
+        <div class="button-bar">
+            <!-- Hamburger Menu -->
+            <div id="menu-toggle" class="button-container">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+    
+            <!-- Right-aligned icon buttons -->
+            <div class="icon-buttons">
+                <a href="https://github.com/ialzouby" target="_blank" class="image-button">
+                    <img src="/images/hub.png" alt="GitHub Icon">
+                </a>
+                <div class="image-button">
+                    <img src="/images/search.png" alt="Search Icon" id="searchButton">
+                </div>
+                <div id="searchBarContainer" style="display: none;">
+                    <input type="text" id="searchInput" placeholder="Search...">
+                </div>
+                
+                <div id="modeToggle">
+                    <img src="/images/light.png" alt="Toggle Dark/Light Mode" id="toggleIcon" style="cursor: pointer;">
+                </div>
+                
+                
+            </div>
+        </div>
+
+
+
+        <!-- Content Sections -->
+
+          
+        
+
+
+
+
+        <section id="wav2lipTrain" class="content-section">
+            <h2>Wav2lip_train.py</h2>
+            <div class="fade-in" style="opacity: 0; animation: fadeIn 1s ease-in-out forwards;">
+
+            <div class="text-container">
+                <p>The <code>wav2lip_train.py</code> script is designed for training the Wav2Lip model without the visual quality discriminator...</p>
+            </div>
+        
+            <ol class="custom-list">
+                <li><strong>Argument Parsing</strong>: The script uses <code>argparse</code> to handle command-line arguments, including paths for the LRS2 dataset, checkpoint directories, and the path to the pre-trained SyncNet discriminator model.</li>
+                <li><strong>Dataset Preparation</strong>: It defines a <code>Dataset</code> class to handle loading and preprocessing of video frames and audio data...</li>
+                <li><strong>Model Training Setup</strong>:
+                    <ul>
+                        <li>Initializes the Wav2Lip and SyncNet models and loads them onto the CUDA device if available.</li>
+                        <li>Sets up the training and evaluation data loaders using the <code>Dataset</code> class.</li>
+                        <li>Defines loss functions (<code>cosine_loss</code> for sync loss and <code>L1Loss</code> for reconstruction loss) and the training optimizer.</li>
+                    </ul>
+                </li>
+                <li><strong>Training Loop</strong>:
+                    <ul>
+                        <li>The script iterates over epochs and batches of data, training the Wav2Lip model.</li>
+                        <li>Calculates the sync loss and the L1 reconstruction loss.</li>
+                        <li>Checkpoints are saved at regular intervals.</li>
+                    </ul>
+                </li>
+                <li><strong>Evaluation Function (<code>eval_model</code>)</strong>:
+                    <ul>
+                        <li>This function evaluates the model's performance on a validation set.</li>
+                        <li>Calculates the average sync loss over a specified number of evaluation steps.</li>
+                    </ul>
+                </li>
+                <li><strong>Checkpoint Management</strong>:
+                    <ul>
+                        <li>Functions for saving and loading model checkpoints are included to allow the continuation of training from a specific point and to use pre-trained weights.</li>
+                    </ul>
+                </li>
+                <li><strong>Main Execution</strong>:
+                    <ul>
+                        <li>Sets up the dataset, model, optimizer, and starts the training process.</li>
+                    </ul>
+                </li>
+            </ol>
+        
+            <div class="text-container summary-container">
+                <div class="blue-tab"></div>
+                <h3>Basic Summary</h3>
+                <p>In simple terms, <code>wav2lip_train.py</code> is a training script for the Wav2Lip model. It focuses on teaching the model to generate videos where the lips are accurately synced with given audio...</p>
+            </div>
+        </section>
+
+
+    </div>
+
+
+        <!-- Updates Bar -->
+        <div class="updates-bar">
+            <h3>Latest Blogs</h3>
+            <a href="/blog/23-12-2023.html">A Student's View on Ai</a>
+            <a href="/blog/30-12-2023.html">Creativity in tech</a>
+            <!-- Add more links or content as needed -->
+
+            <div class="internship-notice">
+
+            I'm looking for an Internship!<br>
+            If you have opportunities, please contact me at<a href="mailto:ialzouby@gmail.com">ialzouby@gmail.com</a> 
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+    <div data-include="/components/footer.html"></div>
+
+    <script src="/scripts/HTMLInclude.min.js"></script>
+    <script src="/scripts/main.js"></script>
+    <script src="/scripts/script.js"></script>
+</body>
+</html>

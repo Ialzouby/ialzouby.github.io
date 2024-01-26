@@ -1,0 +1,189 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Docs</title>
+    <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/styles.css">
+    
+
+   
+     <noscript>
+        <style type="text/css">
+            [data-aos] {
+                opacity: 1 !important;
+                transform: translate(0) scale(1) !important;
+            }
+        </style>
+    </noscript>
+</head>
+<body>
+    <div data-include="/components/header.html"></div>
+
+    <div class="content-flex-container">
+
+        <div class="content-container">
+
+
+
+            <div data-include="/components/navbar.html"></div>
+
+
+    
+  
+     
+    
+        <!-- Main content here -->
+    
+        <!-- Rest of the body content -->
+
+
+    <div class="main-content" id="mainContent">
+        <!-- Introductory Section -->
+      
+        <div class="button-bar">
+            <!-- Hamburger Menu -->
+            <div id="menu-toggle" class="button-container">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+    
+            <!-- Right-aligned icon buttons -->
+            <div class="icon-buttons">
+                <a href="https://github.com/ialzouby" target="_blank" class="image-button">
+                    <img src="/images/hub.png" alt="GitHub Icon">
+                </a>
+                <div class="image-button">
+                    <img src="/images/search.png" alt="Search Icon" id="searchButton">
+                </div>
+                <div id="searchBarContainer" style="display: none;">
+                    <input type="text" id="searchInput" placeholder="Search...">
+                </div>
+                
+                <div id="modeToggle">
+                    <img src="/images/light.png" alt="Toggle Dark/Light Mode" id="toggleIcon" style="cursor: pointer;">
+                </div>
+                
+                
+            </div>
+        </div>
+
+
+
+        <!-- Content Sections -->
+
+        <section id="setup" class="content-section" >
+          
+        
+
+
+
+            <h2>Wav2Lip Project Setup Guide</h2>
+                <div class="fade-in" style="opacity: 0; animation: fadeIn 1s ease-in-out forwards;">
+
+            <div class="text-container">
+                <p>Follow these steps to set up the Wav2Lip project on your system. This guide covers installation of Python, setting up a virtual environment, cloning the Wav2Lip repository, and other necessary setup tasks.</p>
+            </div>
+        
+            <div class="setup-guide">
+                <h3>Initial Setup Steps</h3>
+                <ol class="custom-list">
+                    <li>
+                        Install Homebrew, a package manager for macOS, by running the following command in your terminal:
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy-target="#install-homebrew">Copy</button>
+                            <pre id="install-homebrew">/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</pre>
+                        </div>
+                    </li>
+                    <li>
+                        Use Homebrew to install Python 3.6 and Git:
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy-target="#brew-install">Copy</button>
+                            <pre id="brew-install">brew install python@3.6 git</pre>
+                        </div>
+                    </li>
+                    <li>
+                        Create a project directory named <code>Wav2LipProject</code>:
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy-target="#create-dir">Copy</button>
+                            <pre id="create-dir">mkdir Wav2LipProject
+        cd Wav2LipProject</pre>
+                        </div>
+                    </li>
+                    <li>
+                        Create and activate a Python 3.6 virtual environment:
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy-target="#create-env">Copy</button>
+                            <pre id="create-env">python3.6 -m venv wav2lip_env
+        source wav2lip_env/bin/activate</pre>
+                        </div>
+                    </li>
+                    <li>
+                        Clone the Wav2Lip GitHub repository:
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy-target="#clone-repo">Copy</button>
+                            <pre id="clone-repo">git clone https://github.com/Rudrabha/Wav2Lip.git
+        cd Wav2Lip</pre>
+                        </div>
+                    </li>
+                    <li>
+                        Install necessary Python libraries from requirements.txt:
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy-target="#install-libs">Copy</button>
+                            <pre id="install-libs">pip install -r requirements.txt</pre>
+                        </div>
+                    </li>
+                    <li>
+                        Download the pretrained model weights from the repository.
+                    </li>
+                    <li>
+                        Verify the installation by running a simple script.
+                    </li>
+                </ol>
+            </div>
+        
+        
+            <div class="text-container tips-container">
+                <div class="blue-tab"></div>
+                <h3>Tips for Using Wav2Lip</h3>
+                <ul>
+                    <li>Always activate the environment in the <code>wav2lip_env</code> directory before running scripts.</li>
+                    <li>Run the main script for synchronization in the <code>Wav2Lip</code> directory.</li>
+                    <li>Ensure the <code>Wav2Lip</code> directory is correctly set up before proceeding.</li>
+                </ul>
+            </div>
+        </section>
+        </div>
+        
+    </div>
+
+
+        <!-- Updates Bar -->
+        <div class="updates-bar">
+            <h3>Latest Blogs</h3>
+            <a href="/blog/23-12-2023.html">A Student's View on Ai</a>
+            <a href="/blog/30-12-2023.html">Creativity in tech</a>
+            <!-- Add more links or content as needed -->
+
+            <div class="internship-notice">
+
+            I'm looking for an Internship!<br>
+            If you have opportunities, please contact me at<a href="mailto:ialzouby@gmail.com">ialzouby@gmail.com</a> 
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+    <div data-include="/components/footer.html"></div>
+
+    <script src="/scripts/HTMLInclude.min.js"></script>
+    <script src="/scripts/main.js"></script>
+    <script src="/scripts/script.js"></script>
+</body>
+</html>
