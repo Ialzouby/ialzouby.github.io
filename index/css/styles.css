@@ -496,6 +496,11 @@ body.dark-mode .main-content ul li {
     transition: width 0.3s ease; /* Smooth transition for opening/closing */
     min-width: 250px; /* Ensure it doesn't shrink */
 }
+/* Additional styling as needed */
+.sidebar {
+    height: auto; /* or not set */
+    overflow-y: auto; /* for scrolling if content is too long */
+}
 
 /* Consistent Sidebar Title Styling */
 .sidebar-title {
@@ -562,6 +567,23 @@ body.dark-mode .sidebar {
         padding: 10px;
     }
 }
+.sidebar {
+    display: block; /* or 'none' if you want it hidden by default */
+}
+
+
+/* Mobile view: Sidebar is hidden by default */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+}
+
+/* When sidebar-open class is added, modify the sidebar's visibility */
+.sidebar-open .sidebar {
+    display: block;
+}
+
 
 
 @media (max-width: 768px) {
@@ -646,8 +668,8 @@ nav {
 }
 
 .footer .nav-button {
-    width: 60px; /* Adjust the size as needed */
-    height: 60px; 
+    width: 50px; /* Adjust the size as needed */
+    height: 20px; 
     height: auto; /* Maintain aspect ratio */
     margin: 0 10px; /* Adjust spacing as needed */
     /* Add any additional styling here */
@@ -673,11 +695,7 @@ footer .nav-button:hover {
     }
 }
 
-/* Additional styling for the header */
-.header-content {
-    text-align: center; /* Center the content */
-    padding: 10px; /* Add some padding around the content */
-}
+
 
 
 .link-text {
@@ -686,21 +704,11 @@ footer .nav-button:hover {
 }
 
 
-header {
-    background-color: #57b0dd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(168, 2, 2, 0.1);
-    color: #ffffff;
-    position: relative;
-}
+
 
 .profile-pic-container {
     position: absolute;
-    left: 95px;
+    left: 110px;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -709,6 +717,28 @@ header {
     width: 140px;
     height: 140px;
     border-radius: 50%;
+}
+
+
+
+
+
+/* Additional styling for the header */
+.header-content {
+    text-align: center; /* Center the content */
+    padding: 10px; /* Add some padding around the content */
+}
+
+header {
+    background-color: #57b0dd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(2, 29, 125, 0.2);
+    color: #ffffff;
+    position: relative;
 }
 
 .header-content {
@@ -736,43 +766,15 @@ header a:hover {
     color: #ab0b0b;
 }
 
-/* Responsive Design Adjustments */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .profile-pic-container {
-        position: static;
-        transform: none;
-    }
-
-    .header-content {
-        width: 100%;
-    }
+/* Header Styles */
+header {
+    background-color: #57b0dd;
+    color: #ffffff;
+    padding: 12px;
+    text-align: center;
+    border-radius: 10px;
 }
 
-@media (max-width: 768px) {
-    .header-content img {
-        max-width: 80%; /* Resize the title image */
-        height: auto; /* Maintain aspect ratio */
-    }
-
-    .profile-pic-container img {
-        width: 100px; /* Resize the profile picture */
-        height: 100px; /* Maintain aspect ratio */
-    }
-
-    .header-content nav {
-        margin-top: 10px; /* Adjust spacing */
-    }
-
-    nav a img {
-        width: 30px; /* Resize nav button images */
-        height: auto; /* Maintain aspect ratio */
-    }
-}
 
 /* Main Content Styles */
 /* Main Content Styles */
@@ -808,15 +810,7 @@ body.dark-mode .main-content p {
 /* Add more dark mode specific styles as needed */
 
 
-/* Header Styles */
-header {
-    background-color: #57b0dd;
-    color: #ffffff;
-    padding: 12px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(168, 2, 2, 0.1);
-}
+
 
 /* Typography - Similar to Apple's style */
 h1, nav a, footer nav a, footer p {
@@ -1148,45 +1142,8 @@ body.dark-mode #searchInput {
     }
 }
 
-/* Styles for smaller screens */
-@media (max-width: 767px) {
-    .profile-pic-container img, .title-image {
-        width: 50%; /* Adjust the size to fit smaller screens */
-        height: auto; /* Maintain aspect ratio */
-    }
-
-    .nav-button {
-        width: 40px; /* Increase size for better visibility on small screens */
-        height: auto; /* Maintain aspect ratio */
-    }
-
-    .header-content {
-        text-align: center; /* Center the content for smaller screens */
-    }
-
-    nav {
-        display: flex;
-        justify-content: center; /* Center navigation buttons */
-    }
-}
 
 
-
-/* Styles for smaller screens */
-@media (max-width: 767px) {
-    .profile-pic-container {
-        width: 50%; /* Adjust the width of the container */
-        margin: 0 auto; /* Center the container */
-    }
-
-    .profile-pic-container img {
-        width: 100%; /* The image will take the full width of its container */
-    }
-
-    /* ... other styles ... */
-}
-
-/* ... other existing styles ... */
 
 
 
@@ -1214,19 +1171,8 @@ body.dark-mode #searchInput {
     justify-content: center;
 }
 
-.title-image {
-    width: 400px; /* Example fixed width, adjust as needed */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 100%; /* Ensure it doesn't exceed the width of its container */
-}
 
-/* Responsive adjustments for smaller screens */
-@media (max-width: 767px) {
-    .title-image {
-        width: 150px; /* Smaller width for mobile devices */
-        height: auto; /* Maintain aspect ratio */
-    }
-}
+
 
 nav {
     display: flex;
@@ -1235,64 +1181,11 @@ nav {
     padding-top: 10px; /* Space between title image and nav buttons */
 }
 
-.nav-button {
-    /* Adjust size as necessary */
-    max-width: 100%;
-    height: auto;
-}
-
-@media (max-width: 767px) {
-    /* Responsive adjustments */
-  
-
-.profile-pic {
-    width: 800px; /* Precise size for larger screens */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 10vw; /* Scale size relative to the viewport width */
-}
-}
-
-
-
-/* Styles for smaller screens */
-@media (max-width: 767px) {
-    .profile-pic-container {
-        margin-left: 0; /* Removes any left margin */
-        padding-left: 5px; /* Adds a little padding if needed */
-        /* Alternatively, you can use absolute positioning */
-        position: absolute;
-        left: 5px; /* Adjust this value as needed */
-    }
-}
 
 
 
 
 
-
-
-.profile-pic-container {
-    flex: 0 0 auto; /* Allows this container to maintain its size */
-    padding-left: 10px; /* Adjust as needed for mobile layout */
-}
-
-@media (max-width: 767px) {
-    .profile-pic-container {
-        flex-grow: 1; /* Allows the container to grow if needed */
-        display: flex;
-        justify-content: flex-start; /* Aligns the profile picture to the left */
-        padding-left: 25px; /* Adjust left padding for smaller screens */
-        margin-top: -40px;
-        
-    }
-
-    .profile-pic {
-        max-width: 70px; /* Adjust the maximum width of the profile picture */
-        height: auto; /* Maintain aspect ratio */
-    }
-
-    /* Add additional styling for other header elements */
-}
 
 .blog__image {
     margin-top: 20px; /* Adjust the value as needed */
@@ -1560,11 +1453,7 @@ body.dark-mode .tools-title, body.dark-mode .parts-title {
     padding-bottom: 10px; /* Space between list items */
 }
 
-/* Additional styling as needed */
-.sidebar {
-    height: auto; /* or not set */
-    overflow-y: auto; /* for scrolling if content is too long */
-}
+
 
 /* Parent container example for a flex layout */
 .content-flex-container {
@@ -1587,3 +1476,188 @@ body.dark-mode .tools-title, body.dark-mode .parts-title {
         transform: translateX(0);
     }
 }
+.button-86 {
+    all: unset;
+    width: 60px;
+    height: 20px;
+    font-size: 12px;
+    background: transparent;
+    border: none;
+    position: relative;
+    left: -20px; 
+    color: #f0f0f0;
+    cursor: pointer;
+    z-index: 1;
+    padding: 1px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin-right: -20px; 
+  }
+  
+  .button-86::after,
+  .button-86::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -99999;
+    transition: all .4s;
+  }
+  
+  .button-86::before {
+    transform: translate(0%, 0%);
+    width: 100%;
+    height: 100%;
+    background: #010148;
+    border-radius: 10px;
+  }
+  
+  .button-86::after {
+    transform: translate(4px, 4px);
+    width: 20px;
+    height: 20px;
+    background: #02028a15;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 50px;
+    -webkit-transform: translate(2px, 2px);
+    -moz-transform: translate(4px, 4px);
+    -ms-transform: translate(4px, 4px);
+    -o-transform: translate(4px, 4px);
+}
+  
+  .button-86:hover::before {
+    transform: translate(5%, 20%);
+    width: 110%;
+    height: 110%;
+    -webkit-transform: translate(5%, 20%);
+    -moz-transform: translate(5%, 20%);
+    -ms-transform: translate(5%, 20%);
+    -o-transform: translate(5%, 20%);
+}
+  
+  .button-86:hover::after {
+    border-radius: 10px;
+    transform: translate(0, 0);
+    width: 100%;
+    height: 100%;
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+}
+  
+  .button-86:active::after {
+    transition: 0s;
+    transform: translate(0, 5%);
+    -webkit-transform: translate(0, 5%);
+    -moz-transform: translate(0, 5%);
+    -ms-transform: translate(0, 5%);
+    -o-transform: translate(0, 5%);
+} 
+
+.button-86 {
+    /*Existingstyles...*/box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    /*Addsashadow*/border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.button-86:hover {
+    transform: scale(1.1); /* Enlarges the image */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+.button-86:hover {
+    transform: rotate(10deg); /* Rotates the image */
+}
+.button-86:hover {
+    transform: scale(1.1) rotate(10deg);
+    -webkit-transform: scale(1.1) rotate(10deg);
+    -moz-transform: scale(1.1) rotate(10deg);
+    -ms-transform: scale(1.1) rotate(10deg);
+    -o-transform: scale(1.1) rotate(10deg);
+}
+.button-86 {
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition for transform and opacity */
+}
+.button-86:hover {
+    transform: scale(1.1) rotate(10deg);
+    opacity: 0.8; /* Slightly transparent on hover */
+}
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+.button-86:hover {
+    animation: bounce 0.6s ease infinite; /* Apply the bouncing animation */
+}
+.button-86:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* Glowing shadow */
+}
+
+/* This will apply to screens wider than 767px */
+@media (max-width: 560px) {
+    .profile-pic {
+        display: none;
+    }
+
+    /* Other styles for smaller screens */
+    .profile-pic-container {
+        position: absolute;
+        left: 0px;
+        top: 10%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+}
+    /* ... other styles for small screen ... */
+}
+
+@media (min-width: 561px) and (max-width: 910px) {
+    .profile-pic {
+        display: block; /* Make the image visible */
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        /* You can add specific position styles here if needed */
+    }
+
+    .profile-pic-container {
+        position: absolute;
+        left: 20px;
+        top: 30%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+}
+
+    /* Other styles for larger screens */
+    /* ... */
+}
+
+
+.square-img {
+    width: 100%;
+    padding-top: 50%; /* This makes the height equal to the width */
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .square-img img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  

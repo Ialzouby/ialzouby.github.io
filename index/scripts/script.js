@@ -8,6 +8,13 @@ document.addEventListener('DOMContentLoaded', function() {
         toggleIcon.src = document.body.classList.contains('dark-mode') ? 'images/dark.png' : 'images/light.png';
     });
 
+    var menuToggle = document.getElementById('menu-toggle');
+    menuToggle.addEventListener('click', function() {
+        document.body.classList.toggle('sidebar-open');
+    });
+
+   
+
     document.addEventListener('click', function(event) {
         if (event.target.classList.contains('copy-btn')) {
             var button = event.target;
@@ -34,11 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 
-    // Handle hamburger menu toggle
-    var menuToggle = document.getElementById('menu-toggle');
-    menuToggle.addEventListener('click', function() {
-        document.body.classList.toggle('sidebar-closed');
-    });
+    
 
     // Handle search functionality
     var searchButton = document.getElementById('searchButton');
