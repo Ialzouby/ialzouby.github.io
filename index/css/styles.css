@@ -751,30 +751,54 @@ header {
     height: auto; /* Maintain aspect ratio */
 }
 
-header nav {
-    margin-top: 8px;
+header nav a {
+    color: #282828; /* Text color */
+    margin: 0 15px; /* Adjust spacing around links */
+    text-decoration: none; /* Remove underline from links */
+    font-weight: 500; /* Font weight */
+    padding: 2px 8px; /* Adjusted padding */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease; /* Smooth transition for background, color, and box-shadow */
+    background-color: rgba(255, 255, 255, 0); /* Start with a transparent background */
 }
 
+header nav a:hover, header nav a:focus {
+    background-color: rgba(255, 255, 255, 0); /* Make background fully transparent on hover/focus */
+    color: #ffffff; /* Change text color on hover/focus */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Adjust or remove the shadow effect */
+    /* Animation */
+    animation: pulseAnimation 1s infinite;
+}
+
+/* Animation Keyframes */
+@keyframes pulseAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Ensure other styles remain unchanged */
 header a {
-    color: #ffffff;
+    color: #484848;
     margin: 0 10px;
     text-decoration: none;
     font-weight: 500;
 }
 
-header a:hover {
-    color: #ab0b0b;
-}
-
-/* Header Styles */
 header {
     background-color: #57b0dd;
-    color: #ffffff;
+    color: #5b5959;
     padding: 12px;
     text-align: center;
     border-radius: 10px;
 }
 
+@media (max-width: 600px) {
+    header nav a {
+        margin: 0 8px; /* Reduced spacing around links for smaller screens */
+        padding: 0px 6px; /* Optionally adjust padding as well */
+    }
+}
 
 /* Main Content Styles */
 /* Main Content Styles */
