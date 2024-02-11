@@ -667,19 +667,31 @@ nav {
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Enhances the shadow on hover */
 }
 
-.footer .nav-button {
-    width: 50px; /* Adjust the size as needed */
-    height: 20px; 
-    height: auto; /* Maintain aspect ratio */
-    margin: 0 10px; /* Adjust spacing as needed */
-    /* Add any additional styling here */
+/* Base styles for footer links */
+footer nav a {
+    color: #ffffff; /* Text color */
+    margin: 0 15px; /* Spacing around links */
+    text-decoration: none; /* Remove underline from links */
+    font-weight: 500; /* Font weight */
+    padding: 4px 8px; /* Padding around links */
+    border-radius: 5px; /* Rounded corners for aesthetic */
+    transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition effects */
 }
 
-
-footer .nav-button:hover {
-    /* Hover effect - adjust as needed */
-    opacity: 0.8;
+/* Hover and focus styles for footer links */
+footer nav a:hover, footer nav a:focus {
+    background-color: rgba(255, 255, 255, 0.2); /* Slight background color change on hover/focus */
+    color: #57b0dd; /* Text color change on hover/focus */
+    text-decoration: none; /* Ensure underline doesn't reappear on hover/focus */
 }
+
+/* Media query for adjusting footer link spacing on smaller screens */
+@media (max-width: 600px) {
+    footer nav a {
+        margin: 0 8px; /* Closer spacing on smaller screens */
+    }
+}
+
 
 @media (max-width: 768px) {
     .footer .nav-button {
